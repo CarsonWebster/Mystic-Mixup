@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ch2b3qon74jop" path="res://PROTOTYPE ASSETS/shelves.tscn" id="1_83aqm"]
 [ext_resource type="Script" path="res://PROTOTYPE ASSETS/prototype_scene.gd" id="1_ijfja"]
 [ext_resource type="PackedScene" uid="uid://bik4yvwkunu8" path="res://PROTOTYPE ASSETS/table.tscn" id="2_5js8h"]
-[ext_resource type="PackedScene" uid="uid://bktf856owee8m" path="res://PROTOTYPE ASSETS/customer.tscn" id="4_wvm8d"]
+[ext_resource type="PackedScene" uid="uid://bktf856owee8m" path="res://PROTOTYPE ASSETS/customerPrototype.tscn" id="4_wvm8d"]
 [ext_resource type="PackedScene" uid="uid://doeybf2huc2q5" path="res://PROTOTYPE ASSETS/ingredient.tscn" id="5_kkgh7"]
 
 [node name="Prototype Scene" type="Node2D"]
