@@ -8,6 +8,7 @@
 
 [node name="Prototype Scene" type="Node2D"]
 script = ExtResource("1_ijfja")
+customer_scene = ExtResource("4_wvm8d")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="ColorRect" parent="."]
@@ -27,7 +28,8 @@ scale = Vector2(0.381612, 1.43237)
 metadata/_edit_lock_ = true
 
 [node name="Table" parent="." instance=ExtResource("2_5js8h")]
-position = Vector2(571, 508)
+position = Vector2(575, 571)
+scale = Vector2(0.475139, 0.539448)
 metadata/_edit_lock_ = true
 
 [node name="Green ingredient" parent="." instance=ExtResource("5_kkgh7")]
@@ -46,18 +48,10 @@ color = "Blue"
 position = Vector2(1052, 421)
 color = "Black"
 
-[node name="Label" type="Label" parent="."]
-offset_left = 472.0
-offset_top = 8.0
-offset_right = 519.0
-offset_bottom = 34.0
-scale = Vector2(4.17205, 3.51133)
-text = " "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="customer" parent="." instance=ExtResource("4_wvm8d")]
-visible = false
-position = Vector2(1119, 46)
-
-[connection signal="demand_ingredent" from="customer" to="." method="_on_customer_demand_ingredent"]
+[node name="DialogBox" type="Label" parent="."]
+offset_left = 405.0
+offset_top = 160.0
+offset_right = 662.0
+offset_bottom = 254.0
+scale = Vector2(1.36138, 1.18826)
+autowrap_mode = 3

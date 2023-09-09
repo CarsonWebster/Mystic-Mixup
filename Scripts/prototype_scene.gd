@@ -8,15 +8,15 @@ extends Node2D
 var demanded_color: String
 
 # Export the customer scene as a PackedScene variable
-#@export var customer_scene : PackedScene
+@export var customer_scene : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Spawn a new customer from the exported scene
-	#var customer = customer_scene.instantiate()
-	#customer.position = Vector2(1093, 45)
-	#add_child(customer)
-	pass
+	var customer = customer_scene.instantiate()
+	customer.position = Vector2(1093, 45)
+	add_child(customer)
+	customer.demand_ingredent.connect(_on_customer_demand_ingredent)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,5 +25,9 @@ func _process(_delta):
 
 
 func _on_customer_demand_ingredent(color: String):
-	$Label.text = color
+	#print("Got customer signal")
+	$DialogBox.visible_ratio = 0
+	$DialogBox.text = "I AM HUNGRY FOR SOME " + color + "!"
 	demanded_color = color
+	var tween = create_tween()
+	tween.tween_property($DialogBox, "visible_ratio", 1, 1)
