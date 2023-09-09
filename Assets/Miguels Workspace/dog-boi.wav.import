@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lrx1ugpqty5o"
+path="res://.godot/imported/dog-boi.wav-47ff1b39ca95b56a0af9d79e092cc4f0.sample"
+
+[deps]
+
+source_file="res://Assets/Miguels Workspace/dog-boi.wav"
+dest_files=["res://.godot/imported/dog-boi.wav-47ff1b39ca95b56a0af9d79e092cc4f0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

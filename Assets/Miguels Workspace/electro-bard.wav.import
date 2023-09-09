@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cj0f1fxv4073"
+path="res://.godot/imported/electro-bard.wav-66c51e1572678741975780274448911b.sample"
+
+[deps]
+
+source_file="res://Assets/Miguels Workspace/electro-bard.wav"
+dest_files=["res://.godot/imported/electro-bard.wav-66c51e1572678741975780274448911b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
