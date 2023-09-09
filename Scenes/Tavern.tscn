@@ -1,10 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://donpponaixs60"]
+[gd_scene load_steps=8 format=3 uid="uid://donpponaixs60"]
 
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
+[ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
 [ext_resource type="Texture2D" uid="uid://dy1y3hlhwh4rv" path="res://Assets/Art/Shelves.png" id="2_4d712"]
 [ext_resource type="Texture2D" uid="uid://cr6uqxla0wsgw" path="res://Assets/Art/FishCustomer.png" id="3_c8pg8"]
+[ext_resource type="Texture2D" uid="uid://6apw7742rurc" path="res://Assets/Art/DoorClosed.png" id="5_46dt6"]
+[ext_resource type="Texture2D" uid="uid://b2emibx0pkvb2" path="res://Assets/Art/DoorOpened.png" id="6_73m6t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qk04"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_46dt6")
+}],
+"loop": true,
+"name": &"Closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_73m6t")
+}],
+"loop": true,
+"name": &"Opened",
+"speed": 5.0
+}]
 
 [node name="Tavern" type="Node2D"]
+script = ExtResource("1_iuiyy")
 metadata/_edit_lock_ = true
 
 [node name="TavernBackground" type="Sprite2D" parent="."]
@@ -20,7 +43,20 @@ texture = ExtResource("2_4d712")
 metadata/_edit_lock_ = true
 
 [node name="FishCustomer" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1200, 462)
 scale = Vector2(0.293482, 0.293482)
 texture = ExtResource("3_c8pg8")
 metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(926, 503)
+scale = Vector2(0.783193, 0.783193)
+sprite_frames = SubResource("SpriteFrames_0qk04")
+animation = &"Closed"
+metadata/_edit_lock_ = true
+
+[node name="Door" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(862, 544)
+texture = ExtResource("5_46dt6")
