@@ -1,185 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://donpponaixs60"]
+[gd_scene load_steps=11 format=3 uid="uid://donpponaixs60"]
 
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
 [ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
 [ext_resource type="Texture2D" uid="uid://dy1y3hlhwh4rv" path="res://Assets/Art/Shelves.png" id="2_4d712"]
-[ext_resource type="Texture2D" uid="uid://cr6uqxla0wsgw" path="res://Assets/Art/FishCustomer.png" id="2_nontd"]
-[ext_resource type="Script" path="res://Scripts/customer.gd" id="3_2cohs"]
 [ext_resource type="Texture2D" uid="uid://6apw7742rurc" path="res://Assets/Art/DoorClosed.png" id="5_46dt6"]
 [ext_resource type="Texture2D" uid="uid://b2emibx0pkvb2" path="res://Assets/Art/DoorOpened.png" id="6_73m6t"]
 [ext_resource type="PackedScene" uid="uid://dxgypbjt1cplp" path="res://Scenes/Customer.tscn" id="8_d7oh5"]
-
-[sub_resource type="Animation" id="Animation_tq5va"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_nontd")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1169, 321)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.0608366, 0.0608366)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:skew")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_rr82e"]
-resource_name = "customerWalk"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("2_nontd"), ExtResource("2_nontd")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 1.5, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1169, 321), Vector2(1169, 321), Vector2(1084, 371), Vector2(1035, 451), Vector2(1051, 445)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1, 1.5, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.0608366, 0.0608366), Vector2(0.0608366, 0.0608366), Vector2(0.111, 0.111), Vector2(0.191, 0.191), Vector2(0.263, 0.263)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:skew")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1, 1.5, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, -0.174533, 0.174533, 0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vrmmd"]
-_data = {
-"RESET": SubResource("Animation_tq5va"),
-"customerWalk": SubResource("Animation_rr82e")
-}
-
-[sub_resource type="PackedScene" id="PackedScene_oapol"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("Customer", "visible", "position", "scale", "texture", "script", "Sprite2D", "AnimationPlayer", "libraries"),
-"node_count": 2,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 6, 0, -1, 5, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 0, 0, 0, 7, 7, -1, 1, 8, 5, 0),
-"variants": [false, Vector2(1169, 321), Vector2(0.0608366, 0.0608366), ExtResource("2_nontd"), ExtResource("3_2cohs"), {
-"": SubResource("AnimationLibrary_vrmmd")
-}],
-"version": 3
-}
+[ext_resource type="Texture2D" uid="uid://cocboblg5dlds" path="res://Assets/Art/firepit.png" id="8_kbgl0"]
+[ext_resource type="Texture2D" uid="uid://bhes504o3nox8" path="res://Assets/Art/cauldron.png" id="9_7cqv0"]
+[ext_resource type="Texture2D" uid="uid://cl54ujkparb0x" path="res://Assets/Art/countertop.png" id="10_byw7j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qk04"]
 animations = [{
@@ -202,26 +31,44 @@ animations = [{
 
 [node name="Tavern" type="Node2D"]
 script = ExtResource("1_iuiyy")
-customer_scene = SubResource("PackedScene_oapol")
+customer_scene = ExtResource("8_d7oh5")
 metadata/_edit_lock_ = true
 
 [node name="TavernBackground" type="Sprite2D" parent="."]
-position = Vector2(935.561, 257.815)
-scale = Vector2(0.309489, 0.309489)
+z_index = -1
+position = Vector2(935, 288)
+scale = Vector2(0.34961, 0.34961)
 texture = ExtResource("1_e7ns7")
 metadata/_edit_lock_ = true
 
-[node name="Shelves" type="Sprite2D" parent="."]
+[node name="Firepit" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(935, 619)
-scale = Vector2(1, 1.00077)
-texture = ExtResource("2_4d712")
+texture = ExtResource("8_kbgl0")
+metadata/_edit_lock_ = true
+
+[node name="Countertop" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(932, 611)
+texture = ExtResource("10_byw7j")
 metadata/_edit_lock_ = true
 
 [node name="Door" type="AnimatedSprite2D" parent="."]
-position = Vector2(926, 503)
-scale = Vector2(0.783193, 0.783193)
+position = Vector2(906, 590)
+scale = Vector2(0.955949, 1.0119)
 sprite_frames = SubResource("SpriteFrames_0qk04")
 animation = &"Closed"
 metadata/_edit_lock_ = true
 
-[node name="Customer" parent="." instance=ExtResource("8_d7oh5")]
+[node name="Cauldron" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(935, 619)
+texture = ExtResource("9_7cqv0")
+metadata/_edit_lock_ = true
+
+[node name="Shelves" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(935, 619)
+scale = Vector2(1, 1.00077)
+texture = ExtResource("2_4d712")
+metadata/_edit_lock_ = true
