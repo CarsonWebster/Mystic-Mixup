@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmip67d6gavb3"
+path="res://.godot/imported/sasquatch.wav-4c6c57f6a6121fec95c3973d293bcc59.sample"
+
+[deps]
+
+source_file="res://Assets/Miguels Workspace/sasquatch.wav"
+dest_files=["res://.godot/imported/sasquatch.wav-4c6c57f6a6121fec95c3973d293bcc59.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

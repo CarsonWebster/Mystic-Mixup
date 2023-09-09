@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lc6sbt2fvu4f"
+path="res://.godot/imported/splash2.wav-f9025d45de2c1f1f307f1e236bf0b4b9.sample"
+
+[deps]
+
+source_file="res://Assets/Miguels Workspace/SoundEffects/Objects/drop-item/splash2.wav"
+dest_files=["res://.godot/imported/splash2.wav-f9025d45de2c1f1f307f1e236bf0b4b9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

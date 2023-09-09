@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://fpuy7u4i77v8"]
+
+[ext_resource type="AudioStream" uid="uid://crvu3t1jxa7b1" path="res://Assets/Miguels Workspace/SoundEffects/Game/StartGame/start-game-sound.wav" id="1_aikfb"]
+
+[node name="StartGameSoundEffect" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_aikfb")
+volume_db = 9.226
+pitch_scale = 0.75

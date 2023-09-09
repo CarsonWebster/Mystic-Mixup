@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2v45fqjq61bm"
+path="res://.godot/imported/can-1.wav-b8be79f029e2b142a8e9bfcee2433e3c.sample"
+
+[deps]
+
+source_file="res://Assets/Miguels Workspace/SoundEffects/Objects/pickup-item/can-1.wav"
+dest_files=["res://.godot/imported/can-1.wav-b8be79f029e2b142a8e9bfcee2433e3c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
