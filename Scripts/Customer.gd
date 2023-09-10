@@ -23,7 +23,7 @@ var node: Node2D = $"."
 @onready
 var text: Label = get_node("ScrollDialouge/ScrollText")
 
-var customer_type: String = "fishmaid"
+var customer_type: String = "sad_ghost"
 
 var characterWalkingAnims: Dictionary = {
 	"fishmaid": "Standard Customer Walk",
@@ -31,7 +31,8 @@ var characterWalkingAnims: Dictionary = {
 }
 
 var characterLeavingAnims: Dictionary = {
-	"fishmaid": "Standard Customer Leave"
+	"fishmaid": "Standard Customer Leave",
+	"sad_ghost": "Standard Customer Leave"
 }
 
 var dialogSounds: Dictionary = {
@@ -48,8 +49,8 @@ var dialogSounds: Dictionary = {
 }
 
 var characterSprites: Dictionary = {
+	"fishmaid": "res://Assets/Art/fishmaid.png",
 	"sad_ghost": "res://Assets/Art/ghost.png",
-	"fishmaid": "res://Assets/Art/FishCustomer.png"
 }
 
 var characterDialog: Dictionary = {
@@ -65,37 +66,65 @@ var characterDialog: Dictionary = {
 	"sasquatch": "… … Innkeeper … … normal?"
 }
 
+var talkingCharacterSprites: Dictionary = {
+	"fishmaid": "res://Assets/Art/fishmaid.png",
+	"sad_ghost": "res://Assets/Art/ghost_talking.png"
+}
+
+var unsatisfiedCharacterSprites: Dictionary = {
+	"fishmaid": "res://Assets/Art/fishmaid_unsatisifed.png",
+	"sad_ghost": "res://Assets/Art/ghost_unsatisfied.png",
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var sprite = load(characterSprites[customer_type])
-	node.set_texture(sprite)
+	updateSprite(characterSprites[customer_type])
 	
 	var phrase = characterDialog[customer_type]
 	text.text = str(phrase)
 	
 	var walkingAnimation = characterWalkingAnims[customer_type]
-	
 	walking.play(walkingAnimation)
+	
 	pass
-
-func _on_animation_player_animation_finished(anim_name):
-	print("animation is done: "+anim_name)
 
 func _on_animation_player_animation_started(anim_name):
 	print("animation is starting: "+anim_name)
 
 func _on_walking_animation_animation_finished(anim_name):
-	dialog.play("Speech bubble movement")
-	$SoundStream.stop()
-	$SoundStream.stream = load(dialogSounds[customer_type])
-	$SoundStream.play(0.0)
+	if "Walk" in anim_name:
+		customer_speak()
+		
 
 func _on_scroll_animation_animation_finished(anim_name):
 	if anim_name == "Speech bubble movement": 
-		var leavingAnimation = characterLeavingAnims[customer_type]
-		walking.play(leavingAnimation)
+		customer_leave(false)
 		
 	print("scroll animation is done: "+anim_name) # Replace with function body.
 
 func reset():
 	pass
+
+func customer_speak():
+	# set talking sprite
+	updateSprite(talkingCharacterSprites[customer_type])
+	
+	# start speech bubble
+	dialog.play("Speech bubble movement")
+	
+	# update sound stream
+	$SoundStream.stop()
+	$SoundStream.stream = load(dialogSounds[customer_type])
+	$SoundStream.play(0.0)
+
+func customer_leave(isHappy): 
+	if !isHappy: 
+		updateSprite(unsatisfiedCharacterSprites[customer_type])
+		
+	$SoundStream.stop()
+	var leavingAnimation = characterLeavingAnims[customer_type]
+	walking.play(leavingAnimation)
+
+func updateSprite(path):
+	var sprite = load(path)
+	node.set_texture(sprite)

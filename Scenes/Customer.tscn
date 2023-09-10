@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dxgypbjt1cplp"]
 
-[ext_resource type="Texture2D" uid="uid://cr6uqxla0wsgw" path="res://Assets/Art/FishCustomer.png" id="1_fpbah"]
+[ext_resource type="Texture2D" path="res://Assets/Art/fishmaid.png" id="1_a6br8"]
 [ext_resource type="Script" path="res://Scripts/Customer.gd" id="2_lsbfo"]
 [ext_resource type="Texture2D" uid="uid://ctrjcigyjh3rg" path="res://Assets/Art/Scroll_Dialouge.png" id="3_eo31a"]
 [ext_resource type="AudioStream" uid="uid://3csq43wudptd" path="res://Assets/Miguels Workspace/SoundEffects/Characters/fishmaid.wav" id="3_rriuv"]
@@ -71,7 +71,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1352.5, -1922.5)]
+"values": [Vector2(-1000, -1922.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -99,7 +99,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(-0.2, 0, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-1095, -1922.5), Vector2(-1095, -1922.5), Vector2(-1095, -662.5)]
+"values": [Vector2(-1095, -1922.5), Vector2(-1095, -1922.5), Vector2(-550, -350)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -121,9 +121,10 @@ _data = {
 }
 
 [node name="Fishmaid" type="Sprite2D"]
+z_index = -1
 position = Vector2(1610, 487)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_fpbah")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_a6br8")
 script = ExtResource("2_lsbfo")
 
 [node name="SoundStream" type="AudioStreamPlayer2D" parent="."]
@@ -139,8 +140,8 @@ libraries = {
 position = Vector2(2.08165e-12, 488)
 
 [node name="ScrollDialouge" type="Sprite2D" parent="."]
-position = Vector2(-1352.5, -1922.5)
-scale = Vector2(4, 4)
+position = Vector2(-1000, -1922.5)
+scale = Vector2(2, 2)
 texture = ExtResource("3_eo31a")
 
 [node name="ScrollAnimation" type="AnimationPlayer" parent="ScrollDialouge"]

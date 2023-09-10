@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr6uqxla0wsgw"
-path="res://.godot/imported/FishCustomer.png-76bcaddcc0898a964e305279e09d9384.ctex"
+uid="uid://n0ps106v0ouw"
+path="res://.godot/imported/fishmaid.png-d5324353d8ae718344a0c7a4bffd8704.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/FishCustomer.png"
-dest_files=["res://.godot/imported/FishCustomer.png-76bcaddcc0898a964e305279e09d9384.ctex"]
+source_file="res://Assets/Art/fishmaid.png"
+dest_files=["res://.godot/imported/fishmaid.png-d5324353d8ae718344a0c7a4bffd8704.ctex"]
 
 [params]
 
