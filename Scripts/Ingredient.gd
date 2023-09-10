@@ -15,39 +15,58 @@ extends Node2D
 @export var type: String = ""
 
 var ingredient_types: Array = [
-	"DeathPotion",
 	"Vanilla",
 	"EnviousExtract",
 	"NegativeReflection",
 	"FrogLegs",
-	"LovePotion",
 	"Bones",
+	"Moonshine",
 	"ToxicJellyfish",
-	"Hair"
+	"Hair",
+	"GameJam",
+	"MysteryBox",
+	"MysteryMeat",
+	"SpicySugar",
+	"GooseBerryBush",
+	"CockatriceEgg",
+	"Rainbows",
+	"Wolfsbane"
 ]
 
 var spritemap: Dictionary = {
-	"DeathPotion": load("res://Assets/Art/DeathJuice.png"),
 	"Vanilla": load("res://Assets/Art/Vanilla.png"),
 	"EnviousExtract": load("res://Assets/Art/EnviousExtract.png"),
 	"NegativeReflection": load("res://Assets/Art/NegativeReflection.png"),
 	"FrogLegs": load("res://Assets/Art/FrogLegs.png"),
-	"LovePotion": load("res://Assets/Art/LovePotion.png"),
 	"Bones": load("res://Assets/Art/Bones.png"),
+	"Moonshine": load("res://Assets/Art/Moonshine.png"),
 	"ToxicJellyfish": load("res://Assets/Art/ToxicJellyfish.png"),
-	"Hair": load("res://Assets/Art/Hair.png")
+	"Hair": load("res://Assets/Art/Hair.png"),
+	"GameJam": load("res://Assets/Art/GameJam.png"),
+	"MysteryBox": load("res://Assets/Art/MysteryBox.png"),
+	"MysteryMeat": load("res://Assets/Art/MysteryMeat.png"),
+	"SpicySugar": load("res://Assets/Art/SpicySugar.png"),
+	"GooseBerryBush": load("res://Assets/Art/GooseBerryBush.png"),
+	"CockatriceEgg": load("res://Assets/Art/CockatriceEgg.png"),
+	"Rainbows": load("res://Assets/Art/Rainbows.png"),
+	"Wolfsbane": load("res://Assets/Art/Wolfsbane.png")
 }
 
 var spawning_chance: Dictionary = {
-	"DeathPotion": .2,
 	"Vanilla": .1,
-	"EnviousExtract": .3,
+	"EnviousExtract": .2,
 	"NegativeReflection": .1,
 	"FrogLegs": .2,
-	"LovePotion": .3,
 	"Bones": .3,
-	"ToxicJellyfish": .3,
-	"Hair": .2
+	"Moonshine": .3,
+	"ToxicJellyfish": .2,
+	"Hair": .2,
+	"GameJam": .1,
+	"MysteryBox": .1,
+	"MysteryMeat": .3,
+	"SpicySugar": .2,
+	"GooseBerryBush": .2,
+	"CockatriceEgg": .3
 }
 
 var dragging: bool = false
