@@ -21,7 +21,7 @@ var spritemap: Dictionary = {
 }
 
 var dragging: bool = false
-signal dragsignal;
+# signal dragsignal;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,15 +29,16 @@ func _ready():
 	# Set sprite
 	$Sprite2D.texture = spritemap[type]
 	#print("I live at ", position)
-	connect("dragsignal", _set_drag_pc)
+	#connect("dragsignal", _set_drag_pc)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if dragging:
-		position = lerp(position, get_global_mouse_position(), 25 * delta)
+		# position = lerp(position, get_global_mouse_position(), 25 * delta)
+		position = get_global_mouse_position()
 
-func _set_drag_pc():
-	dragging=!dragging
+# func _set_drag_pc():
+# 	dragging=!dragging
 
 
 func _on_area_2d_input_event(_viewport, event, _shape_idx):
@@ -46,9 +47,12 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 		print("Mouse Click/Unclick at: ", event.position)
 		print(event.pressed)
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			emit_signal("dragsignal")
+			# emit_signal("dragsignal")
+			dragging = true
 		elif event.button_index == MOUSE_BUTTON_LEFT and !event.pressed:
-			emit_signal("dragsignal")
+#			emit_signal("dragsignal")
+			dragging = false
+			
 	elif event is InputEventScreenTouch:
 		if event.pressed and event.get_index() == 0:
 			self.position = event.get_position()

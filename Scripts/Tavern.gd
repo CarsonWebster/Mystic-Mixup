@@ -18,24 +18,24 @@ extends Node2D
 @export var customer_scene : PackedScene
 @export var ingredient_scene : PackedScene
 
-var ingredient_positions : Array = [
-	Vector2(150, 325),
-	Vector2(336, 325),
-	Vector2(336, 579),
-	Vector2(149, 579),
-	Vector2(149, 799),
-	Vector2(339, 799),
-	Vector2(360, 1040),
-	Vector2(148, 1040),
-	Vector2(1533, 327),
-	Vector2(1726, 329),
-	Vector2(1726, 584),
-	Vector2(1529, 584),
-	Vector2(1529, 809),
-	Vector2(1733, 809),
-	Vector2(1733, 1053),
-	Vector2(1524, 1052)
-]
+#var ingredient_positions : Array = [
+#	Vector2(150, 325),
+#	Vector2(336, 325),
+#	Vector2(336, 579),
+#	Vector2(149, 579),
+#	Vector2(149, 799),
+#	Vector2(339, 799),
+#	Vector2(360, 1040),
+#	Vector2(148, 1040),
+#	Vector2(1533, 327),
+#	Vector2(1726, 329),
+#	Vector2(1726, 584),
+#	Vector2(1529, 584),
+#	Vector2(1529, 809),
+#	Vector2(1733, 809),
+#	Vector2(1733, 1053),
+#	Vector2(1524, 1052)
+#]
 
 var ingredient_types: Array = [
 	"DeathPotion",
@@ -49,12 +49,14 @@ var ingredient_types: Array = [
 func _ready():
 	
 	$BackgroundMusic.play(0.0)
+	
 	# Spawn Itmes
-	for i in range(len(ingredient_positions)):
-		var ingredient_instance = ingredient_scene.instantiate()
-		ingredient_instance.position = ingredient_positions[i]
-		ingredient_instance.type = ingredient_types[randi() % ingredient_types.size()]
-		add_child(ingredient_instance)
+#	for i in range(len(ingredient_positions)):
+#		var ingredient_instance = ingredient_scene.instantiate()
+#		ingredient_instance.position = ingredient_positions[i]
+#		ingredient_instance.type = ingredient_types[randi() % ingredient_types.size()]
+#		add_child(ingredient_instance)
+	
 
 
 
