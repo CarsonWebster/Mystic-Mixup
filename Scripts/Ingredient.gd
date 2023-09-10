@@ -86,9 +86,9 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 func _on_cauldron_area_entered(area):
 	#print(area)
 	if area.is_in_group("cauldron"):
-		#print("IN CAULDRON (", type, "): ", in_cauldron)
+		print("IN CAULDRON (", type, "): ", in_cauldron)
 		in_cauldron = true
-		#print("AFTER ENTER (", type, "): ", in_cauldron)
+		print("AFTER ENTER (", type, "): ", in_cauldron)
 
 
 func _on_cauldron_area_exited(area):
@@ -101,3 +101,15 @@ func _on_cauldron_area_exited(area):
 func reset():
 	position = starting_position
 	visible = true
+
+func crafted():
+	#print(type, "Is In Cauldron: ", type)
+	if in_cauldron:
+	#if visible == false:
+		print(type, "Is becoming...")
+		type = ingredient_types[randi() % ingredient_types.size()]
+		print(type)
+		$Sprite2D.texture = spritemap[type]
+	position = starting_position
+	visible = true
+	

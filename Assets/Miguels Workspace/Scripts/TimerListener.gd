@@ -35,7 +35,7 @@ func _ready():
 	primaryTimer.one_shot = isOneShotTimer
 	primaryTimer.start(defaultSoundStartPoint)
 
-func _process(delta):
+func _process(_delta):
 	# secondary time won't get added unless it starts.
 	# because of that, we must manually add the time offset 
 	# that the secondary timer would normally apply.
