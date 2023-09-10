@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxgypbjt1cplp"]
+[gd_scene load_steps=11 format=3 uid="uid://dxgypbjt1cplp"]
 
 [ext_resource type="Script" path="res://Scripts/Customer.gd" id="2_lsbfo"]
 [ext_resource type="Texture2D" uid="uid://ctrjcigyjh3rg" path="res://Assets/Art/Scroll_Dialouge.png" id="3_eo31a"]
@@ -77,7 +77,6 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iin1c"]
 _data = {
-"Doggo Customer Walk": SubResource("Animation_fpmji"),
 "RESET": SubResource("Animation_me48a"),
 "Standard Customer Leave": SubResource("Animation_pvv7f"),
 "Standard Customer Walk": SubResource("Animation_mfqe0")
@@ -180,6 +179,8 @@ offset_bottom = 64.5
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
 
 [connection signal="animation_finished" from="WalkingAnimation" to="." method="_on_walking_animation_animation_finished"]
 [connection signal="animation_started" from="WalkingAnimation" to="." method="_on_animation_player_animation_started"]
