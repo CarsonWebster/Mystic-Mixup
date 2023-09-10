@@ -1,12 +1,15 @@
-[gd_scene load_steps=20 format=3 uid="uid://donpponaixs60"]
+[gd_scene load_steps=23 format=3 uid="uid://donpponaixs60"]
 
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
 [ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
 [ext_resource type="Texture2D" uid="uid://dy1y3hlhwh4rv" path="res://Assets/Art/Shelves.png" id="2_4d712"]
-[ext_resource type="PackedScene" uid="uid://ce8aga010ip1f" path="res://Scenes/Ingredient.tscn" id="3_oldij"]
+[ext_resource type="PackedScene" path="res://Scenes/Ingredient.tscn" id="3_oldij"]
+[ext_resource type="AudioStream" uid="uid://bfqktjx86lnja" path="res://Assets/Miguels Workspace/SoundEffects/Game/warning_sound.wav" id="4_hnb7n"]
 [ext_resource type="Texture2D" uid="uid://6apw7742rurc" path="res://Assets/Art/DoorClosed.png" id="5_46dt6"]
+[ext_resource type="AudioStream" uid="uid://bhka1dpj77ihb" path="res://Assets/Music/timer_ending_-_9923_8.19_PM.mp3" id="5_iiw66"]
 [ext_resource type="Texture2D" uid="uid://b2emibx0pkvb2" path="res://Assets/Art/DoorOpened.png" id="6_73m6t"]
-[ext_resource type="PackedScene" uid="uid://dxgypbjt1cplp" path="res://Scenes/Customer.tscn" id="8_d7oh5"]
+[ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/TimerListener.gd" id="7_kwttk"]
+[ext_resource type="PackedScene" path="res://Scenes/Customer.tscn" id="8_d7oh5"]
 [ext_resource type="Texture2D" uid="uid://cocboblg5dlds" path="res://Assets/Art/firepit.png" id="8_kbgl0"]
 [ext_resource type="Texture2D" uid="uid://bhes504o3nox8" path="res://Assets/Art/cauldron.png" id="9_7cqv0"]
 [ext_resource type="Texture2D" uid="uid://cl54ujkparb0x" path="res://Assets/Art/countertop.png" id="10_byw7j"]
@@ -78,6 +81,47 @@ script = ExtResource("1_iuiyy")
 customer_scene = ExtResource("8_d7oh5")
 metadata/_edit_lock_ = true
 
+[node name="TimerWarningEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hnb7n")
+volume_db = 3.884
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_32k0n")
+
+[node name="TimerEndingMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_iiw66")
+
+[node name="GameTimer" type="Node" parent="."]
+script = ExtResource("7_kwttk")
+
+[node name="PrimaryTimer" type="Timer" parent="GameTimer"]
+wait_time = 1.135
+
+[node name="SecondaryTimer" type="Timer" parent="GameTimer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameTimer"]
+z_index = 5
+offset_left = 1.0
+offset_right = 124.0
+offset_bottom = 148.0
+alignment = 1
+
+[node name="Label" type="Label" parent="GameTimer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Time
+Remaining"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Duration" type="Label" parent="GameTimer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TavernBackground" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(935, 288)
@@ -130,7 +174,7 @@ position = Vector2(937, 622)
 texture = ExtResource("11_q3h8e")
 metadata/_edit_lock_ = true
 
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="BackgroundMusic2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_32k0n")
 
 [node name="IngredentsGroup" type="Node" parent="."]
@@ -232,5 +276,8 @@ offset_bottom = 701.0
 scale = Vector2(5.10957, 2.2806)
 text = "CRAFT"
 
+[connection signal="finished" from="TimerWarningEffect" to="GameTimer" method="_on_timer_warning_effect_finished"]
+[connection signal="timeout" from="GameTimer/PrimaryTimer" to="GameTimer" method="_on_primary_timer_timeout"]
+[connection signal="timeout" from="GameTimer/SecondaryTimer" to="GameTimer" method="_on_secondary_timer_timeout"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="CraftButton" to="." method="_on_craft_button_pressed"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://fndp8o4xa6lb"]
+
+[ext_resource type="Script" path="res://Scenes/GameOverButton.gd" id="1_7w2p0"]
+
+[node name="Prototyping" type="Node2D"]
+
+[node name="GameOverTitle" type="Label" parent="."]
+offset_left = 304.0
+offset_top = 154.0
+offset_right = 1662.0
+offset_bottom = 499.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 250
+text = "Game Over"
+
+[node name="GameOverButton" type="Button" parent="."]
+offset_left = 734.0
+offset_top = 970.0
+offset_right = 1178.0
+offset_bottom = 1088.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "Main Menu"
+script = ExtResource("1_7w2p0")
+
+[connection signal="button_up" from="GameOverButton" to="GameOverButton" method="_on_button_up"]

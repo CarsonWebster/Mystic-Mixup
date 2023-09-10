@@ -52,7 +52,6 @@ var used_ingredents: Array
 func _ready():
 	
 	$BackgroundMusic.play(0.0)
-	
 	# Spawn Itmes DEPRECATED FROM TAVERN RESPONSABILITY
 #	for i in range(len(ingredient_positions)):
 #		var ingredient_instance = ingredient_scene.instantiate()
