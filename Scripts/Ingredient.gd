@@ -127,6 +127,8 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 		elif event is InputEventScreenTouch:
 			if event.pressed and event.get_index() == 0:
 				position = event.get_position()
+	else:
+		dragging = false
 
 func _set_game_active(boolean):
 	game_active = boolean

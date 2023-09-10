@@ -185,8 +185,6 @@ Blub, blub, blub?"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-visible_characters = 0
-visible_ratio = 0.0
 
 [connection signal="animation_finished" from="WalkingAnimation" to="." method="_on_walking_animation_animation_finished"]
 [connection signal="animation_started" from="WalkingAnimation" to="." method="_on_animation_player_animation_started"]

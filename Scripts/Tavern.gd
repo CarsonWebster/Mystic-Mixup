@@ -17,6 +17,8 @@ extends Node2D
 # Export the customer scene as a PackedScene variable
 @export var customer_scene : PackedScene
 
+@export var game_over_scene : PackedScene
+
 signal GameActive(bool)
 
 var product_types: Array = [
@@ -112,3 +114,10 @@ func _on_animation_tree_animation_finished(anim_name):
 
 func _on_customer_done_walking():
 	emit_signal("GameActive", true)
+
+
+func _on_game_timer_game_over():
+	emit_signal("GameActive", false)
+	var game_over_layer = game_over_scene.instantiate()
+	add_child(game_over_layer)
+	game_over_layer.z_index = 10
