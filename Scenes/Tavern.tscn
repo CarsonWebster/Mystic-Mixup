@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b2vjnxgnvntuw" path="res://Assets/Art/icon.svg" id="18_te40p"]
 [ext_resource type="Texture2D" uid="uid://ck5exmcbavo6q" path="res://Assets/Art/CauldronLiquid.png" id="19_du0su"]
 [ext_resource type="Texture2D" uid="uid://cfh02buld2r25" path="res://Assets/Art/ProductMat.png" id="19_uaigo"]
-[ext_resource type="Texture2D" path="res://Assets/Art/220.png" id="22_rsncl"]
+[ext_resource type="Texture2D" uid="uid://m36g402dwkik" path="res://Assets/Art/220.png" id="22_rsncl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qk04"]
 animations = [{
