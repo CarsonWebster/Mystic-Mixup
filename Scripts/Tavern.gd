@@ -29,6 +29,7 @@ var used_ingredents: Array
 
 var product_result: String
 
+var customer = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,14 +37,13 @@ func _ready():
 	$BackgroundMusic.play(0.0)
 	$Product/AnimationPlayer.play("RESET")
 	$Product/AnimationPlayer.connect("animation_finished", _on_product_animation_finished)
-
 	for node in $IngredentsGroup.get_children():
 		if node.is_in_group("ingredient"):
 			node.connect("dropped_in_cauldron", _on_ingredient_dropped_in_cauldron)
 
 
 	# Spawn Customer
-	var customer = customer_scene.instantiate()
+	customer = customer_scene.instantiate()
 	customer.position = Vector2(1093, 45)
 	add_child(customer)
 
@@ -88,5 +88,6 @@ func _on_product_animation_finished(anim_name):
 		print("We got a: ", product_result)
 		
 		# HERE IS WHERE THE CUSTOMER WILL CALL THE JUDGE FUNCTION
-		#customer.judge_product(product_result)
+		customer.judge_product(product_result)
+		$Product/AnimationPlayer.play("RESET")
 
