@@ -26,8 +26,8 @@ var node: Node2D = $"."
 var text: Label = get_node("ScrollDialouge/ScrollText")
 var customer_type: String = "fishmaid"
 
-var customerTypes: Array = ["fishmaid", "sad_ghost", "angry_cowboy", "electro_bard", "doggo", "evil_scientist", "frog_prince", "old_man", "sasquatch"]
-
+#var customerTypes: Array = ["fishmaid", "sad_ghost", "angry_cowboy", "electro_bard", "doggo", "evil_scientist", "frog_prince", "old_man", "sasquatch"]
+var customerTypes: Array = ["fishmaid", "sad_ghost"]
 var characterWalkingAnims: Dictionary = {
 	"fishmaid": "Standard Customer Walk",
 	"sad_ghost": "Standard Customer Walk"

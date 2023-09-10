@@ -1,19 +1,21 @@
-[gd_scene load_steps=13 format=3 uid="uid://5p4o0el4svqu"]
+[gd_scene load_steps=14 format=3 uid="uid://5p4o0el4svqu"]
 
-[ext_resource type="Texture2D" uid="uid://ctrjcigyjh3rg" path="res://Assets/Art/Scroll_Dialouge.png" id="1_riqnh"]
-[ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_rkre7"]
-[ext_resource type="Texture2D" uid="uid://c1jvqcxgnfplk" path="res://Assets/Art/stars_review.png" id="3_hbcvt"]
-[ext_resource type="Texture2D" uid="uid://cddtmtgvgkqrh" path="res://Assets/Art/square_profile.png" id="4_ty2ue"]
-[ext_resource type="Texture2D" uid="uid://cm4ln32xk5vrx" path="res://Assets/Art/fishmaid_crop.png" id="5_8uyd5"]
-[ext_resource type="Texture2D" uid="uid://baeykumq1icfs" path="res://Assets/Art/blank_star.png" id="6_ira1g"]
-[ext_resource type="Texture2D" uid="uid://h6m3263k3u7i" path="res://Assets/Art/ghost_cropped.png" id="7_p5jqt"]
-[ext_resource type="Texture2D" uid="uid://cbbt3hsdgnity" path="res://Assets/Art/angry_cowboy_cropped.png" id="8_v606i"]
-[ext_resource type="Texture2D" uid="uid://c1srqqgs1fiua" path="res://Assets/Art/old_man_cropped.png" id="9_21j62"]
-[ext_resource type="Texture2D" uid="uid://balafipmhbr6e" path="res://Assets/Art/frog.png" id="10_im867"]
-[ext_resource type="Texture2D" uid="uid://gwowbamhu0ow" path="res://Assets/Art/electro_bard_cropped.png" id="11_0esqr"]
-[ext_resource type="Texture2D" uid="uid://de8j6ywftwkq5" path="res://Assets/Art/dark_cropped.png" id="12_34hyu"]
+[ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_oooi5"]
+[ext_resource type="Texture2D" uid="uid://ctrjcigyjh3rg" path="res://Assets/Art/Scroll_Dialouge.png" id="2_5dtoc"]
+[ext_resource type="Texture2D" uid="uid://c1jvqcxgnfplk" path="res://Assets/Art/stars_review.png" id="3_fm6ql"]
+[ext_resource type="Texture2D" uid="uid://cddtmtgvgkqrh" path="res://Assets/Art/square_profile.png" id="4_e0vb1"]
+[ext_resource type="Texture2D" uid="uid://cm4ln32xk5vrx" path="res://Assets/Art/fishmaid_crop.png" id="5_rqkq5"]
+[ext_resource type="Texture2D" uid="uid://baeykumq1icfs" path="res://Assets/Art/blank_star.png" id="6_1cm4o"]
+[ext_resource type="Texture2D" uid="uid://h6m3263k3u7i" path="res://Assets/Art/ghost_cropped.png" id="7_4k18l"]
+[ext_resource type="Texture2D" uid="uid://cbbt3hsdgnity" path="res://Assets/Art/angry_cowboy_cropped.png" id="8_b7jup"]
+[ext_resource type="Texture2D" uid="uid://c1srqqgs1fiua" path="res://Assets/Art/old_man_cropped.png" id="9_a6ov6"]
+[ext_resource type="Texture2D" uid="uid://balafipmhbr6e" path="res://Assets/Art/frog.png" id="10_fllva"]
+[ext_resource type="Texture2D" uid="uid://gwowbamhu0ow" path="res://Assets/Art/electro_bard_cropped.png" id="11_l2i5n"]
+[ext_resource type="Texture2D" uid="uid://de8j6ywftwkq5" path="res://Assets/Art/dark_cropped.png" id="12_tde3s"]
+[ext_resource type="Script" path="res://Scenes/GameOverButton.gd" id="13_7ur4o"]
 
 [node name="game_over" type="Node2D"]
+z_index = 10
 
 [node name="Label" type="Label" parent="."]
 top_level = true
@@ -33,7 +35,7 @@ offset_bottom = 40.0
 [node name="TavernBackground" type="Sprite2D" parent="."]
 position = Vector2(940, 609)
 scale = Vector2(0.755, 0.755)
-texture = ExtResource("1_rkre7")
+texture = ExtResource("1_oooi5")
 metadata/_edit_lock_ = true
 
 [node name="Scroll" type="TextureRect" parent="."]
@@ -43,7 +45,7 @@ offset_right = 2914.0
 offset_bottom = 946.0
 rotation = 1.5708
 scale = Vector2(0.805, 0.805)
-texture = ExtResource("1_riqnh")
+texture = ExtResource("2_5dtoc")
 metadata/_edit_lock_ = true
 
 [node name="Stars" type="TextureRect" parent="."]
@@ -52,7 +54,7 @@ offset_top = 188.0
 offset_right = 2704.0
 offset_bottom = 2108.0
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("3_hbcvt")
+texture = ExtResource("3_fm6ql")
 metadata/_edit_lock_ = true
 
 [node name="Stars2" type="TextureRect" parent="."]
@@ -61,7 +63,7 @@ offset_top = 311.0
 offset_right = 2702.0
 offset_bottom = 2231.0
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("3_hbcvt")
+texture = ExtResource("3_fm6ql")
 metadata/_edit_lock_ = true
 
 [node name="Stars3" type="TextureRect" parent="."]
@@ -70,7 +72,7 @@ offset_top = 431.0
 offset_right = 2702.0
 offset_bottom = 2351.0
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("3_hbcvt")
+texture = ExtResource("3_fm6ql")
 metadata/_edit_lock_ = true
 
 [node name="Stars4" type="TextureRect" parent="."]
@@ -79,7 +81,7 @@ offset_top = 548.0
 offset_right = 2703.0
 offset_bottom = 2468.0
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("3_hbcvt")
+texture = ExtResource("3_fm6ql")
 metadata/_edit_lock_ = true
 
 [node name="Stars5" type="TextureRect" parent="."]
@@ -88,7 +90,7 @@ offset_top = 668.0
 offset_right = 2704.0
 offset_bottom = 2588.0
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("3_hbcvt")
+texture = ExtResource("3_fm6ql")
 metadata/_edit_lock_ = true
 
 [node name="Stars6" type="TextureRect" parent="."]
@@ -97,7 +99,7 @@ offset_top = 788.0
 offset_right = 2703.0
 offset_bottom = 2708.0
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("3_hbcvt")
+texture = ExtResource("3_fm6ql")
 metadata/_edit_lock_ = true
 
 [node name="Stars7" type="TextureRect" parent="."]
@@ -106,7 +108,7 @@ offset_top = 910.0
 offset_right = 2707.0
 offset_bottom = 2830.0
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("3_hbcvt")
+texture = ExtResource("3_fm6ql")
 metadata/_edit_lock_ = true
 
 [node name="Square" type="TextureRect" parent="."]
@@ -115,7 +117,7 @@ offset_top = 246.0
 offset_right = 1190.0
 offset_bottom = 758.0
 scale = Vector2(0.215, 0.215)
-texture = ExtResource("4_ty2ue")
+texture = ExtResource("4_e0vb1")
 metadata/_edit_lock_ = true
 
 [node name="Square2" type="TextureRect" parent="."]
@@ -124,7 +126,7 @@ offset_top = 367.0
 offset_right = 1192.0
 offset_bottom = 879.0
 scale = Vector2(0.215, 0.215)
-texture = ExtResource("4_ty2ue")
+texture = ExtResource("4_e0vb1")
 metadata/_edit_lock_ = true
 
 [node name="Square3" type="TextureRect" parent="."]
@@ -133,7 +135,7 @@ offset_top = 488.0
 offset_right = 1192.0
 offset_bottom = 1000.0
 scale = Vector2(0.215, 0.215)
-texture = ExtResource("4_ty2ue")
+texture = ExtResource("4_e0vb1")
 metadata/_edit_lock_ = true
 
 [node name="Square4" type="TextureRect" parent="."]
@@ -142,7 +144,7 @@ offset_top = 607.0
 offset_right = 1193.0
 offset_bottom = 1119.0
 scale = Vector2(0.215, 0.215)
-texture = ExtResource("4_ty2ue")
+texture = ExtResource("4_e0vb1")
 metadata/_edit_lock_ = true
 
 [node name="Square5" type="TextureRect" parent="."]
@@ -151,7 +153,7 @@ offset_top = 728.0
 offset_right = 1194.0
 offset_bottom = 1240.0
 scale = Vector2(0.215, 0.215)
-texture = ExtResource("4_ty2ue")
+texture = ExtResource("4_e0vb1")
 metadata/_edit_lock_ = true
 
 [node name="Square6" type="TextureRect" parent="."]
@@ -160,7 +162,7 @@ offset_top = 848.0
 offset_right = 1191.0
 offset_bottom = 1360.0
 scale = Vector2(0.215, 0.215)
-texture = ExtResource("4_ty2ue")
+texture = ExtResource("4_e0vb1")
 metadata/_edit_lock_ = true
 
 [node name="Square7" type="TextureRect" parent="."]
@@ -169,7 +171,7 @@ offset_top = 968.0
 offset_right = 1192.0
 offset_bottom = 1480.0
 scale = Vector2(0.215, 0.215)
-texture = ExtResource("4_ty2ue")
+texture = ExtResource("4_e0vb1")
 metadata/_edit_lock_ = true
 
 [node name="Fishmaid" type="TextureRect" parent="."]
@@ -178,7 +180,7 @@ offset_top = 259.0
 offset_right = 1701.0
 offset_bottom = 1064.0
 scale = Vector2(0.11, 0.11)
-texture = ExtResource("5_8uyd5")
+texture = ExtResource("5_rqkq5")
 
 [node name="blank_star" type="TextureRect" parent="."]
 offset_left = 875.0
@@ -186,7 +188,7 @@ offset_top = 253.0
 offset_right = 3275.0
 offset_bottom = 2653.0
 scale = Vector2(0.01, 0.01)
-texture = ExtResource("6_ira1g")
+texture = ExtResource("6_1cm4o")
 metadata/_edit_lock_ = true
 
 [node name="blank_star2" type="TextureRect" parent="."]
@@ -195,7 +197,7 @@ offset_top = 253.0
 offset_right = 3301.0
 offset_bottom = 2653.0
 scale = Vector2(0.01, 0.01)
-texture = ExtResource("6_ira1g")
+texture = ExtResource("6_1cm4o")
 metadata/_edit_lock_ = true
 
 [node name="blank_star3" type="TextureRect" parent="."]
@@ -204,7 +206,7 @@ offset_top = 613.0
 offset_right = 3222.0
 offset_bottom = 3013.0
 scale = Vector2(0.01, 0.01)
-texture = ExtResource("6_ira1g")
+texture = ExtResource("6_1cm4o")
 metadata/_edit_lock_ = true
 
 [node name="blank_star4" type="TextureRect" parent="."]
@@ -213,7 +215,7 @@ offset_top = 613.0
 offset_right = 3248.0
 offset_bottom = 3013.0
 scale = Vector2(0.01, 0.01)
-texture = ExtResource("6_ira1g")
+texture = ExtResource("6_1cm4o")
 metadata/_edit_lock_ = true
 
 [node name="blank_star5" type="TextureRect" parent="."]
@@ -222,7 +224,7 @@ offset_top = 613.0
 offset_right = 3274.0
 offset_bottom = 3013.0
 scale = Vector2(0.01, 0.01)
-texture = ExtResource("6_ira1g")
+texture = ExtResource("6_1cm4o")
 metadata/_edit_lock_ = true
 
 [node name="blank_star6" type="TextureRect" parent="."]
@@ -231,7 +233,7 @@ offset_top = 613.0
 offset_right = 3300.0
 offset_bottom = 3013.0
 scale = Vector2(0.01, 0.01)
-texture = ExtResource("6_ira1g")
+texture = ExtResource("6_1cm4o")
 metadata/_edit_lock_ = true
 
 [node name="blank_star7" type="TextureRect" parent="."]
@@ -240,7 +242,7 @@ offset_top = 975.0
 offset_right = 3278.0
 offset_bottom = 3375.0
 scale = Vector2(0.01, 0.01)
-texture = ExtResource("6_ira1g")
+texture = ExtResource("6_1cm4o")
 metadata/_edit_lock_ = true
 
 [node name="blank_star8" type="TextureRect" parent="."]
@@ -249,7 +251,7 @@ offset_top = 975.0
 offset_right = 3304.0
 offset_bottom = 3375.0
 scale = Vector2(0.01, 0.01)
-texture = ExtResource("6_ira1g")
+texture = ExtResource("6_1cm4o")
 metadata/_edit_lock_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -267,7 +269,7 @@ offset_top = 373.0
 offset_right = 1486.0
 offset_bottom = 1170.0
 scale = Vector2(0.12, 0.12)
-texture = ExtResource("7_p5jqt")
+texture = ExtResource("7_4k18l")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 offset_left = 803.0
@@ -283,7 +285,7 @@ offset_top = 494.0
 offset_right = 1637.0
 offset_bottom = 1449.0
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_v606i")
+texture = ExtResource("8_b7jup")
 metadata/_edit_lock_ = true
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
@@ -300,7 +302,7 @@ offset_top = 603.0
 offset_right = 1590.0
 offset_bottom = 1518.0
 scale = Vector2(0.115, 0.115)
-texture = ExtResource("9_21j62")
+texture = ExtResource("9_a6ov6")
 metadata/_edit_lock_ = true
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
@@ -317,7 +319,7 @@ offset_top = 560.0
 offset_right = 2281.0
 offset_bottom = 2722.0
 scale = Vector2(0.135, 0.135)
-texture = ExtResource("10_im867")
+texture = ExtResource("10_fllva")
 metadata/_edit_lock_ = true
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="."]
@@ -334,7 +336,7 @@ offset_top = 846.0
 offset_right = 1669.0
 offset_bottom = 1835.0
 scale = Vector2(0.105, 0.105)
-texture = ExtResource("11_0esqr")
+texture = ExtResource("11_l2i5n")
 metadata/_edit_lock_ = true
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="."]
@@ -352,7 +354,7 @@ offset_top = 708.0
 offset_right = 2232.0
 offset_bottom = 2870.0
 scale = Vector2(0.18, 0.18)
-texture = ExtResource("12_34hyu")
+texture = ExtResource("12_tde3s")
 metadata/_edit_lock_ = true
 
 [node name="RichTextLabel7" type="RichTextLabel" parent="."]
@@ -363,3 +365,15 @@ offset_bottom = 1038.0
 scale = Vector2(1.225, 1.225)
 text = "\"bark\""
 metadata/_edit_lock_ = true
+
+[node name="GameOverButton" type="Button" parent="."]
+offset_left = 651.0
+offset_top = 1077.0
+offset_right = 1095.0
+offset_bottom = 1195.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "Main Menu"
+script = ExtResource("13_7ur4o")
+
+[connection signal="button_up" from="GameOverButton" to="GameOverButton" method="_on_button_up"]

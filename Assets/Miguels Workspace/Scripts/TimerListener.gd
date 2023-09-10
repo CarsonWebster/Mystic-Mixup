@@ -17,13 +17,16 @@ var timerWarningEffect: AudioStreamPlayer2D = get_node("../TimerWarningEffect")
 ### Local Variables ###
 var isOneShotTimer = true
 var isOnSecondaryTimer = false
-var primaryDuration = 120
+var primaryDuration = 60
 var secondaryDuration = 30
 var redColor = Color(1,0,0,1)
 var fontColorKey = "font_color"
 var defaultSoundStartPoint = 0.0
 var countdownDecimalPadding = 2
-var gameOverScene = "res://Scenes/Prototyping.tscn"
+#var gameOverScene = "res://Scenes/Prototyping.tscn"
+var gameOverScene = "res://Scenes/game_over.tscn"
+
+signal GameOver
 
 var gameStarted: bool = false
 
@@ -68,7 +71,9 @@ func _on_timer_warning_effect_finished():
 	pass
 
 func _on_secondary_timer_timeout():
-	get_tree().change_scene_to_file(gameOverScene)
+	#get_tree().change_scene_to_file(gameOverScene)
+	emit_signal("GameOver")
+	
 
 
 func _on_animation_tree_animation_finished(anim_name):
