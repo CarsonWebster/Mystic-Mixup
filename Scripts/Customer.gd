@@ -29,8 +29,7 @@ var dialogSounds: Dictionary = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play("customerWalk")
-
+	$AnimationPlayer.play("Customer walk")
 	#$AnimationPlayer.animation_finished
 
 
@@ -41,7 +40,7 @@ func _process(_delta):
 
 func _on_animation_player_animation_finished(anim_name):
 	#print(anim_name)
-	if anim_name == "customerWalk":
+	if anim_name == "Customer walk":
 		$ScrollDialouge/ScrollText.text = "I WANNA ROCK ROCK!!! DUN DUN DUN DUN DUN DUN DUN I WANT TO ROCK ROCK"
 		$AnimationPlayer.play("Dialog")
 		play_dialog_sound(customer_type)
