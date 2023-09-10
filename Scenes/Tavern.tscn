@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://donpponaixs60"]
+[gd_scene load_steps=18 format=3 uid="uid://donpponaixs60"]
 
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
 [ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
 [ext_resource type="Texture2D" uid="uid://dy1y3hlhwh4rv" path="res://Assets/Art/Shelves.png" id="2_4d712"]
-[ext_resource type="PackedScene" path="res://Scenes/Ingredient.tscn" id="3_oldij"]
+[ext_resource type="PackedScene" uid="uid://ce8aga010ip1f" path="res://Scenes/Ingredient.tscn" id="3_oldij"]
 [ext_resource type="Texture2D" uid="uid://6apw7742rurc" path="res://Assets/Art/DoorClosed.png" id="5_46dt6"]
 [ext_resource type="Texture2D" uid="uid://b2emibx0pkvb2" path="res://Assets/Art/DoorOpened.png" id="6_73m6t"]
 [ext_resource type="PackedScene" uid="uid://dxgypbjt1cplp" path="res://Scenes/Customer.tscn" id="8_d7oh5"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cl54ujkparb0x" path="res://Assets/Art/countertop.png" id="10_byw7j"]
 [ext_resource type="Texture2D" uid="uid://bjyuff6w8hd1f" path="res://Assets/Art/Bell.png" id="10_jn7jx"]
 [ext_resource type="Texture2D" uid="uid://bkhw0japtk87p" path="res://Assets/Art/TipJar.png" id="11_q3h8e"]
+[ext_resource type="AudioStream" uid="uid://h4h03ub21iu8" path="res://Assets/Music/tavern_background_-_9923_6.50_PM.mp3" id="13_32k0n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qk04"]
 animations = [{
@@ -32,6 +33,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_3pak4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Closed"]
+}
+
 [sub_resource type="Animation" id="Animation_dvc0b"]
 resource_name = "door movement"
 length = 1.5
@@ -46,21 +62,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [&"Closed", &"Opened", &"Closed"]
-}
-
-[sub_resource type="Animation" id="Animation_3pak4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Closed"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_12ng4"]
@@ -132,3 +133,6 @@ z_index = 1
 position = Vector2(937, 622)
 texture = ExtResource("11_q3h8e")
 metadata/_edit_lock_ = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_32k0n")

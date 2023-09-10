@@ -46,6 +46,7 @@ var ingredient_types: Array = [
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+	$BackgroundMusic.play(0.0)
 	# Spawn Itmes
 	for i in range(len(ingredient_positions)):
 		var ingredient_instance = ingredient_scene.instantiate()
