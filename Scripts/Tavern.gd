@@ -27,18 +27,47 @@ var product_types: Array = [
 	"LovePotion",
 	"Bones",
 	"MosaicFood",
+	"ElixirOfLife",
+	"AnimePotion"
 ]
+
 var product_sprite_map: Dictionary = {
 	"Moonshine": load("res://Assets/Art/Moonshine.png"),
 	"DeathPotion": load("res://Assets/Art/DeathJuice.png"),
 	"LovePotion": load("res://Assets/Art/LovePotion.png"),
 	"Bones": load("res://Assets/Art/Bones.png"),
 	"MosaicFood": load("res://Assets/Art/MosaicFood.png"),
+	"ElixirOfLife": load("res://Assets/Art/ElixirOfLife.png"),
+	"AnimePotion": load("res://Assets/Art/AnimePotion.png")
 }
 
 var combinations: Dictionary = {
-	"Bones-Hair": "Bones",
-	"EnviousExtract-Vanilla": "Bones",
+	"FairyDust-MysteryBoxGood-NegativeReflection": "ElixirOfLife",
+	"FairyDust-MysteryBoxGood-NegativeReflection-Vanilla": "ElixirOfLife",
+	"Moonshine": "Moonshine",
+	"Moonshine-Vanilla": "Moonshine",
+	"Bones": "Bones",
+	"Bones-Vanilla": "Bones",
+	"Bones-CockatriceEgg-Moonshine": "YouthPotion",
+	"Bones-CockatriceEgg-Moonshine-Vanilla": "YouthPotion",
+	"CockatriceEgg-SpicySugar-WargMilk": "FruitCake",
+	"CockatriceEgg-SpicySugar-Vanilla-WargMilk": "FruitCake",
+	"EnviousExtract-FairyDust-Rainbows": "LovePotion",
+	"EnviousExtract-FairyDust-Rainbows-Vanilla": "LovePotion",
+	"FrogLegs-Hair-WargMilk": "NuclearWaste",
+	"FrogLegs-Hair-Vanilla-WargMilk": "NuclearWaste",
+	"Moonshine-MysteryMeat-SpicySugar": "Steak",
+	"Moonshine-MysteryMeat-SpicySugar-Vanilla": "Steak",
+	"AssortedRocks-Bones": "CrunchySalad",
+	"AssortedRocks-Bones-Vanilla": "CrunchySalad",
+	"MysteryMeat-ToxicJellyfish-WargMilk": "Omega3Supplement",
+	"MysteryMeat-ToxicJellyfish-Vanilla-WargMilk": "Omega3Supplement",
+	"CockatriceEgg-GooseBerryBush-LeprechaunBeard": "TamagoSushi",
+	"CockatriceEgg-GooseBerryBush-LeprechaunBeard-Vanilla": "TamagoSushi",
+	"ChemicalX-ToxicJellyfish-Wolfsbane": "DeathPotion",
+	"ChemicalX-ToxicJellyfish-Vanilla-Wolfsbane": "DeathPotion",
+	"FairyDust-Moonshine-Rainbows": "AnimePotion",
+	"FairyDust-Moonshine-Rainbows-Vanilla": "AnimePotion"
 }
 
 var used_ingredents: Array
