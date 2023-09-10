@@ -11,6 +11,8 @@ extends Node
 # 
 #################################
 
+signal CustomerDoneWalking
+
 ### Local References ###
 @onready
 var walking: AnimationPlayer = $WalkingAnimation
@@ -122,6 +124,7 @@ func _on_animation_player_animation_started(anim_name):
 func _on_walking_animation_animation_finished(anim_name):
 	if "Walk" in anim_name:
 		customer_speak()
+		emit_signal("CustomerDoneWalking")
 	if "Leave" in anim_name:
 		spawnCustomer()
 		

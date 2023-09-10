@@ -17,6 +17,7 @@ extends Node2D
 # Export the customer scene as a PackedScene variable
 @export var customer_scene : PackedScene
 
+signal GameActive(bool)
 
 var product_types: Array = [
 	"Moonshine",
@@ -78,6 +79,7 @@ func _on_craft_button_pressed():
 	product_result = determine_product()
 	$Product.texture = product_sprite_map[product_result]
 	$Product/AnimationPlayer.play("Present")
+	emit_signal("GameActive", false)
 
 func _on_product_animation_finished(anim_name):
 	if anim_name == "Present":
@@ -97,3 +99,8 @@ func _on_animation_tree_animation_finished(anim_name):
 		customer = customer_scene.instantiate()
 		customer.position = Vector2(1093, 45)
 		add_child(customer)
+		#emit_signal("GameActive", true)
+		customer.connect("CustomerDoneWalking", _on_customer_done_walking)
+
+func _on_customer_done_walking():
+	emit_signal("GameActive", true)
