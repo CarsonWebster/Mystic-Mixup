@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxgypbjt1cplp"]
+[gd_scene load_steps=11 format=3 uid="uid://dxgypbjt1cplp"]
 
 [ext_resource type="Texture2D" uid="uid://cr6uqxla0wsgw" path="res://Assets/Art/FishCustomer.png" id="1_fpbah"]
 [ext_resource type="Script" path="res://Scripts/Customer.gd" id="2_lsbfo"]
 [ext_resource type="Texture2D" uid="uid://ctrjcigyjh3rg" path="res://Assets/Art/Scroll_Dialouge.png" id="3_eo31a"]
+[ext_resource type="AudioStream" uid="uid://3csq43wudptd" path="res://Assets/Miguels Workspace/SoundEffects/Characters/fishmaid.wav" id="3_rriuv"]
 
 [sub_resource type="Animation" id="Animation_mfqe0"]
 resource_name = "Customer walk"
@@ -132,22 +133,24 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_fpbah")
 script = ExtResource("2_lsbfo")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Customer walk"
+[node name="SoundStream" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rriuv")
+volume_db = -4.0
+
+[node name="WalkingAnimation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_iin1c")
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-12.5005, 89.9999)
+position = Vector2(2.08165e-12, 488)
 
 [node name="ScrollDialouge" type="Sprite2D" parent="."]
 position = Vector2(-1352.5, -1922.5)
 scale = Vector2(4, 4)
 texture = ExtResource("3_eo31a")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollDialouge"]
-autoplay = "Speech bubble movement"
+[node name="ScrollAnimation" type="AnimationPlayer" parent="ScrollDialouge"]
 libraries = {
 "": SubResource("AnimationLibrary_vjtur")
 }
@@ -164,3 +167,8 @@ Blub, blub, blub?"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[connection signal="animation_finished" from="WalkingAnimation" to="." method="_on_walking_animation_animation_finished"]
+[connection signal="animation_started" from="WalkingAnimation" to="." method="_on_animation_player_animation_started"]
+[connection signal="animation_finished" from="ScrollDialouge/ScrollAnimation" to="." method="_on_scroll_animation_animation_finished"]
+[connection signal="animation_started" from="ScrollDialouge/ScrollAnimation" to="." method="_on_animation_player_animation_started"]
