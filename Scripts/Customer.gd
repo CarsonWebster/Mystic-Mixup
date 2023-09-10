@@ -51,6 +51,13 @@ var dialogSounds: Dictionary = {
 var characterSprites: Dictionary = {
 	"fishmaid": "res://Assets/Art/fishmaid.png",
 	"sad_ghost": "res://Assets/Art/ghost.png",
+	"angry_cowboy": "res://Assets/Art/Cowboy(Idle).png",
+	"sasquatch": "res://Assets/Art/Cthulhu(Idle).png",
+	"doggo": "res://Assets/Art/Doggo(Idle).png",
+	"electro_bard": "res://Assets/Art/Electro_Bard(Idle).png",
+	"evil_scientist": "res://Assets/Art/Evil_Scientist(Idle).png",
+	"frog_prince": "res://Assets/Art/FrogPrince(Idle).png",
+	"old_man": "res://Assets/Art/Old_Man(Idle).png"
 }
 
 var characterDialog: Dictionary = {
@@ -62,18 +69,32 @@ var characterDialog: Dictionary = {
 	"old_man": "Say, young'un, do you by any chance, got any o' them youth potions?",
 	"punny_skeleton": "\"Bone\"-appetit, my good tavern owner! What's \"cooking\" on the menu tonight? Just don't leave me \"humerus,\" okay?",
 	"doggo": "Bark Bark! Ruff Ruff!\nHowl… Bark!\nWoof woof?",
-	"evil-scientist": "I seek a unique elixir, friend. A potion of uncommon properties, if you please. Kekeke…",
+	"evil_scientist": "I seek a unique elixir, friend. A potion of uncommon properties, if you please. Kekeke…",
 	"sasquatch": "… … Innkeeper … … normal?"
 }
 
 var talkingCharacterSprites: Dictionary = {
 	"fishmaid": "res://Assets/Art/fishmaid.png",
-	"sad_ghost": "res://Assets/Art/ghost_talking.png"
+	"sad_ghost": "res://Assets/Art/ghost_talking.png",
+	"angry_cowboy": "res://Assets/Art/Cowboy(talking).png",
+	"sasquatch": "res://Assets/Art/Cthulhu(Talking).png",
+	"doggo": "res://Assets/Art/Doggo(Talking).png",
+	"electro_bard": "res://Assets/Art/Electro_Bard(Talking).png",
+	"evil_scientist": "res://Assets/Art/Evil_Scientist(Talking).png",
+	"frog_prince": "res://Assets/Art/FrogPrince(Talking).png",
+	"old_man": "res://Assets/Art/Old_Man(Talking).png"
 }
 
 var unsatisfiedCharacterSprites: Dictionary = {
 	"fishmaid": "res://Assets/Art/fishmaid_unsatisifed.png",
 	"sad_ghost": "res://Assets/Art/ghost_unsatisfied.png",
+	"angry_cowboy": "res://Assets/Art/Cowboy(upset).png",
+	"sasquatch": "res://Assets/Art/Cthulhu(Upset).png",
+	"doggo": "res://Assets/Art/Doggo(Upset).png",
+	"electro_bard": "res://Assets/Art/Electro_Bard(Upset).png",
+	"evil_scientist": "res://Assets/Art/Evil_Scientist(Upset).png",
+	"frog_prince": "res://Assets/Art/FrogPrince(Upset).png",
+	"old_man": "res://Assets/Art/Old_Man(Upset).png"
 }
 
 # Called when the node enters the scene tree for the first time.
