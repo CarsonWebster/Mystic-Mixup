@@ -13,4 +13,4 @@ func _process(delta):
 
 func _on_button_up():
 	$SoundEffect.play(0.0)
-	get_node("../CreditsBackground").visible = true
+	get_node("../InstructionsBackground").visible = true
