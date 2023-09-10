@@ -71,7 +71,8 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 			if in_cauldron == true:
 				print("Dead: ", type)
 				emit_signal("dropped_in_cauldron", type)
-				queue_free()
+				#queue_free()
+				visible = false
 			else:
 				print("Back to shelf: ", type)
 				position = starting_position
@@ -96,3 +97,7 @@ func _on_cauldron_area_exited(area):
 		#print("EXITED CAULDRON (", type, "): ", in_cauldron)
 		in_cauldron = false
 		#print("AFTER EXIT (", type, "): ", in_cauldron)
+		
+func reset():
+	position = starting_position
+	visible = true

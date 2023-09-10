@@ -60,7 +60,7 @@ func _ready():
 #		ingredient_instance.type = ingredient_types[randi() % ingredient_types.size()]
 #		add_child(ingredient_instance)
 
-	for node in get_children():
+	for node in $IngredentsGroup.get_children():
 		if node.is_in_group("ingredient"):
 			node.connect("dropped_in_cauldron", _on_ingredient_dropped_in_cauldron)
 
@@ -81,3 +81,16 @@ func _on_ingredient_dropped_in_cauldron(ingredent_type):
 	used_ingredents.append(ingredent_type)
 	print("New Ingredent Added:")
 	print(used_ingredents)
+
+
+func _on_reset_button_pressed():
+	print("RESET")
+	for node in $IngredentsGroup.get_children():
+		if node.is_in_group("ingredient"):
+			node.reset()
+
+
+func _on_craft_button_pressed():
+	print("CRAFT")
+	print("You Get A Score Of...")
+	print(randi_range(1, 10))
