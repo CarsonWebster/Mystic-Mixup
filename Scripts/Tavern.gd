@@ -36,6 +36,11 @@ var product_sprite_map: Dictionary = {
 	"MosaicFood": load("res://Assets/Art/MosaicFood.png"),
 }
 
+var combinations: Dictionary = {
+	"Bones-Hair": "Bones",
+	"EnviousExtract-Vanilla": "Bones",
+}
+
 var used_ingredents: Array
 
 var product_result: String
@@ -44,7 +49,6 @@ var customer = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	$BackgroundMusic.play(0.0)
 	$Product/AnimationPlayer.play("RESET")
 	$Product/AnimationPlayer.connect("animation_finished", _on_product_animation_finished)
@@ -76,20 +80,32 @@ func _on_reset_button_pressed():
 	used_ingredents = []
 
 func determine_product():
-	return product_types.pick_random()
+	# Sort and filter out duplicates from the selection.
+	var sorted = sorted_unique_array(used_ingredents)
+	print("sorted array", sorted)
+	# Join the key.
+	var key = "-".join(sorted)
+	# Find the item.
+	print("found key", key)
+	if key in combinations:
+		return combinations[key]
+	else:
+		return "MosaicFood"
+
 
 func _on_craft_button_pressed():
 
 	for node in $IngredentsGroup.get_children():
 		if node.is_in_group("ingredient"):
 			node.crafted()
-	used_ingredents = []
+	product_result = determine_product()
 
 	# SET THE PRODUCT RESULT
-	product_result = determine_product()
 	$Product.texture = product_sprite_map[product_result]
 	$Product/AnimationPlayer.play("Present")
 	emit_signal("GameActive", false)
+	
+	used_ingredents = []
 
 func _on_product_animation_finished(anim_name):
 	if anim_name == "Present":
@@ -121,3 +137,15 @@ func _on_game_timer_game_over():
 	var game_over_layer = game_over_scene.instantiate()
 	add_child(game_over_layer)
 	game_over_layer.z_index = 10
+
+
+func sorted_unique_array(array: Array) -> Array:
+	var unique: Array = []
+	
+	for item in array:
+		if not unique.has(item):
+			unique.append(item)
+			
+	unique.sort()
+	
+	return unique
