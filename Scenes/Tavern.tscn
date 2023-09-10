@@ -32,6 +32,43 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_dvc0b"]
+resource_name = "door movement"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"Closed", &"Opened", &"Closed"]
+}
+
+[sub_resource type="Animation" id="Animation_3pak4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Closed"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_12ng4"]
+_data = {
+"RESET": SubResource("Animation_3pak4"),
+"door movement": SubResource("Animation_dvc0b")
+}
+
 [node name="Tavern" type="Node2D"]
 script = ExtResource("1_iuiyy")
 customer_scene = ExtResource("8_d7oh5")
@@ -62,7 +99,14 @@ position = Vector2(906, 590)
 scale = Vector2(0.955949, 1.0119)
 sprite_frames = SubResource("SpriteFrames_0qk04")
 animation = &"Closed"
+frame_progress = 0.222719
 metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door"]
+autoplay = "door movement"
+libraries = {
+"": SubResource("AnimationLibrary_12ng4")
+}
 
 [node name="Cauldron" type="Sprite2D" parent="."]
 z_index = 2
