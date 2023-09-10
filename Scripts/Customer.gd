@@ -68,7 +68,7 @@ var dialogSounds: Dictionary = {
 }
 
 var characterSprites: Dictionary = {
-	"fishmaid": "res://Assets/Art/fishmaid.png",
+	"fishmaid": "res://Assets/Art/Fishmaid(Talking).png",
 	"sad_ghost": "res://Assets/Art/Ghost(Idle).png",
 	"angry_cowboy": "res://Assets/Art/Cowboy(Idle).png",
 	"sasquatch": "res://Assets/Art/Cthulhu(Idle).png",
@@ -93,9 +93,9 @@ var characterDialog: Dictionary = {
 }
 
 var talkingCharacterSprites: Dictionary = {
-	"fishmaid": "res://Assets/Art/fishmaid.png",
-	"sad_ghost": "res://Assets/Art/ghost_talking.png",
-	"angry_cowboy": "res://Assets/Art/Cowboy(talking).png",
+	"fishmaid": "res://Assets/Art/Fishmaid(Talking).png",
+	"sad_ghost": "res://Assets/Art/Ghost(Talking).png",
+	"angry_cowboy": "res://Assets/Art/Cowboy(Talking).png",
 	"sasquatch": "res://Assets/Art/Cthulhu(Talking).png",
 	"doggo": "res://Assets/Art/Doggo(Talking).png",
 	"electro_bard": "res://Assets/Art/Electro_Bard(Talking).png",
@@ -105,9 +105,9 @@ var talkingCharacterSprites: Dictionary = {
 }
 
 var unsatisfiedCharacterSprites: Dictionary = {
-	"fishmaid": "res://Assets/Art/fishmaid_unsatisifed.png",
-	"sad_ghost": "res://Assets/Art/ghost_unsatisfied.png",
-	"angry_cowboy": "res://Assets/Art/Cowboy(upset).png",
+	"fishmaid": "res://Assets/Art/Fishmaid(Upset).png",
+	"sad_ghost": "res://Assets/Art/Ghost(Upset).png",
+	"angry_cowboy": "res://Assets/Art/Cowboy(Upset).png",
 	"sasquatch": "res://Assets/Art/Cthulhu(Upset).png",
 	"doggo": "res://Assets/Art/Doggo(Upset).png",
 	"electro_bard": "res://Assets/Art/Electro_Bard(Upset).png",
@@ -184,7 +184,7 @@ func updateSprite(path):
 	
 func spawnCustomer():
 #	var possibleCustomer = customerTypes.pick_random()
-	var possibleCustomer = "sad_ghost"
+	var possibleCustomer = "doggo"
 	print("A new customer was selected", possibleCustomer)
 	
 	customer_type = possibleCustomer
