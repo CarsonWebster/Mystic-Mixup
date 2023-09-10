@@ -1,9 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyc2wlptwcybj"]
+[gd_scene load_steps=13 format=3 uid="uid://cyc2wlptwcybj"]
 
 [ext_resource type="Texture2D" uid="uid://bewor2natxyrv" path="res://Assets/Art/Door_Start_Menu.svg" id="1_lmo3e"]
+[ext_resource type="Script" path="res://Scenes/Title.gd" id="1_tbajw"]
 [ext_resource type="PackedScene" uid="uid://fpuy7u4i77v8" path="res://Assets/Miguels Workspace/SoundEffects/Game/StartGame/start_game_sound_effect.tscn" id="2_2dpjy"]
 [ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/CreditsButton.gd" id="3_qmfix"]
 [ext_resource type="AudioStream" uid="uid://c24g87n27hebr" path="res://Assets/Miguels Workspace/SoundEffects/Objects/bell.wav" id="4_1e5pq"]
+[ext_resource type="AudioStream" uid="uid://crd1paqtlp5xh" path="res://Assets/Music/tavern_menu_-_9923_6.48_PM.mp3" id="5_tmxh2"]
+[ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/InstructionButton.gd" id="5_wrsff"]
+[ext_resource type="Texture2D" uid="uid://bgkbsxtp2eikh" path="res://Assets/Art/black_background.jpg" id="6_83cuj"]
+[ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/InstructionsBackButton.gd" id="7_blrjd"]
+[ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/CreditsBackButton.gd" id="7_btnya"]
+[ext_resource type="AudioStream" uid="uid://b2fn068m7f30y" path="res://Assets/Miguels Workspace/SoundEffects/Game/door-close.wav" id="8_p4t26"]
 
 [sub_resource type="GDScript" id="GDScript_1qwj1"]
 script/source = "extends Button
@@ -23,6 +30,7 @@ func _on_button_up():
 "
 
 [node name="title_menu" type="Node2D"]
+script = ExtResource("1_tbajw")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 629.0
@@ -41,21 +49,22 @@ texture = ExtResource("1_lmo3e")
 
 [node name="EnterTavernButton" type="Button" parent="TextureRect"]
 layout_mode = 0
-offset_left = 777.0
-offset_top = 735.0
-offset_right = 884.0
-offset_bottom = 766.0
+offset_left = 779.0
+offset_top = 741.0
+offset_right = 886.0
+offset_bottom = 772.0
 scale = Vector2(3, 3)
 text = "Start Game"
 script = SubResource("GDScript_1qwj1")
 
 [node name="StartGameSoundEffect" parent="TextureRect/EnterTavernButton" instance=ExtResource("2_2dpjy")]
+volume_db = 10.0
 
 [node name="CreditsButton" type="Button" parent="."]
-offset_left = 134.0
-offset_top = 1046.0
-offset_right = 197.0
-offset_bottom = 1077.0
+offset_left = 128.0
+offset_top = 1036.0
+offset_right = 191.0
+offset_bottom = 1067.0
 scale = Vector2(3, 3)
 text = "Credits"
 script = ExtResource("3_qmfix")
@@ -64,5 +73,135 @@ script = ExtResource("3_qmfix")
 position = Vector2(218.667, -94.3333)
 stream = ExtResource("4_1e5pq")
 
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tmxh2")
+
+[node name="InstructionButton" type="Button" parent="."]
+offset_left = 129.0
+offset_top = 925.0
+offset_right = 230.0
+offset_bottom = 956.0
+scale = Vector2(3, 3)
+text = "Instructions"
+script = ExtResource("5_wrsff")
+
+[node name="SoundEffect" type="AudioStreamPlayer2D" parent="InstructionButton"]
+stream = ExtResource("4_1e5pq")
+
+[node name="InstructionsBackground" type="TextureRect" parent="."]
+visible = false
+offset_left = -106.0
+offset_top = -47.0
+offset_right = 1925.0
+offset_bottom = 1314.0
+texture = ExtResource("6_83cuj")
+
+[node name="Instructions" type="Label" parent="InstructionsBackground"]
+layout_mode = 0
+offset_left = 868.0
+offset_top = 99.0
+offset_right = 941.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 64
+text = "Credits:"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InstructionsBackground"]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 492.0
+offset_right = 1422.0
+offset_bottom = 594.0
+
+[node name="Label" type="Label" parent="InstructionsBackground/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "INSTRUCTIONS GO HERE"
+
+[node name="InstructionsBackButton" type="Button" parent="InstructionsBackground"]
+layout_mode = 0
+offset_left = 1591.0
+offset_top = 72.0
+offset_right = 1932.0
+offset_bottom = 255.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
+text = "BACK"
+script = ExtResource("7_blrjd")
+
+[node name="SoundEffect" type="AudioStreamPlayer2D" parent="InstructionsBackground/InstructionsBackButton"]
+stream = ExtResource("8_p4t26")
+
+[node name="CreditsBackground" type="TextureRect" parent="."]
+visible = false
+offset_left = -113.0
+offset_top = -45.0
+offset_right = 1966.0
+offset_bottom = 1348.0
+texture = ExtResource("6_83cuj")
+
+[node name="Title" type="Label" parent="CreditsBackground"]
+layout_mode = 0
+offset_left = 868.0
+offset_top = 99.0
+offset_right = 941.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 64
+text = "Credits:"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsBackground"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 458.0
+offset_right = 666.0
+offset_bottom = 929.0
+
+[node name="Technical Lead" type="Label" parent="CreditsBackground/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Technical Lead:"
+
+[node name="Design Team" type="Label" parent="CreditsBackground/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Design:"
+
+[node name="Programmers" type="Label" parent="CreditsBackground/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Programmers:"
+
+[node name="Artists" type="Label" parent="CreditsBackground/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Artwork:"
+
+[node name="Audio" type="Label" parent="CreditsBackground/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Audio:"
+
+[node name="Thanks" type="Label" parent="CreditsBackground/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Honorable Mention: 
+    - AudioLDM, ChatGPT & Bing Chat"
+
+[node name="CreditsBackButton" type="Button" parent="CreditsBackground"]
+layout_mode = 0
+offset_left = 1646.0
+offset_top = 74.0
+offset_right = 1949.0
+offset_bottom = 257.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
+text = "Back"
+script = ExtResource("7_btnya")
+
+[node name="SoundEffect" type="AudioStreamPlayer2D" parent="CreditsBackground/CreditsBackButton"]
+stream = ExtResource("8_p4t26")
+
 [connection signal="button_up" from="TextureRect/EnterTavernButton" to="TextureRect/EnterTavernButton" method="_on_button_up"]
 [connection signal="button_up" from="CreditsButton" to="CreditsButton" method="_on_button_up"]
+[connection signal="button_up" from="InstructionButton" to="InstructionButton" method="_on_button_up"]
+[connection signal="button_up" from="InstructionsBackground/InstructionsBackButton" to="InstructionsBackground/InstructionsBackButton" method="_on_button_up"]
+[connection signal="button_up" from="CreditsBackground/CreditsBackButton" to="CreditsBackground/CreditsBackButton" method="_on_button_up"]

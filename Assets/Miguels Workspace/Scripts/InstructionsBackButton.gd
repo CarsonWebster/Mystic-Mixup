@@ -12,5 +12,5 @@ func _process(delta):
 
 
 func _on_button_up():
-	$SoundEffect.play(0.0)
-	get_node("../CreditsBackground").visible = true
+	$SoundEffect.play(0.0) # Replace with function body.
+	get_parent().visible = false
