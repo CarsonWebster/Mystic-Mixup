@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://donpponaixs60"]
+[gd_scene load_steps=20 format=3 uid="uid://donpponaixs60"]
 
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
 [ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bjyuff6w8hd1f" path="res://Assets/Art/Bell.png" id="10_jn7jx"]
 [ext_resource type="Texture2D" uid="uid://bkhw0japtk87p" path="res://Assets/Art/TipJar.png" id="11_q3h8e"]
 [ext_resource type="AudioStream" uid="uid://h4h03ub21iu8" path="res://Assets/Music/tavern_background_-_9923_6.50_PM.mp3" id="13_32k0n"]
+[ext_resource type="Script" path="res://Scripts/Cauldron.gd" id="13_e714h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qk04"]
 animations = [{
@@ -70,10 +71,11 @@ _data = {
 "door movement": SubResource("Animation_dvc0b")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_54lxq"]
+
 [node name="Tavern" type="Node2D"]
 script = ExtResource("1_iuiyy")
 customer_scene = ExtResource("8_d7oh5")
-ingredient_scene = ExtResource("3_oldij")
 metadata/_edit_lock_ = true
 
 [node name="TavernBackground" type="Sprite2D" parent="."]
@@ -109,12 +111,6 @@ libraries = {
 "": SubResource("AnimationLibrary_12ng4")
 }
 
-[node name="Cauldron" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(935, 619)
-texture = ExtResource("9_7cqv0")
-metadata/_edit_lock_ = true
-
 [node name="Shelves" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(935, 619)
@@ -136,3 +132,82 @@ metadata/_edit_lock_ = true
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_32k0n")
+
+[node name="Ingredient" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(128, 341)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient2" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(327, 341)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient3" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(327, 588)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient4" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(124, 588)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient5" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(124, 817)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient6" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(356, 817)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient7" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(356, 1050)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient8" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(130, 1050)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient9" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(1733, 347)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient10" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(1531, 347)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient11" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(1733, 603)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient12" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(1522, 611)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient13" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(1522, 821)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient14" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(1737, 821)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient15" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(1737, 1065)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient16" parent="." instance=ExtResource("3_oldij")]
+position = Vector2(1527, 1065)
+metadata/_edit_lock_ = true
+
+[node name="Cauldron" type="Area2D" parent="." groups=["cauldron"]]
+script = ExtResource("13_e714h")
+
+[node name="CauldronSprite" type="Sprite2D" parent="Cauldron"]
+z_index = 2
+position = Vector2(935, 619)
+texture = ExtResource("9_7cqv0")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron"]
+z_index = 2
+position = Vector2(934, 959)
+scale = Vector2(19.688, 19.688)
+shape = SubResource("CircleShape2D_54lxq")
