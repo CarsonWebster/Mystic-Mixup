@@ -52,6 +52,7 @@ var used_ingredents: Array
 func _ready():
 	
 	$BackgroundMusic.play(0.0)
+	$Product/AnimationPlayer.play("RESET")
 	# Spawn Itmes DEPRECATED FROM TAVERN RESPONSABILITY
 #	for i in range(len(ingredient_positions)):
 #		var ingredient_instance = ingredient_scene.instantiate()
@@ -91,10 +92,15 @@ func _on_reset_button_pressed():
 
 
 func _on_craft_button_pressed():
-	print("CRAFT")
-	print("You Get A Score Of...")
-	print(randi_range(1, 10))
+
+	#print("CRAFT")
+	#print("You Get A Score Of...")
+	#print(randi_range(1, 10))
+
 	for node in $IngredentsGroup.get_children():
 		if node.is_in_group("ingredient"):
 			node.crafted()
 	used_ingredents = []
+
+	$Product/AnimationPlayer.play("Present")
+
