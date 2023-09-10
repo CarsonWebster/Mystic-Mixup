@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bhka1dpj77ihb" path="res://Assets/Music/timer_ending_-_9923_8.19_PM.mp3" id="5_iiw66"]
 [ext_resource type="Texture2D" uid="uid://b2emibx0pkvb2" path="res://Assets/Art/DoorOpened.png" id="6_73m6t"]
 [ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/TimerListener.gd" id="7_kwttk"]
-[ext_resource type="PackedScene" path="res://Scenes/Customer.tscn" id="8_d7oh5"]
+[ext_resource type="PackedScene" uid="uid://dxgypbjt1cplp" path="res://Scenes/Customer.tscn" id="8_d7oh5"]
 [ext_resource type="Texture2D" uid="uid://cocboblg5dlds" path="res://Assets/Art/firepit.png" id="8_kbgl0"]
 [ext_resource type="Texture2D" uid="uid://bhes504o3nox8" path="res://Assets/Art/cauldron.png" id="9_7cqv0"]
 [ext_resource type="Texture2D" uid="uid://cl54ujkparb0x" path="res://Assets/Art/countertop.png" id="10_byw7j"]
