@@ -18,14 +18,24 @@ var ingredient_types: Array = [
 	"DeathPotion",
 	"Vanilla",
 	"EnviousExtract",
-	"NegativeReflection"
+	"NegativeReflection",
+	"FrogLegs",
+	"LovePotion",
+	"Bones",
+	"ToxicJellyfish",
+	"Hair"
 ]
 
 var spritemap: Dictionary = {
 	"DeathPotion": load("res://Assets/Art/DeathJuice.png"),
 	"Vanilla": load("res://Assets/Art/Vanilla.png"),
 	"EnviousExtract": load("res://Assets/Art/EnviousExtract.png"),
-	"NegativeReflection": load("res://Assets/Art/NegativeReflection.png")
+	"NegativeReflection": load("res://Assets/Art/NegativeReflection.png"),
+	"FrogLegs": load("res://Assets/Art/FrogLegs.png"),
+	"LovePotion": load("res://Assets/Art/LovePotion.png"),
+	"Bones": load("res://Assets/Art/Bones.png"),
+	"ToxicJellyfish": load("res://Assets/Art/ToxicJellyfish.png"),
+	"Hair": load("res://Assets/Art/Hair.png")
 }
 
 var spawning_chance: Dictionary = {
@@ -33,6 +43,11 @@ var spawning_chance: Dictionary = {
 	"Vanilla": .1,
 	"EnviousExtract": .3,
 	"NegativeReflection": .1,
+	"FrogLegs": .2,
+	"LovePotion": .3,
+	"Bones": .3,
+	"ToxicJellyfish": .3,
+	"Hair": .2
 }
 
 var dragging: bool = false

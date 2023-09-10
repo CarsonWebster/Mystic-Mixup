@@ -130,7 +130,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1.5, 1.5)]
+"values": [Vector2(0.25, 0.25), Vector2(0.75, 0.75), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_j26fe"]
@@ -476,11 +476,11 @@ position = Vector2(124, 817)
 metadata/_edit_lock_ = true
 
 [node name="Ingredient6" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
-position = Vector2(356, 817)
+position = Vector2(339, 817)
 metadata/_edit_lock_ = true
 
 [node name="Ingredient7" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
-position = Vector2(356, 1050)
+position = Vector2(337, 1050)
 metadata/_edit_lock_ = true
 
 [node name="Ingredient8" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
@@ -546,6 +546,7 @@ z_index = 1
 position = Vector2(935, 520)
 scale = Vector2(1.32238, 1.32238)
 texture = ExtResource("19_du0su")
+metadata/_edit_lock_ = true
 
 [node name="ResetButton" type="Button" parent="."]
 z_index = 3
