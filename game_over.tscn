@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpqil6obykc4a"]
+
+[ext_resource type="Texture2D" uid="uid://ctrjcigyjh3rg" path="res://Assets/Art/Scroll_Dialouge.png" id="1_riqnh"]
+[ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_rkre7"]
+
+[node name="game_over" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -257.0
+offset_top = -444.0
+offset_right = 224.0
+offset_bottom = -106.0
+text = "REVIEWS"
+
+[node name="TavernBackground" type="Sprite2D" parent="."]
+position = Vector2(-2, 7)
+texture = ExtResource("1_rkre7")
+
+[node name="Tavern" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Scroll" type="TextureRect" parent="."]
+offset_left = 517.0
+offset_top = -779.0
+offset_right = 2105.0
+offset_bottom = 201.0
+rotation = 1.5708
+texture = ExtResource("1_riqnh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-69, -20)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -179.0
+offset_top = 99.0
+offset_right = 88.0
+offset_bottom = 145.0
+scale = Vector2(0.48, 0.48)
+text = "Fishhead *img -  \"insert review\""
+fit_content = true
