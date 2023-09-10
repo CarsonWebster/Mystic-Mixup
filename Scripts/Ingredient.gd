@@ -28,6 +28,13 @@ var spritemap: Dictionary = {
 	"NegativeReflection": load("res://Assets/Art/NegativeReflection.png")
 }
 
+var spawning_chance: Dictionary = {
+	"DeathPotion": .2,
+	"Vanilla": .1,
+	"EnviousExtract": .3,
+	"NegativeReflection": .1,
+}
+
 var dragging: bool = false
 var starting_position: Vector2
 var in_cauldron: bool
@@ -40,7 +47,8 @@ func _ready():
 	# Setup Ingredient
 	# Assign type if not manually assigned
 	if type == "":
-		type = ingredient_types[randi() % ingredient_types.size()]
+		#type = ingredient_types[randi() % ingredient_types.size()]
+		get_type()
 	$Sprite2D.texture = spritemap[type]
 	starting_position = position
 	in_cauldron = false
@@ -69,12 +77,12 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 			dragging = false
 			#print("We are in the bowl: ", in_cauldron)
 			if in_cauldron == true:
-				print("Dead: ", type)
+				#print("Dead: ", type)
 				emit_signal("dropped_in_cauldron", type)
 				#queue_free()
 				visible = false
 			else:
-				print("Back to shelf: ", type)
+				#print("Back to shelf: ", type)
 				position = starting_position
 			
 	# Touch screen support? Havnt tested this ever
@@ -86,9 +94,9 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 func _on_cauldron_area_entered(area):
 	#print(area)
 	if area.is_in_group("cauldron"):
-		print("IN CAULDRON (", type, "): ", in_cauldron)
+		#print("IN CAULDRON (", type, "): ", in_cauldron)
 		in_cauldron = true
-		print("AFTER ENTER (", type, "): ", in_cauldron)
+		#print("AFTER ENTER (", type, "): ", in_cauldron)
 
 
 func _on_cauldron_area_exited(area):
@@ -97,7 +105,26 @@ func _on_cauldron_area_exited(area):
 		#print("EXITED CAULDRON (", type, "): ", in_cauldron)
 		in_cauldron = false
 		#print("AFTER EXIT (", type, "): ", in_cauldron)
-		
+
+func get_type():
+	var type_index: int = 0
+	var assigned = false
+	var selected: String
+	while !assigned:
+		selected = ingredient_types[type_index]
+		#print("Rolling for ", selected)
+		var roll = randf()
+		#print("Is ", roll, "Less than or equal to ", spawning_chance[selected])
+		if spawning_chance[selected] >= roll:
+			#print("Yep, got a ", selected)
+			assigned = true
+		else:
+			type_index += 1
+			if type_index >= len(ingredient_types):
+				type_index = 0
+	type = selected
+	
+
 func reset():
 	position = starting_position
 	visible = true
@@ -106,9 +133,10 @@ func crafted():
 	#print(type, "Is In Cauldron: ", type)
 	if in_cauldron:
 	#if visible == false:
-		print(type, "Is becoming...")
-		type = ingredient_types[randi() % ingredient_types.size()]
-		print(type)
+		#print(type, "Is becoming...")
+		#type = ingredient_types[randi() % ingredient_types.size()]
+		get_type()
+		#print(type)
 		$Sprite2D.texture = spritemap[type]
 	position = starting_position
 	visible = true
