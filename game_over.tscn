@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://5p4o0el4svqu"]
+[gd_scene load_steps=3 format=3 uid="uid://5p4o0el4svqu"]
 
 [ext_resource type="Texture2D" uid="uid://ctrjcigyjh3rg" path="res://Assets/Art/Scroll_Dialouge.png" id="1_riqnh"]
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_rkre7"]
-[ext_resource type="Texture2D" uid="uid://cr6uqxla0wsgw" path="res://Assets/Art/FishCustomer.png" id="3_ns8fn"]
 
 [node name="game_over" type="Node2D"]
 
@@ -49,6 +48,5 @@ text = "  - \"review\""
 top_level = true
 position = Vector2(733, 315)
 scale = Vector2(0.194, 0.159)
-texture = ExtResource("3_ns8fn")
 region_enabled = true
 region_rect = Rect2(295.312, 186.073, 1032.92, 880.717)

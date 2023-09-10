@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://donpponaixs60"]
+[gd_scene load_steps=35 format=3 uid="uid://donpponaixs60"]
 
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
 [ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
@@ -317,40 +317,12 @@ _data = {
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_05pjw"]
 blend_mode = 1
 
-[sub_resource type="Gradient" id="Gradient_u1534"]
-offsets = PackedFloat32Array(0, 0.0296296, 0.407407, 0.962963, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0.355447, 1, 0.364905, 1, 0.205334, 0.670668, 0.356128, 1, 0.0096065, 0.379083, 0.204319, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_rf6xd"]
-gradient = SubResource("Gradient_u1534")
-width = 1
-
 [sub_resource type="Gradient" id="Gradient_evwtb"]
 colors = PackedColorArray(0, 0.784314, 0.415686, 1, 0.0784314, 0.803922, 0.415686, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_1v7px"]
-gradient = SubResource("Gradient_evwtb")
-width = 1
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qbl6q"]
-lifetime_randomness = 0.5
-emission_shape = 1
-emission_sphere_radius = 3.0
-particle_flag_disable_z = true
-direction = Vector3(0, -1, 0)
-spread = 180.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 70.0
-initial_velocity_max = 150.0
-angular_velocity_min = 1.0
-angular_velocity_max = 1.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-angle_min = 5.0
-angle_max = 5.0
-color = Color(0, 0.686275, 0.215686, 1)
-color_ramp = SubResource("GradientTexture1D_1v7px")
-color_initial_ramp = SubResource("GradientTexture1D_rf6xd")
+[sub_resource type="Gradient" id="Gradient_u1534"]
+offsets = PackedFloat32Array(0, 0.0296296, 0.407407, 0.962963, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.355447, 1, 0.364905, 1, 0.205334, 0.670668, 0.356128, 1, 0.0096065, 0.379083, 0.204319, 1, 1, 1, 1, 0)
 
 [node name="Tavern" type="Node2D"]
 script = ExtResource("1_iuiyy")
@@ -582,32 +554,80 @@ position = Vector2(980, 612)
 texture = ExtResource("19_uaigo")
 metadata/_edit_lock_ = true
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
 z_index = 20
 material = SubResource("CanvasItemMaterial_05pjw")
 position = Vector2(864, 847)
 amount = 30
-process_material = SubResource("ParticleProcessMaterial_qbl6q")
-texture = ExtResource("22_rsncl")
 explosiveness = 1.0
+lifetime_randomness = 0.5
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("22_rsncl")
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.0
+initial_velocity_max = 150.0
+angular_velocity_min = 1.0
+angular_velocity_max = 1.0
+angle_min = 5.0
+angle_max = 5.0
+color = Color(0, 0.686275, 0.215686, 1)
+color_ramp = SubResource("Gradient_evwtb")
+color_initial_ramp = SubResource("Gradient_u1534")
 
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D2" type="CPUParticles2D" parent="."]
 z_index = 20
 material = SubResource("CanvasItemMaterial_05pjw")
 position = Vector2(1013, 839)
 amount = 30
-process_material = SubResource("ParticleProcessMaterial_qbl6q")
-texture = ExtResource("22_rsncl")
 explosiveness = 1.0
+lifetime_randomness = 0.5
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("22_rsncl")
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.0
+initial_velocity_max = 150.0
+angular_velocity_min = 1.0
+angular_velocity_max = 1.0
+angle_min = 5.0
+angle_max = 5.0
+color = Color(0, 0.686275, 0.215686, 1)
+color_ramp = SubResource("Gradient_evwtb")
+color_initial_ramp = SubResource("Gradient_u1534")
 
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D3" type="CPUParticles2D" parent="."]
 z_index = 20
 material = SubResource("CanvasItemMaterial_05pjw")
 position = Vector2(933, 849)
 amount = 30
-process_material = SubResource("ParticleProcessMaterial_qbl6q")
-texture = ExtResource("22_rsncl")
 explosiveness = 1.0
+lifetime_randomness = 0.5
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("22_rsncl")
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.0
+initial_velocity_max = 150.0
+angular_velocity_min = 1.0
+angular_velocity_max = 1.0
+angle_min = 5.0
+angle_max = 5.0
+color = Color(0, 0.686275, 0.215686, 1)
+color_ramp = SubResource("Gradient_evwtb")
+color_initial_ramp = SubResource("Gradient_u1534")
 
 [connection signal="finished" from="TimerWarningEffect" to="GameTimer" method="_on_timer_warning_effect_finished"]
 [connection signal="timeout" from="GameTimer/PrimaryTimer" to="GameTimer" method="_on_primary_timer_timeout"]
