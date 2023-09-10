@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cj0f1fxv4073"
-path="res://.godot/imported/electro-bard.wav-66c51e1572678741975780274448911b.sample"
+path="res://.godot/imported/electro-bard.wav-724807633459cb57954c197876010e18.sample"
 
 [deps]
 
-source_file="res://Assets/Miguels Workspace/electro-bard.wav"
-dest_files=["res://.godot/imported/electro-bard.wav-66c51e1572678741975780274448911b.sample"]
+source_file="res://Assets/Miguels Workspace/SoundEffects/Characters/electro-bard.wav"
+dest_files=["res://.godot/imported/electro-bard.wav-724807633459cb57954c197876010e18.sample"]
 
 [params]
 

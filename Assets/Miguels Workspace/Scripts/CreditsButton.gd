@@ -1,5 +1,6 @@
 extends Button
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,4 +12,4 @@ func _process(delta):
 
 
 func _on_button_up():
-	$FrogPrinceSpeech.play(0.0) # Replace with function body.
+	$SoundEffect.play(0.0)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c24g87n27hebr"
+path="res://.godot/imported/bell.wav-76298ce1f98785c6288b5c6b6918acc0.sample"
+
+[deps]
+
+source_file="res://Assets/Miguels Workspace/SoundEffects/Objects/bell.wav"
+dest_files=["res://.godot/imported/bell.wav-76298ce1f98785c6288b5c6b6918acc0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
