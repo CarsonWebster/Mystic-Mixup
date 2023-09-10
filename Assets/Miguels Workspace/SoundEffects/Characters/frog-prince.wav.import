@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://iurgqxsyth3t"
-path="res://.godot/imported/frog-prince.wav-f0831cc178305bf7d20d3a40959a0a86.sample"
+path="res://.godot/imported/frog-prince.wav-2fb1e65d7f8b4b5d7cdcd0bbad30e0b4.sample"
 
 [deps]
 
-source_file="res://Assets/Miguels Workspace/SoundEffects/Characters/Frog Prince/frog-prince.wav"
-dest_files=["res://.godot/imported/frog-prince.wav-f0831cc178305bf7d20d3a40959a0a86.sample"]
+source_file="res://Assets/Miguels Workspace/SoundEffects/Characters/frog-prince.wav"
+dest_files=["res://.godot/imported/frog-prince.wav-2fb1e65d7f8b4b5d7cdcd0bbad30e0b4.sample"]
 
 [params]
 

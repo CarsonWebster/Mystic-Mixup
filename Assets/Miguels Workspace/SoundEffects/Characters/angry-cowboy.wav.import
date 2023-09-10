@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bujik01ofhxxc"
-path="res://.godot/imported/angry-cowboy.wav-c7074cc81d24f34734c198c52a0c6c40.sample"
+path="res://.godot/imported/angry-cowboy.wav-d3b52aa09153e408b90794669d14e745.sample"
 
 [deps]
 
-source_file="res://Assets/Miguels Workspace/angry-cowboy.wav"
-dest_files=["res://.godot/imported/angry-cowboy.wav-c7074cc81d24f34734c198c52a0c6c40.sample"]
+source_file="res://Assets/Miguels Workspace/SoundEffects/Characters/angry-cowboy.wav"
+dest_files=["res://.godot/imported/angry-cowboy.wav-d3b52aa09153e408b90794669d14e745.sample"]
 
 [params]
 

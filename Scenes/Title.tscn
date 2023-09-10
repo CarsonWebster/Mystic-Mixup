@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyc2wlptwcybj"]
+
+[ext_resource type="Texture2D" uid="uid://bewor2natxyrv" path="res://Assets/Art/Door_Start_Menu.svg" id="1_lmo3e"]
+[ext_resource type="PackedScene" uid="uid://fpuy7u4i77v8" path="res://Assets/Miguels Workspace/SoundEffects/Game/StartGame/start_game_sound_effect.tscn" id="2_2dpjy"]
+[ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/CreditsButton.gd" id="3_qmfix"]
+[ext_resource type="AudioStream" uid="uid://c24g87n27hebr" path="res://Assets/Miguels Workspace/SoundEffects/Objects/bell.wav" id="4_1e5pq"]
+
+[sub_resource type="GDScript" id="GDScript_1qwj1"]
+script/source = "extends Button
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_button_up():
+	$StartGameSoundEffect.play(0.0) # Replace with function body.
+"
+
+[node name="title_menu" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 629.0
+offset_top = 174.0
+offset_right = 752.0
+offset_bottom = 200.0
+scale = Vector2(5, 5)
+text = "Wizard's Tavern"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+
+[node name="DoorStartMenu" type="Sprite2D" parent="TextureRect"]
+position = Vector2(931, 735)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_lmo3e")
+
+[node name="EnterTavernButton" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 777.0
+offset_top = 735.0
+offset_right = 884.0
+offset_bottom = 766.0
+scale = Vector2(3, 3)
+text = "Start Game"
+script = SubResource("GDScript_1qwj1")
+
+[node name="StartGameSoundEffect" parent="TextureRect/EnterTavernButton" instance=ExtResource("2_2dpjy")]
+
+[node name="CreditsButton" type="Button" parent="."]
+offset_left = 134.0
+offset_top = 1046.0
+offset_right = 197.0
+offset_bottom = 1077.0
+scale = Vector2(3, 3)
+text = "Credits"
+script = ExtResource("3_qmfix")
+
+[node name="SoundEffect" type="AudioStreamPlayer2D" parent="CreditsButton"]
+position = Vector2(218.667, -94.3333)
+stream = ExtResource("4_1e5pq")
+
+[connection signal="button_up" from="TextureRect/EnterTavernButton" to="TextureRect/EnterTavernButton" method="_on_button_up"]
+[connection signal="button_up" from="CreditsButton" to="CreditsButton" method="_on_button_up"]

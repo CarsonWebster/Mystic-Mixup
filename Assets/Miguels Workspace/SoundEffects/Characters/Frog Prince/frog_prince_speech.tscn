@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5r0wa7ux7fsc"]
-
-[ext_resource type="AudioStream" uid="uid://iurgqxsyth3t" path="res://Assets/Miguels Workspace/SoundEffects/Characters/Frog Prince/frog-prince.wav" id="1_87itr"]
-
-[node name="FrogPrinceSpeech" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_87itr")
