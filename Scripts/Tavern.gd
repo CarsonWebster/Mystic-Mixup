@@ -20,9 +20,17 @@ extends Node2D
 
 var product_types: Array = [
 	"Moonshine",
+	"DeathPotion",
+	"LovePotion",
+	"Bones",
+	"MosaicFood",
 ]
 var product_sprite_map: Dictionary = {
-	"Moonshine": load("res://Assets/Art/Moonshine.png")
+	"Moonshine": load("res://Assets/Art/Moonshine.png"),
+	"DeathPotion": load("res://Assets/Art/DeathJuice.png"),
+	"LovePotion": load("res://Assets/Art/LovePotion.png"),
+	"Bones": load("res://Assets/Art/Bones.png"),
+	"MosaicFood": load("res://Assets/Art/MosaicFood.png"),
 }
 
 var used_ingredents: Array

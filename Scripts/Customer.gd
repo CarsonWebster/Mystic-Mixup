@@ -99,15 +99,15 @@ var unsatisfiedCharacterSprites: Dictionary = {
 }
 
 var desires: Dictionary = {
-	"fishmaid": ["primary", "secondary", "tertiary"],
-	"sad_ghost": ["primary", "secondary", "tertiary"],
-	"angry_cowboy": [],
-	"sasquatch": [],
-	"doggo": [],
-	"electro_bard": [],
-	"evil_scientist": [],
-	"frog_prince": [],
-	"old_man": []
+	"fishmaid": ["LovePotion"],
+	"sad_ghost": ["ElixerOfLife"],
+	"angry_cowboy": ["Steak"],
+	"sasquatch": ["AnimePotion"],
+	"doggo": ["Bones"],
+	"electro_bard": ["Moonshine"],
+	"evil_scientist": ["NuclearWaste"],
+	"frog_prince": ["FruitCake"],
+	"old_man": ["YouthPotion"]
 }
 
 # Called when the node enters the scene tree for the first time.
