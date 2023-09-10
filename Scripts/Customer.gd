@@ -23,7 +23,7 @@ var node: Node2D = $"."
 @onready
 var text: Label = get_node("ScrollDialouge/ScrollText")
 
-var customer_type: String = "fishmaid"
+var customer_type: String = "sad_ghost"
 
 var characterWalkingAnims: Dictionary = {
 	"fishmaid": "Standard Customer Walk",
