@@ -24,13 +24,16 @@ var ingredient_types: Array = [
 	"ToxicJellyfish",
 	"Hair",
 	"GameJam",
-	"MysteryBox",
+	"MysteryBoxGood",
+	"MysteryBoxBad",
 	"MysteryMeat",
 	"SpicySugar",
 	"GooseBerryBush",
 	"CockatriceEgg",
 	"Rainbows",
-	"Wolfsbane"
+	"Wolfsbane",
+	"WargMilk",
+	"FairyDust"
 ]
 
 var spritemap: Dictionary = {
@@ -43,32 +46,16 @@ var spritemap: Dictionary = {
 	"ToxicJellyfish": load("res://Assets/Art/ToxicJellyfish.png"),
 	"Hair": load("res://Assets/Art/Hair.png"),
 	"GameJam": load("res://Assets/Art/GameJam.png"),
-	"MysteryBox": load("res://Assets/Art/MysteryBox.png"),
+	"MysteryBoxGood": load("res://Assets/Art/MysteryBox.png"),
+	"MysteryBoxBad": load("res://Assets/Art/MysteryBox.png"),
 	"MysteryMeat": load("res://Assets/Art/MysteryMeat.png"),
 	"SpicySugar": load("res://Assets/Art/SpicySugar.png"),
 	"GooseBerryBush": load("res://Assets/Art/GooseBerryBush.png"),
 	"CockatriceEgg": load("res://Assets/Art/CockatriceEgg.png"),
 	"Rainbows": load("res://Assets/Art/Rainbows.png"),
-	"Wolfsbane": load("res://Assets/Art/Wolfsbane.png")
-}
-
-var spawning_chance: Dictionary = {
-	"Vanilla": .1,
-	"EnviousExtract": .2,
-	"NegativeReflection": .1,
-	"FrogLegs": .2,
-	"Bones": .3,
-	"Moonshine": .3,
-	"ToxicJellyfish": .2,
-	"Hair": .2,
-	"GameJam": .1,
-	"MysteryBox": .1,
-	"MysteryMeat": .3,
-	"SpicySugar": .2,
-	"GooseBerryBush": .2,
-	"CockatriceEgg": .3,
-	"Rainbows": .1,
-	"Wolfsbane": .1,
+	"Wolfsbane": load("res://Assets/Art/Wolfsbane.png"),
+	"WargMilk": load("res://Assets/Art/WargMilk.png"),
+	"FairyDust": load("res://Assets/Art/FairyDust.png")
 }
 
 var dragging: bool = false
@@ -151,23 +138,7 @@ func _on_cauldron_area_exited(area):
 		#print("AFTER EXIT (", type, "): ", in_cauldron)
 
 func get_type():
-	var type_index: int = 0
-	var assigned = false
-	var selected: String
-	while !assigned:
-		selected = ingredient_types[type_index]
-		#print("Rolling for ", selected)
-		var roll = randf()
-		#print("Is ", roll, "Less than or equal to ", spawning_chance[selected])
-		if spawning_chance[selected] >= roll:
-			#print("Yep, got a ", selected)
-			assigned = true
-		else:
-			type_index += 1
-			if type_index >= len(ingredient_types):
-				type_index = 0
-	type = selected
-	
+	type = ingredient_types.pick_random()
 
 func reset():
 	position = starting_position
