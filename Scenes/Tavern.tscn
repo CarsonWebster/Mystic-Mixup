@@ -1,17 +1,28 @@
+<<<<<<< HEAD
 [gd_scene load_steps=17 format=3 uid="uid://donpponaixs60"]
+=======
+[gd_scene load_steps=20 format=3 uid="uid://donpponaixs60"]
+>>>>>>> fa70116e2f4e1d74f24c30518c7b0e74acc5ca67
 
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
 [ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
 [ext_resource type="Texture2D" uid="uid://dy1y3hlhwh4rv" path="res://Assets/Art/Shelves.png" id="2_4d712"]
-[ext_resource type="PackedScene" path="res://Scenes/Ingredient.tscn" id="3_oldij"]
+[ext_resource type="PackedScene" uid="uid://ce8aga010ip1f" path="res://Scenes/Ingredient.tscn" id="3_oldij"]
 [ext_resource type="Texture2D" uid="uid://6apw7742rurc" path="res://Assets/Art/DoorClosed.png" id="5_46dt6"]
 [ext_resource type="Texture2D" uid="uid://b2emibx0pkvb2" path="res://Assets/Art/DoorOpened.png" id="6_73m6t"]
 [ext_resource type="PackedScene" uid="uid://dxgypbjt1cplp" path="res://Scenes/Customer.tscn" id="8_d7oh5"]
 [ext_resource type="Texture2D" uid="uid://cocboblg5dlds" path="res://Assets/Art/firepit.png" id="8_kbgl0"]
 [ext_resource type="Texture2D" uid="uid://bhes504o3nox8" path="res://Assets/Art/cauldron.png" id="9_7cqv0"]
 [ext_resource type="Texture2D" uid="uid://cl54ujkparb0x" path="res://Assets/Art/countertop.png" id="10_byw7j"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" path="res://Assets/Art/Bell.png" id="10_jn7jx"]
 [ext_resource type="Texture2D" path="res://Assets/Art/TipJar.png" id="11_q3h8e"]
+=======
+[ext_resource type="Texture2D" uid="uid://bjyuff6w8hd1f" path="res://Assets/Art/Bell.png" id="10_jn7jx"]
+[ext_resource type="Texture2D" uid="uid://bkhw0japtk87p" path="res://Assets/Art/TipJar.png" id="11_q3h8e"]
+[ext_resource type="AudioStream" uid="uid://h4h03ub21iu8" path="res://Assets/Music/tavern_background_-_9923_6.50_PM.mp3" id="13_32k0n"]
+[ext_resource type="Script" path="res://Scripts/Cauldron.gd" id="13_e714h"]
+>>>>>>> fa70116e2f4e1d74f24c30518c7b0e74acc5ca67
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qk04"]
 animations = [{
@@ -69,10 +80,11 @@ _data = {
 "door movement": SubResource("Animation_dvc0b")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_54lxq"]
+
 [node name="Tavern" type="Node2D"]
 script = ExtResource("1_iuiyy")
 customer_scene = ExtResource("8_d7oh5")
-ingredient_scene = ExtResource("3_oldij")
 metadata/_edit_lock_ = true
 
 [node name="TavernBackground" type="Sprite2D" parent="."]
@@ -108,12 +120,6 @@ libraries = {
 "": SubResource("AnimationLibrary_12ng4")
 }
 
-[node name="Cauldron" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(935, 619)
-texture = ExtResource("9_7cqv0")
-metadata/_edit_lock_ = true
-
 [node name="Shelves" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(935, 619)
@@ -132,3 +138,108 @@ z_index = 1
 position = Vector2(937, 622)
 texture = ExtResource("11_q3h8e")
 metadata/_edit_lock_ = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_32k0n")
+
+[node name="IngredentsGroup" type="Node" parent="."]
+
+[node name="Ingredient" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(128, 341)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient2" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(327, 341)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient3" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(327, 588)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient4" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(124, 588)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient5" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(124, 817)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient6" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(356, 817)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient7" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(356, 1050)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient8" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(130, 1050)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient9" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(1733, 347)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient10" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(1531, 347)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient11" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(1733, 603)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient12" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(1522, 611)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient13" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(1522, 821)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient14" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(1737, 821)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient15" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(1737, 1065)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient16" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
+position = Vector2(1527, 1065)
+metadata/_edit_lock_ = true
+
+[node name="Cauldron" type="Area2D" parent="." groups=["cauldron"]]
+script = ExtResource("13_e714h")
+
+[node name="CauldronSprite" type="Sprite2D" parent="Cauldron"]
+z_index = 2
+position = Vector2(935, 619)
+texture = ExtResource("9_7cqv0")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron"]
+z_index = 2
+position = Vector2(934, 959)
+scale = Vector2(19.688, 19.688)
+shape = SubResource("CircleShape2D_54lxq")
+
+[node name="ResetButton" type="Button" parent="."]
+z_index = 3
+offset_left = 490.0
+offset_top = 670.0
+offset_right = 498.0
+offset_bottom = 678.0
+scale = Vector2(5.10957, 2.2806)
+text = "RESET"
+
+[node name="CraftButton" type="Button" parent="."]
+z_index = 3
+offset_left = 1122.0
+offset_top = 670.0
+offset_right = 1179.0
+offset_bottom = 701.0
+scale = Vector2(5.10957, 2.2806)
+text = "CRAFT"
+
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="CraftButton" to="." method="_on_craft_button_pressed"]
