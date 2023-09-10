@@ -45,7 +45,17 @@ var ingredient_types: Array = [
 	"NegativeReflection"
 ]
 
+var product_types: Array = [
+	"1",
+	"2",
+	"3",
+	"4",
+	"5"
+]
+
 var used_ingredents: Array
+
+var product_result: String
 
 
 # Called when the node enters the scene tree for the first time.
@@ -53,6 +63,7 @@ func _ready():
 	
 	$BackgroundMusic.play(0.0)
 	$Product/AnimationPlayer.play("RESET")
+	$Product/AnimationPlayer.connect("animation_finished", _on_product_animation_finished)
 	# Spawn Itmes DEPRECATED FROM TAVERN RESPONSABILITY
 #	for i in range(len(ingredient_positions)):
 #		var ingredient_instance = ingredient_scene.instantiate()
@@ -90,6 +101,8 @@ func _on_reset_button_pressed():
 			node.reset()
 	used_ingredents = []
 
+func determine_product():
+	return product_types.pick_random()
 
 func _on_craft_button_pressed():
 
@@ -102,5 +115,17 @@ func _on_craft_button_pressed():
 			node.crafted()
 	used_ingredents = []
 
+	# SET THE PRODUCT RESULT
+	product_result = determine_product()
+	$Product.texture = load("res://Assets/Art/icon.svg")
 	$Product/AnimationPlayer.play("Present")
+
+func _on_product_animation_finished(anim_name):
+	if anim_name == "Present":
+		# Your code to run after the "Present" animation is finished goes here.
+		print("Animation 'Present' has finished.")
+		print("We got a: ", product_result)
+		
+		# HERE IS WHERE THE CUSTOMER WILL CALL THE JUDGE FUNCTION
+		#customer.judge_product(product_result)
 
