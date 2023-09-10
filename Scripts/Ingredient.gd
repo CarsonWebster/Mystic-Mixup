@@ -66,7 +66,9 @@ var spawning_chance: Dictionary = {
 	"MysteryMeat": .3,
 	"SpicySugar": .2,
 	"GooseBerryBush": .2,
-	"CockatriceEgg": .3
+	"CockatriceEgg": .3,
+	"Rainbows": .1,
+	"Wolfsbane": .1,
 }
 
 var dragging: bool = false

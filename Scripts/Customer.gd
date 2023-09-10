@@ -21,21 +21,27 @@ var dialog: AnimationPlayer = get_node("ScrollDialouge/ScrollAnimation")
 @onready
 var sounds: AudioStreamPlayer2D = $SoundStream
 @onready
-var node: Node2D = $"."
+var sprite: Sprite2D = $Sprite2D
 @onready
 var text: Label = get_node("ScrollDialouge/ScrollText")
 var customer_type: String = "fishmaid"
 
-#var customerTypes: Array = ["fishmaid", "sad_ghost", "angry_cowboy", "electro_bard", "doggo", "evil_scientist", "frog_prince", "old_man", "sasquatch"]
-var customerTypes: Array = ["fishmaid", "sad_ghost"]
-var characterWalkingAnims: Dictionary = {
-	"fishmaid": "Standard Customer Walk",
-	"sad_ghost": "Standard Customer Walk"
-}
+var customerTypes: Array = ["fishmaid", "sad_ghost", "angry_cowboy", "electro_bard", "doggo", "evil_scientist", "frog_prince", "old_man", "sasquatch"]
 
-var characterLeavingAnims: Dictionary = {
-	"fishmaid": "Standard Customer Leave",
-	"sad_ghost": "Standard Customer Leave"
+var characterWalkingAnim: String = "Standard Customer Walk"
+var characterLeavingAnim: String = "Standard Customer Leave"
+
+var characterHeightOffset: Dictionary = {
+	"angry_cowboy": 0,
+	"electro_bard": 0,
+	"doggo":  -725,
+	"evil_scientist":  -300,
+	"fishmaid":  0,
+	"frog_prince":  -725,
+	"old_man":  -250,
+	"punny_skeleton": 0,
+	"sad_ghost": 0,
+	"sasquatch": 0,
 }
 
 var dialogSounds: Dictionary = {
@@ -52,8 +58,8 @@ var dialogSounds: Dictionary = {
 }
 
 var characterSprites: Dictionary = {
-	"fishmaid": "res://Assets/Art/fishmaid.png",
-	"sad_ghost": "res://Assets/Art/ghost.png",
+	"fishmaid": "res://Assets/Art/Fishmaid(Talking).png",
+	"sad_ghost": "res://Assets/Art/Ghost(Idle).png",
 	"angry_cowboy": "res://Assets/Art/Cowboy(Idle).png",
 	"sasquatch": "res://Assets/Art/Cthulhu(Idle).png",
 	"doggo": "res://Assets/Art/Doggo(Idle).png",
@@ -77,9 +83,9 @@ var characterDialog: Dictionary = {
 }
 
 var talkingCharacterSprites: Dictionary = {
-	"fishmaid": "res://Assets/Art/fishmaid.png",
-	"sad_ghost": "res://Assets/Art/ghost_talking.png",
-	"angry_cowboy": "res://Assets/Art/Cowboy(talking).png",
+	"fishmaid": "res://Assets/Art/Fishmaid(Talking).png",
+	"sad_ghost": "res://Assets/Art/Ghost(Talking).png",
+	"angry_cowboy": "res://Assets/Art/Cowboy(Talking).png",
 	"sasquatch": "res://Assets/Art/Cthulhu(Talking).png",
 	"doggo": "res://Assets/Art/Doggo(Talking).png",
 	"electro_bard": "res://Assets/Art/Electro_Bard(Talking).png",
@@ -89,9 +95,9 @@ var talkingCharacterSprites: Dictionary = {
 }
 
 var unsatisfiedCharacterSprites: Dictionary = {
-	"fishmaid": "res://Assets/Art/fishmaid_unsatisifed.png",
-	"sad_ghost": "res://Assets/Art/ghost_unsatisfied.png",
-	"angry_cowboy": "res://Assets/Art/Cowboy(upset).png",
+	"fishmaid": "res://Assets/Art/Fishmaid(Upset).png",
+	"sad_ghost": "res://Assets/Art/Ghost(Upset).png",
+	"angry_cowboy": "res://Assets/Art/Cowboy(Upset).png",
 	"sasquatch": "res://Assets/Art/Cthulhu(Upset).png",
 	"doggo": "res://Assets/Art/Doggo(Upset).png",
 	"electro_bard": "res://Assets/Art/Electro_Bard(Upset).png",
@@ -112,9 +118,20 @@ var desires: Dictionary = {
 	"old_man": ["YouthPotion"]
 }
 
+var results: Dictionary = {
+	"fishmaid": -1,
+	"sad_ghost":  -1,
+	"angry_cowboy": -1,
+	"sasquatch":  -1,
+	"doggo": -1,
+	"electro_bard": -1,
+	"evil_scientist": -1,
+	"frog_prince":  -1,
+	"old_man":  -1,
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# TODO: randomize
 	spawnCustomer()
 	
 
@@ -149,34 +166,45 @@ func customer_speak():
 
 func judge_product(productName): 
 	var happyProducts = desires[customer_type]
-	
 	# customer is satisfied
-	if productName in happyProducts: 
+	if productName not in happyProducts: 
 		updateSprite(unsatisfiedCharacterSprites[customer_type])
+		results[customer_type] = randi_range(0,3)
+	else:
+		results[customer_type] = randi_range(4,5)
 		
 	# stop any sounds.
 	$SoundStream.stop()
 	# walk away
-	var leavingAnimation = characterLeavingAnims[customer_type]
-	walking.play(leavingAnimation)
+	walking.play(characterLeavingAnim)
 	dialog.play("RESET")
+	print("current results", results)
+	
 	
 
 func updateSprite(path):
-	var sprite = load(path)
-	node.set_texture(sprite)
+	sprite.texture = load(path)
+	
+func updateSpriteOffset():
+	sprite.position.y = characterHeightOffset[customer_type] 
 	
 func spawnCustomer():
+	if len(customerTypes) == 0:
+		print("no customers remaining")
+		return
+		
 	var possibleCustomer = customerTypes.pick_random()
-	print("A new customer was selected", possibleCustomer)
+	customerTypes.assign(customerTypes.filter(func(i): return i != possibleCustomer))
+	
+	print("A new customer was selected remaining options:", customerTypes)
 	
 	customer_type = possibleCustomer
 	
 	updateSprite(characterSprites[possibleCustomer])
+	updateSpriteOffset()
 	
 	var phrase = characterDialog[possibleCustomer]
 	text.text = str(phrase)
 	
-	var walkingAnimation = characterWalkingAnims[possibleCustomer]
-	walking.play(walkingAnimation)
+	walking.play(characterWalkingAnim)
 	
