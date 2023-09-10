@@ -27,6 +27,11 @@ var dialogSounds: Dictionary = {
 	"sasquatch": "res://Assets/Miguels Workspace/SoundEffects/Characters/sasquatch.wav",
 }
 
+var customermap : Dictionary = {
+	"fishmaid" : load("res://Assets/Art/FishCustomer.png"),
+	"frog_prince" : load("res://Assets/Art/FrogPrince(Talking).png"),
+	"angry_cowboy" : load("res://Assets/Art/Cowboy(talking).png")
+}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimationPlayer.play("Customer walk")
