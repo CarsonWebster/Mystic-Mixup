@@ -93,3 +93,5 @@ func _on_craft_button_pressed():
 	print("CRAFT")
 	print("You Get A Score Of...")
 	print(randi_range(1, 10))
+	
+

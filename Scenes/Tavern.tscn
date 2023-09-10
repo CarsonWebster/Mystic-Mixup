@@ -1,9 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://donpponaixs60"]
+[gd_scene load_steps=31 format=3 uid="uid://donpponaixs60"]
 
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
 [ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
 [ext_resource type="Texture2D" uid="uid://dy1y3hlhwh4rv" path="res://Assets/Art/Shelves.png" id="2_4d712"]
-[ext_resource type="PackedScene" path="res://Scenes/Ingredient.tscn" id="3_oldij"]
+[ext_resource type="PackedScene" uid="uid://ce8aga010ip1f" path="res://Scenes/Ingredient.tscn" id="3_oldij"]
 [ext_resource type="AudioStream" uid="uid://bfqktjx86lnja" path="res://Assets/Miguels Workspace/SoundEffects/Game/warning_sound.wav" id="4_hnb7n"]
 [ext_resource type="Texture2D" uid="uid://6apw7742rurc" path="res://Assets/Art/DoorClosed.png" id="5_46dt6"]
 [ext_resource type="AudioStream" uid="uid://bhka1dpj77ihb" path="res://Assets/Music/timer_ending_-_9923_8.19_PM.mp3" id="5_iiw66"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://bkhw0japtk87p" path="res://Assets/Art/TipJar.png" id="11_q3h8e"]
 [ext_resource type="AudioStream" uid="uid://h4h03ub21iu8" path="res://Assets/Music/tavern_background_-_9923_6.50_PM.mp3" id="13_32k0n"]
 [ext_resource type="Script" path="res://Scripts/Cauldron.gd" id="13_e714h"]
+[ext_resource type="Texture2D" uid="uid://cur8l0dpyeo11" path="res://Assets/Art/220.png" id="18_7sts7"]
+[ext_resource type="Script" path="res://Scenes/GPUParticles2D.gd" id="19_yeql8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qk04"]
 animations = [{
@@ -75,6 +77,46 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54lxq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h1yhv"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_1ak07"]
+offsets = PackedFloat32Array(0.00699301, 0.118519, 0.488889, 0.923077, 0.993007)
+colors = PackedColorArray(0.0431373, 0.0431373, 0.0431373, 0, 0.0885134, 0.430865, 0.0469849, 1, 0.264096, 0.459362, 0, 1, 0.0271241, 0.232434, 9.62615e-08, 1, 0.0666667, 0.372549, 0.431373, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_iddva"]
+gradient = SubResource("Gradient_1ak07")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_1go1o"]
+offsets = PackedFloat32Array(0, 0.17037, 0.577778, 1)
+colors = PackedColorArray(0.266667, 0.521569, 0.0901961, 0, 0.136202, 0.29464, 4.81308e-08, 1, 0, 0.192157, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uubx7"]
+gradient = SubResource("Gradient_1go1o")
+width = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mwkj3"]
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_sphere_radius = 3.0
+direction = Vector3(0, -1, 0)
+spread = 60.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 6.0
+initial_velocity_max = 6.0
+angular_velocity_min = 0.5
+angular_velocity_max = 0.5
+angle_min = 720.0
+angle_max = 720.0
+scale_max = 2.0
+color = Color(0.0117647, 0.27451, 0.0196078, 1)
+color_ramp = SubResource("GradientTexture1D_uubx7")
+color_initial_ramp = SubResource("GradientTexture1D_iddva")
+turbulence_noise_scale = 0.75
+anim_speed_min = 5.0
+anim_speed_max = 5.0
 
 [node name="Tavern" type="Node2D"]
 script = ExtResource("1_iuiyy")
@@ -254,9 +296,10 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron"]
 z_index = 2
-position = Vector2(934, 959)
+position = Vector2(923, 967)
 scale = Vector2(19.688, 19.688)
 shape = SubResource("CircleShape2D_54lxq")
+metadata/_edit_lock_ = true
 
 [node name="ResetButton" type="Button" parent="."]
 z_index = 3
@@ -275,6 +318,60 @@ offset_right = 1179.0
 offset_bottom = 701.0
 scale = Vector2(5.10957, 2.2806)
 text = "CRAFT"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+top_level = true
+z_index = 50
+material = SubResource("CanvasItemMaterial_h1yhv")
+position = Vector2(833, 869)
+scale = Vector2(15.881, 15)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_mwkj3")
+texture = ExtResource("18_7sts7")
+explosiveness = 1.0
+randomness = 1.0
+visibility_rect = Rect2(0, 0, 0, 0)
+script = ExtResource("19_yeql8")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="GPUParticles2D"]
+top_level = true
+z_index = 50
+material = SubResource("CanvasItemMaterial_h1yhv")
+position = Vector2(918, 896)
+scale = Vector2(15.881, 15)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_mwkj3")
+texture = ExtResource("18_7sts7")
+explosiveness = 1.0
+visibility_rect = Rect2(0, 0, 0, 0)
+script = ExtResource("19_yeql8")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="GPUParticles2D"]
+top_level = true
+z_index = 50
+material = SubResource("CanvasItemMaterial_h1yhv")
+position = Vector2(1005, 874)
+scale = Vector2(15.881, 15)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_mwkj3")
+texture = ExtResource("18_7sts7")
+explosiveness = 1.0
+visibility_rect = Rect2(0, 0, 0, 0)
+script = ExtResource("19_yeql8")
+
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="GPUParticles2D"]
+top_level = true
+z_index = 50
+material = SubResource("CanvasItemMaterial_h1yhv")
+position = Vector2(946, 858)
+scale = Vector2(15.881, 15)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_mwkj3")
+texture = ExtResource("18_7sts7")
+explosiveness = 1.0
+randomness = 1.0
+visibility_rect = Rect2(0, 0, 0, 0)
+script = ExtResource("19_yeql8")
 
 [connection signal="finished" from="TimerWarningEffect" to="GameTimer" method="_on_timer_warning_effect_finished"]
 [connection signal="timeout" from="GameTimer/PrimaryTimer" to="GameTimer" method="_on_primary_timer_timeout"]

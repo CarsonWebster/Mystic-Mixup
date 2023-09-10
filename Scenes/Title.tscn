@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cyc2wlptwcybj"]
+[gd_scene load_steps=14 format=3 uid="uid://cyc2wlptwcybj"]
 
 [ext_resource type="Texture2D" uid="uid://bewor2natxyrv" path="res://Assets/Art/Door_Start_Menu.svg" id="1_lmo3e"]
 [ext_resource type="Script" path="res://Scenes/Title.gd" id="1_tbajw"]
@@ -10,11 +10,7 @@
 [ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/InstructionsBackButton.gd" id="7_blrjd"]
 [ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/CreditsBackButton.gd" id="7_btnya"]
 [ext_resource type="AudioStream" uid="uid://b2fn068m7f30y" path="res://Assets/Miguels Workspace/SoundEffects/Game/door-close.wav" id="8_p4t26"]
-<<<<<<< Updated upstream
-[ext_resource type="Texture2D" uid="uid://cf804ywn3ciep" path="res://Assets/Art/wood_background.jpg" id="9_x48mf"]
-=======
-[ext_resource type="Texture2D" uid="uid://bakif2tnbjphc" path="res://Assets/Art/wood_background.jpg" id="9_x48mf"]
->>>>>>> Stashed changes
+[ext_resource type="Texture2D" uid="uid://bc007b6w7yidi" path="res://Assets/Art/wood_background.jpg" id="9_x48mf"]
 [ext_resource type="Texture2D" uid="uid://cdvyuwk4eetea" path="res://Assets/Art/brick_wall-background.jpg" id="12_s1spt"]
 
 [sub_resource type="GDScript" id="GDScript_1qwj1"]
