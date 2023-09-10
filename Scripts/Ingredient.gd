@@ -15,7 +15,9 @@ extends Node2D
 
 var spritemap: Dictionary = {
 	"DeathPotion": load("res://Assets/Art/DeathJuice.png"),
-	"Vanilla": load("res://Assets/Art/Vanilla.png")
+	"Vanilla": load("res://Assets/Art/Vanilla.png"),
+	"EnviousExtract": load("res://Assets/Art/EnviousExtract.png"),
+	"NegativeReflection": load("res://Assets/Art/NegativeReflection.png")
 }
 
 var dragging: bool = false

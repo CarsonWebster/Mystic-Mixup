@@ -40,6 +40,8 @@ var ingredient_positions : Array = [
 var ingredient_types: Array = [
 	"DeathPotion",
 	"Vanilla",
+	"EnviousExtract",
+	"NegativeReflection"
 ]
 
 

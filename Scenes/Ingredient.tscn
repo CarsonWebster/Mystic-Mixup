@@ -16,7 +16,7 @@ texture = ExtResource("2_73te5")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(25.0408, 24.7643)
+scale = Vector2(18.5636, 18.3587)
 shape = SubResource("CircleShape2D_fa34v")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
