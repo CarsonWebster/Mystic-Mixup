@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=17 format=3 uid="uid://donpponaixs60"]
-=======
 [gd_scene load_steps=20 format=3 uid="uid://donpponaixs60"]
->>>>>>> fa70116e2f4e1d74f24c30518c7b0e74acc5ca67
 
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
 [ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
@@ -14,15 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://cocboblg5dlds" path="res://Assets/Art/firepit.png" id="8_kbgl0"]
 [ext_resource type="Texture2D" uid="uid://bhes504o3nox8" path="res://Assets/Art/cauldron.png" id="9_7cqv0"]
 [ext_resource type="Texture2D" uid="uid://cl54ujkparb0x" path="res://Assets/Art/countertop.png" id="10_byw7j"]
-<<<<<<< HEAD
-[ext_resource type="Texture2D" path="res://Assets/Art/Bell.png" id="10_jn7jx"]
-[ext_resource type="Texture2D" path="res://Assets/Art/TipJar.png" id="11_q3h8e"]
-=======
 [ext_resource type="Texture2D" uid="uid://bjyuff6w8hd1f" path="res://Assets/Art/Bell.png" id="10_jn7jx"]
 [ext_resource type="Texture2D" uid="uid://bkhw0japtk87p" path="res://Assets/Art/TipJar.png" id="11_q3h8e"]
 [ext_resource type="AudioStream" uid="uid://h4h03ub21iu8" path="res://Assets/Music/tavern_background_-_9923_6.50_PM.mp3" id="13_32k0n"]
 [ext_resource type="Script" path="res://Scripts/Cauldron.gd" id="13_e714h"]
->>>>>>> fa70116e2f4e1d74f24c30518c7b0e74acc5ca67
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qk04"]
 animations = [{

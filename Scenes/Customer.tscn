@@ -126,20 +126,21 @@ _data = {
 "Speech bubble movement": SubResource("Animation_bi147")
 }
 
-[node name="Fishmaid" type="Sprite2D"]
+[node name="Customer" type="Sprite2D"]
 position = Vector2(1610, 487)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_fpbah")
 script = ExtResource("2_lsbfo")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1107.5, 105)
+texture = ExtResource("1_fpbah")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+root_node = NodePath("../..")
 autoplay = "Customer walk"
 libraries = {
 "": SubResource("AnimationLibrary_iin1c")
 }
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-12.5005, 89.9999)
 
 [node name="ScrollDialouge" type="Sprite2D" parent="."]
 position = Vector2(-1352.5, -1922.5)
@@ -164,3 +165,5 @@ Blub, blub, blub?"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="Node2D" type="Node2D" parent="."]
