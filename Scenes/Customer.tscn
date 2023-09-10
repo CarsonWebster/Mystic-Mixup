@@ -1,9 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://dxgypbjt1cplp"]
 
-[ext_resource type="Texture2D" uid="uid://cr6uqxla0wsgw" path="res://Assets/Art/FishCustomer.png" id="1_fpbah"]
 [ext_resource type="Script" path="res://Scripts/Customer.gd" id="2_lsbfo"]
 [ext_resource type="Texture2D" uid="uid://ctrjcigyjh3rg" path="res://Assets/Art/Scroll_Dialouge.png" id="3_eo31a"]
 [ext_resource type="AudioStream" uid="uid://3csq43wudptd" path="res://Assets/Miguels Workspace/SoundEffects/Characters/fishmaid.wav" id="3_rriuv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hke5v"]
+load_path = "res://.godot/imported/FishCustomer.png-76bcaddcc0898a964e305279e09d9384.ctex"
 
 [sub_resource type="Animation" id="Animation_me48a"]
 length = 0.001
@@ -123,7 +125,7 @@ _data = {
 [node name="Fishmaid" type="Sprite2D"]
 position = Vector2(1610, 487)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_fpbah")
+texture = SubResource("CompressedTexture2D_hke5v")
 script = ExtResource("2_lsbfo")
 
 [node name="SoundStream" type="AudioStreamPlayer2D" parent="."]
