@@ -7,11 +7,14 @@
 [ext_resource type="AudioStream" uid="uid://c24g87n27hebr" path="res://Assets/Miguels Workspace/SoundEffects/Objects/bell.wav" id="4_1e5pq"]
 [ext_resource type="AudioStream" uid="uid://crd1paqtlp5xh" path="res://Assets/Music/tavern_menu_-_9923_6.48_PM.mp3" id="5_tmxh2"]
 [ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/InstructionButton.gd" id="5_wrsff"]
-[ext_resource type="Texture2D" uid="uid://bgkbsxtp2eikh" path="res://Assets/Art/black_background.jpg" id="6_83cuj"]
 [ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/InstructionsBackButton.gd" id="7_blrjd"]
 [ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/CreditsBackButton.gd" id="7_btnya"]
 [ext_resource type="AudioStream" uid="uid://b2fn068m7f30y" path="res://Assets/Miguels Workspace/SoundEffects/Game/door-close.wav" id="8_p4t26"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://cf804ywn3ciep" path="res://Assets/Art/wood_background.jpg" id="9_x48mf"]
+=======
+[ext_resource type="Texture2D" uid="uid://bakif2tnbjphc" path="res://Assets/Art/wood_background.jpg" id="9_x48mf"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://cdvyuwk4eetea" path="res://Assets/Art/brick_wall-background.jpg" id="12_s1spt"]
 
 [sub_resource type="GDScript" id="GDScript_1qwj1"]
@@ -154,7 +157,7 @@ offset_left = -113.0
 offset_top = -45.0
 offset_right = 1966.0
 offset_bottom = 1348.0
-texture = ExtResource("6_83cuj")
+texture = ExtResource("9_x48mf")
 
 [node name="Title" type="Label" parent="CreditsBackground"]
 layout_mode = 0
