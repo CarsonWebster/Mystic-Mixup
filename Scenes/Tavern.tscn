@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://donpponaixs60"]
+[gd_scene load_steps=31 format=3 uid="uid://donpponaixs60"]
 
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
 [ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
@@ -11,13 +11,16 @@
 [ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/TimerListener.gd" id="7_kwttk"]
 [ext_resource type="PackedScene" uid="uid://dxgypbjt1cplp" path="res://Scenes/Customer.tscn" id="8_d7oh5"]
 [ext_resource type="Texture2D" uid="uid://cocboblg5dlds" path="res://Assets/Art/firepit.png" id="8_kbgl0"]
-[ext_resource type="Texture2D" uid="uid://bhes504o3nox8" path="res://Assets/Art/cauldron.png" id="9_7cqv0"]
 [ext_resource type="Texture2D" uid="uid://cl54ujkparb0x" path="res://Assets/Art/countertop.png" id="10_byw7j"]
 [ext_resource type="Texture2D" uid="uid://bjyuff6w8hd1f" path="res://Assets/Art/Bell.png" id="10_jn7jx"]
 [ext_resource type="Texture2D" uid="uid://bkhw0japtk87p" path="res://Assets/Art/TipJar.png" id="11_q3h8e"]
 [ext_resource type="AudioStream" uid="uid://h4h03ub21iu8" path="res://Assets/Music/tavern_background_-_9923_6.50_PM.mp3" id="13_32k0n"]
 [ext_resource type="Script" path="res://Scripts/Cauldron.gd" id="13_e714h"]
+[ext_resource type="Texture2D" uid="uid://bmt5gthbyy75k" path="res://Assets/Art/CauldronBase.png" id="17_cv7jp"]
+[ext_resource type="Texture2D" uid="uid://bbvlt8olcd0pw" path="res://Assets/Art/CauldronTop.png" id="18_d4ghw"]
 [ext_resource type="Texture2D" uid="uid://b2vjnxgnvntuw" path="res://Assets/Art/icon.svg" id="18_te40p"]
+[ext_resource type="Texture2D" uid="uid://ck5exmcbavo6q" path="res://Assets/Art/CauldronLiquid.png" id="19_du0su"]
+[ext_resource type="Texture2D" uid="uid://cfh02buld2r25" path="res://Assets/Art/ProductMat.png" id="19_uaigo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qk04"]
 animations = [{
@@ -99,10 +102,10 @@ tracks/1/path = NodePath(".:z_index")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [1]
+"values": [1, 2]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -129,8 +132,8 @@ tracks/3/keys = {
 "values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1.5, 1.5)]
 }
 
-[sub_resource type="Animation" id="Animation_h5sav"]
-resource_name = "Setup"
+[sub_resource type="Animation" id="Animation_j26fe"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -216,8 +219,8 @@ tracks/6/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_j26fe"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_h5sav"]
+resource_name = "Setup"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -370,7 +373,6 @@ texture = ExtResource("8_kbgl0")
 metadata/_edit_lock_ = true
 
 [node name="Countertop" type="Sprite2D" parent="."]
-z_index = 1
 position = Vector2(932, 611)
 texture = ExtResource("10_byw7j")
 metadata/_edit_lock_ = true
@@ -480,10 +482,10 @@ metadata/_edit_lock_ = true
 [node name="Cauldron" type="Area2D" parent="." groups=["cauldron"]]
 script = ExtResource("13_e714h")
 
-[node name="CauldronSprite" type="Sprite2D" parent="Cauldron"]
+[node name="CauldronBase" type="Sprite2D" parent="Cauldron"]
 z_index = 2
 position = Vector2(935, 619)
-texture = ExtResource("9_7cqv0")
+texture = ExtResource("17_cv7jp")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron"]
@@ -491,6 +493,19 @@ z_index = 2
 position = Vector2(934, 959)
 scale = Vector2(19.688, 19.688)
 shape = SubResource("CircleShape2D_54lxq")
+metadata/_edit_lock_ = true
+
+[node name="CauldronTop" type="Sprite2D" parent="Cauldron"]
+z_index = 1
+position = Vector2(935, 619)
+texture = ExtResource("18_d4ghw")
+metadata/_edit_lock_ = true
+
+[node name="CauldronLiquid" type="Sprite2D" parent="Cauldron"]
+z_index = 1
+position = Vector2(935, 520)
+scale = Vector2(1.32238, 1.32238)
+texture = ExtResource("19_du0su")
 
 [node name="ResetButton" type="Button" parent="."]
 z_index = 3
@@ -520,6 +535,11 @@ texture = ExtResource("18_te40p")
 libraries = {
 "": SubResource("AnimationLibrary_0k2s4")
 }
+
+[node name="ProductMat" type="Sprite2D" parent="."]
+position = Vector2(980, 612)
+texture = ExtResource("19_uaigo")
+metadata/_edit_lock_ = true
 
 [connection signal="finished" from="TimerWarningEffect" to="GameTimer" method="_on_timer_warning_effect_finished"]
 [connection signal="timeout" from="GameTimer/PrimaryTimer" to="GameTimer" method="_on_primary_timer_timeout"]
