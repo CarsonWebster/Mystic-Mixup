@@ -378,6 +378,7 @@ texture = ExtResource("10_byw7j")
 metadata/_edit_lock_ = true
 
 [node name="Door" type="AnimatedSprite2D" parent="."]
+z_index = -1
 position = Vector2(906, 590)
 scale = Vector2(0.955949, 1.0119)
 sprite_frames = SubResource("SpriteFrames_0qk04")
@@ -506,6 +507,7 @@ z_index = 1
 position = Vector2(935, 520)
 scale = Vector2(1.32238, 1.32238)
 texture = ExtResource("19_du0su")
+metadata/_edit_lock_ = true
 
 [node name="ResetButton" type="Button" parent="."]
 z_index = 3
