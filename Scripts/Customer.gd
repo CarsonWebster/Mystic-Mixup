@@ -30,12 +30,28 @@ var customer_type: String = "fishmaid"
 var customerTypes: Array = ["fishmaid", "sad_ghost"]
 var characterWalkingAnims: Dictionary = {
 	"fishmaid": "Standard Customer Walk",
-	"sad_ghost": "Standard Customer Walk"
+	"sad_ghost": "Standard Customer Walk",
+	"angry_cowboy": "Standard Customer Walk",
+	"electro_bard": "Standard Customer Walk",
+	"doggo": "Standard Customer Walk",
+	"evil_scientist": "Standard Customer Walk",
+	"frog_prince": "Standard Customer Walk",
+	"old_man": "Standard Customer Walk",
+	"punny_skeleton": "Standard Customer Walk",
+	"sasquatch": "Standard Customer Walk",
 }
 
 var characterLeavingAnims: Dictionary = {
 	"fishmaid": "Standard Customer Leave",
-	"sad_ghost": "Standard Customer Leave"
+	"sad_ghost": "Standard Customer Leave",
+	"angry_cowboy": "Standard Customer Leave",
+	"electro_bard": "Standard Customer Leave",
+	"doggo": "Standard Customer Leave",
+	"evil_scientist": "Standard Customer Leave",
+	"frog_prince": "Standard Customer Leave",
+	"old_man": "Standard Customer Leave",
+	"punny_skeleton": "Standard Customer Leave",
+	"sasquatch": "Standard Customer Leave",
 }
 
 var dialogSounds: Dictionary = {
@@ -53,7 +69,7 @@ var dialogSounds: Dictionary = {
 
 var characterSprites: Dictionary = {
 	"fishmaid": "res://Assets/Art/fishmaid.png",
-	"sad_ghost": "res://Assets/Art/ghost.png",
+	"sad_ghost": "res://Assets/Art/Ghost(Idle).png",
 	"angry_cowboy": "res://Assets/Art/Cowboy(Idle).png",
 	"sasquatch": "res://Assets/Art/Cthulhu(Idle).png",
 	"doggo": "res://Assets/Art/Doggo(Idle).png",
@@ -151,7 +167,7 @@ func judge_product(productName):
 	var happyProducts = desires[customer_type]
 	
 	# customer is satisfied
-	if productName in happyProducts: 
+	if productName not in happyProducts: 
 		updateSprite(unsatisfiedCharacterSprites[customer_type])
 		
 	# stop any sounds.
@@ -167,7 +183,8 @@ func updateSprite(path):
 	node.set_texture(sprite)
 	
 func spawnCustomer():
-	var possibleCustomer = customerTypes.pick_random()
+#	var possibleCustomer = customerTypes.pick_random()
+	var possibleCustomer = "sad_ghost"
 	print("A new customer was selected", possibleCustomer)
 	
 	customer_type = possibleCustomer
