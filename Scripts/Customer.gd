@@ -24,7 +24,7 @@ var node: Node2D = $"."
 var text: Label = get_node("ScrollDialouge/ScrollText")
 var customer_type: String = "fishmaid"
 
-var customerTypes: Array = ["fishmaid", "sad_ghost"]
+var customerTypes: Array = ["fishmaid", "sad_ghost", "angry_cowboy", "electro_bard", "doggo", "evil_scientist", "frog_prince", "old_man", "sasquatch"]
 
 var characterWalkingAnims: Dictionary = {
 	"fishmaid": "Standard Customer Walk",
@@ -101,6 +101,13 @@ var unsatisfiedCharacterSprites: Dictionary = {
 var desires: Dictionary = {
 	"fishmaid": ["primary", "secondary", "tertiary"],
 	"sad_ghost": ["primary", "secondary", "tertiary"],
+	"angry_cowboy": [],
+	"sasquatch": [],
+	"doggo": [],
+	"electro_bard": [],
+	"evil_scientist": [],
+	"frog_prince": [],
+	"old_man": []
 }
 
 # Called when the node enters the scene tree for the first time.
