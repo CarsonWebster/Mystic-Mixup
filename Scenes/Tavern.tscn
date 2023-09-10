@@ -1,9 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://donpponaixs60"]
+[gd_scene load_steps=35 format=3 uid="uid://donpponaixs60"]
 
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
 [ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
 [ext_resource type="Texture2D" uid="uid://dy1y3hlhwh4rv" path="res://Assets/Art/Shelves.png" id="2_4d712"]
-[ext_resource type="PackedScene" uid="uid://ce8aga010ip1f" path="res://Scenes/Ingredient.tscn" id="3_oldij"]
+[ext_resource type="PackedScene" path="res://Scenes/Ingredient.tscn" id="3_oldij"]
 [ext_resource type="AudioStream" uid="uid://bfqktjx86lnja" path="res://Assets/Miguels Workspace/SoundEffects/Game/warning_sound.wav" id="4_hnb7n"]
 [ext_resource type="Texture2D" uid="uid://6apw7742rurc" path="res://Assets/Art/DoorClosed.png" id="5_46dt6"]
 [ext_resource type="AudioStream" uid="uid://bhka1dpj77ihb" path="res://Assets/Music/timer_ending_-_9923_8.19_PM.mp3" id="5_iiw66"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b2vjnxgnvntuw" path="res://Assets/Art/icon.svg" id="18_te40p"]
 [ext_resource type="Texture2D" uid="uid://ck5exmcbavo6q" path="res://Assets/Art/CauldronLiquid.png" id="19_du0su"]
 [ext_resource type="Texture2D" uid="uid://cfh02buld2r25" path="res://Assets/Art/ProductMat.png" id="19_uaigo"]
+[ext_resource type="Texture2D" uid="uid://m36g402dwkik" path="res://Assets/Art/220.png" id="22_rsncl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qk04"]
 animations = [{
@@ -129,7 +130,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1.5, 1.5)]
+"values": [Vector2(0.25, 0.25), Vector2(0.75, 0.75), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_j26fe"]
@@ -313,6 +314,16 @@ _data = {
 "Setup": SubResource("Animation_h5sav")
 }
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_05pjw"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_evwtb"]
+colors = PackedColorArray(0, 0.784314, 0.415686, 1, 0.0784314, 0.803922, 0.415686, 1)
+
+[sub_resource type="Gradient" id="Gradient_u1534"]
+offsets = PackedFloat32Array(0, 0.0296296, 0.407407, 0.962963, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.355447, 1, 0.364905, 1, 0.205334, 0.670668, 0.356128, 1, 0.0096065, 0.379083, 0.204319, 1, 1, 1, 1, 0)
+
 [node name="Tavern" type="Node2D"]
 script = ExtResource("1_iuiyy")
 customer_scene = ExtResource("8_d7oh5")
@@ -378,6 +389,7 @@ texture = ExtResource("10_byw7j")
 metadata/_edit_lock_ = true
 
 [node name="Door" type="AnimatedSprite2D" parent="."]
+z_index = -1
 position = Vector2(906, 590)
 scale = Vector2(0.955949, 1.0119)
 sprite_frames = SubResource("SpriteFrames_0qk04")
@@ -436,11 +448,11 @@ position = Vector2(124, 817)
 metadata/_edit_lock_ = true
 
 [node name="Ingredient6" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
-position = Vector2(356, 817)
+position = Vector2(339, 817)
 metadata/_edit_lock_ = true
 
 [node name="Ingredient7" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
-position = Vector2(356, 1050)
+position = Vector2(337, 1050)
 metadata/_edit_lock_ = true
 
 [node name="Ingredient8" parent="IngredentsGroup" instance=ExtResource("3_oldij")]
@@ -506,6 +518,7 @@ z_index = 1
 position = Vector2(935, 520)
 scale = Vector2(1.32238, 1.32238)
 texture = ExtResource("19_du0su")
+metadata/_edit_lock_ = true
 
 [node name="ResetButton" type="Button" parent="."]
 z_index = 3
@@ -540,6 +553,81 @@ libraries = {
 position = Vector2(980, 612)
 texture = ExtResource("19_uaigo")
 metadata/_edit_lock_ = true
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 20
+material = SubResource("CanvasItemMaterial_05pjw")
+position = Vector2(864, 847)
+amount = 30
+explosiveness = 1.0
+lifetime_randomness = 0.5
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("22_rsncl")
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.0
+initial_velocity_max = 150.0
+angular_velocity_min = 1.0
+angular_velocity_max = 1.0
+angle_min = 5.0
+angle_max = 5.0
+color = Color(0, 0.686275, 0.215686, 1)
+color_ramp = SubResource("Gradient_evwtb")
+color_initial_ramp = SubResource("Gradient_u1534")
+
+[node name="GPUParticles2D2" type="CPUParticles2D" parent="."]
+z_index = 20
+material = SubResource("CanvasItemMaterial_05pjw")
+position = Vector2(1013, 839)
+amount = 30
+explosiveness = 1.0
+lifetime_randomness = 0.5
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("22_rsncl")
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.0
+initial_velocity_max = 150.0
+angular_velocity_min = 1.0
+angular_velocity_max = 1.0
+angle_min = 5.0
+angle_max = 5.0
+color = Color(0, 0.686275, 0.215686, 1)
+color_ramp = SubResource("Gradient_evwtb")
+color_initial_ramp = SubResource("Gradient_u1534")
+
+[node name="GPUParticles2D3" type="CPUParticles2D" parent="."]
+z_index = 20
+material = SubResource("CanvasItemMaterial_05pjw")
+position = Vector2(933, 849)
+amount = 30
+explosiveness = 1.0
+lifetime_randomness = 0.5
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("22_rsncl")
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.0
+initial_velocity_max = 150.0
+angular_velocity_min = 1.0
+angular_velocity_max = 1.0
+angle_min = 5.0
+angle_max = 5.0
+color = Color(0, 0.686275, 0.215686, 1)
+color_ramp = SubResource("Gradient_evwtb")
+color_initial_ramp = SubResource("Gradient_u1534")
 
 [connection signal="finished" from="TimerWarningEffect" to="GameTimer" method="_on_timer_warning_effect_finished"]
 [connection signal="timeout" from="GameTimer/PrimaryTimer" to="GameTimer" method="_on_primary_timer_timeout"]

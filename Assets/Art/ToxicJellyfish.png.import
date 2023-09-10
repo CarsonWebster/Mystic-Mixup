@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr6uqxla0wsgw"
-path="res://.godot/imported/FishCustomer.png-76bcaddcc0898a964e305279e09d9384.ctex"
+uid="uid://cuaofd4vvrokk"
+path="res://.godot/imported/ToxicJellyfish.png-272a8cba5332486da2510ee406a2a587.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/FishCustomer.png"
-dest_files=["res://.godot/imported/FishCustomer.png-76bcaddcc0898a964e305279e09d9384.ctex"]
+source_file="res://Assets/Art/ToxicJellyfish.png"
+dest_files=["res://.godot/imported/ToxicJellyfish.png-272a8cba5332486da2510ee406a2a587.ctex"]
 
 [params]
 
