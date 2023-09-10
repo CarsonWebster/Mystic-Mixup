@@ -40,12 +40,10 @@ func _ready():
 	for node in $IngredentsGroup.get_children():
 		if node.is_in_group("ingredient"):
 			node.connect("dropped_in_cauldron", _on_ingredient_dropped_in_cauldron)
+	
+	# Play and wait for fade in
+	$CanvasModulate/AnimationTree.play("FadeOut")
 
-
-	# Spawn Customer
-	customer = customer_scene.instantiate()
-	customer.position = Vector2(1093, 45)
-	add_child(customer)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -91,3 +89,11 @@ func _on_product_animation_finished(anim_name):
 		customer.judge_product(product_result)
 		$Product/AnimationPlayer.play("RESET")
 
+
+func _on_animation_tree_animation_finished(anim_name):
+	if anim_name == "FadeOut":
+		
+		# Spawn Customer
+		var customer = customer_scene.instantiate()
+		customer.position = Vector2(1093, 45)
+		add_child(customer)

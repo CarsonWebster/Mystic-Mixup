@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://donpponaixs60"]
+[gd_scene load_steps=39 format=3 uid="uid://donpponaixs60"]
 
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
 [ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
@@ -324,6 +324,60 @@ colors = PackedColorArray(0, 0.784314, 0.415686, 1, 0.0784314, 0.803922, 0.41568
 offsets = PackedFloat32Array(0, 0.0296296, 0.407407, 0.962963, 1)
 colors = PackedColorArray(0, 0, 0, 0, 0.355447, 1, 0.364905, 1, 0.205334, 0.670668, 0.356128, 1, 0.0096065, 0.379083, 0.204319, 1, 1, 1, 1, 0)
 
+[sub_resource type="Animation" id="Animation_q4aey"]
+resource_name = "FadeIn"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ppk1m"]
+resource_name = "FadeOut"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tgctu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8u3m0"]
+_data = {
+"FadeIn": SubResource("Animation_q4aey"),
+"FadeOut": SubResource("Animation_ppk1m"),
+"RESET": SubResource("Animation_tgctu")
+}
+
 [node name="Tavern" type="Node2D"]
 script = ExtResource("1_iuiyy")
 customer_scene = ExtResource("8_d7oh5")
@@ -629,8 +683,17 @@ color = Color(0, 0.686275, 0.215686, 1)
 color_ramp = SubResource("Gradient_evwtb")
 color_initial_ramp = SubResource("Gradient_u1534")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="AnimationTree" type="AnimationPlayer" parent="CanvasModulate"]
+libraries = {
+"": SubResource("AnimationLibrary_8u3m0")
+}
+
 [connection signal="finished" from="TimerWarningEffect" to="GameTimer" method="_on_timer_warning_effect_finished"]
 [connection signal="timeout" from="GameTimer/PrimaryTimer" to="GameTimer" method="_on_primary_timer_timeout"]
 [connection signal="timeout" from="GameTimer/SecondaryTimer" to="GameTimer" method="_on_secondary_timer_timeout"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="CraftButton" to="." method="_on_craft_button_pressed"]
+[connection signal="animation_finished" from="CanvasModulate/AnimationTree" to="." method="_on_animation_tree_animation_finished"]
+[connection signal="animation_finished" from="CanvasModulate/AnimationTree" to="GameTimer" method="_on_animation_tree_animation_finished"]
