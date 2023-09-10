@@ -92,11 +92,15 @@ func _on_reset_button_pressed():
 
 
 func _on_craft_button_pressed():
+
 	#print("CRAFT")
 	#print("You Get A Score Of...")
 	#print(randi_range(1, 10))
+
 	for node in $IngredentsGroup.get_children():
 		if node.is_in_group("ingredient"):
 			node.crafted()
 	used_ingredents = []
+
 	$Product/AnimationPlayer.play("Present")
+
