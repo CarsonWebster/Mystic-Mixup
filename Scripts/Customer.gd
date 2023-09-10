@@ -22,8 +22,9 @@ var sounds: AudioStreamPlayer2D = $SoundStream
 var node: Node2D = $"."
 @onready
 var text: Label = get_node("ScrollDialouge/ScrollText")
+var customer_type: String = "fishmaid"
 
-var customer_type: String = "sad_ghost"
+var customerTypes: Array = ["fishmaid", "sad_ghost"]
 
 var characterWalkingAnims: Dictionary = {
 	"fishmaid": "Standard Customer Walk",
@@ -76,17 +77,16 @@ var unsatisfiedCharacterSprites: Dictionary = {
 	"sad_ghost": "res://Assets/Art/ghost_unsatisfied.png",
 }
 
+var desires: Dictionary = {
+	"fishmaid": ["primary", "secondary", "tertiary"],
+	"sad_ghost": ["primary", "secondary", "tertiary"],
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	updateSprite(characterSprites[customer_type])
+	# TODO: randomize
+	spawnCustomer()
 	
-	var phrase = characterDialog[customer_type]
-	text.text = str(phrase)
-	
-	var walkingAnimation = characterWalkingAnims[customer_type]
-	walking.play(walkingAnimation)
-	
-	pass
 
 func _on_animation_player_animation_started(anim_name):
 	print("animation is starting: "+anim_name)
@@ -94,12 +94,11 @@ func _on_animation_player_animation_started(anim_name):
 func _on_walking_animation_animation_finished(anim_name):
 	if "Walk" in anim_name:
 		customer_speak()
+	if "Leave" in anim_name:
+		spawnCustomer()
 		
 
 func _on_scroll_animation_animation_finished(anim_name):
-	if anim_name == "Speech bubble movement": 
-		customer_leave(false)
-		
 	print("scroll animation is done: "+anim_name) # Replace with function body.
 
 func reset():
@@ -117,14 +116,36 @@ func customer_speak():
 	$SoundStream.stream = load(dialogSounds[customer_type])
 	$SoundStream.play(0.0)
 
-func customer_leave(isHappy): 
-	if !isHappy: 
+func judge_product(productName): 
+	var happyProducts = desires[customer_type]
+	
+	# customer is satisfied
+	if productName in happyProducts: 
 		updateSprite(unsatisfiedCharacterSprites[customer_type])
 		
+	# stop any sounds.
 	$SoundStream.stop()
+	# walk away
 	var leavingAnimation = characterLeavingAnims[customer_type]
 	walking.play(leavingAnimation)
+	dialog.play("RESET")
+	
 
 func updateSprite(path):
 	var sprite = load(path)
 	node.set_texture(sprite)
+	
+func spawnCustomer():
+	var possibleCustomer = customerTypes.pick_random()
+	print("A new customer was selected", possibleCustomer)
+	
+	customer_type = possibleCustomer
+	
+	updateSprite(characterSprites[possibleCustomer])
+	
+	var phrase = characterDialog[possibleCustomer]
+	text.text = str(phrase)
+	
+	var walkingAnimation = characterWalkingAnims[possibleCustomer]
+	walking.play(walkingAnimation)
+	
