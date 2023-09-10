@@ -54,7 +54,15 @@ var characterSprites: Dictionary = {
 
 var characterDialog: Dictionary = {
 	"fishmaid": "Blub, blub, blubbbbb!\nBlub, blub, blub, blub.\nBlub, blub… …\nBlub, blub, blub?",
-	"sad_ghost": "Something else",
+	"sad_ghost": "… *Whispers* …",
+	"frog_prince": "Greetings, gentle tav'rn keepeth'r. *Ribbit* I am a prince und'r a naughty enchantment. *Ribbit* A fav'r of a magical nature, and thy kindness may setteth me free from this amphibious plight! *Ribbit*",
+	"angry_cowboy": "Ah'm starvin'! Give me some guh-rub, now.",
+	"electro_bard": "🎶 One drink, my friend, to set the vibe, a glass of lightning, let the music thrive! 🎶",
+	"old_man": "Say, young'un, do you by any chance, got any o' them youth potions?",
+	"punny_skeleton": "\"Bone\"-appetit, my good tavern owner! What's \"cooking\" on the menu tonight? Just don't leave me \"humerus,\" okay?",
+	"doggo": "Bark Bark! Ruff Ruff!\nHowl… Bark!\nWoof woof?",
+	"evil-scientist": "I seek a unique elixir, friend. A potion of uncommon properties, if you please. Kekeke…",
+	"sasquatch": "… … Innkeeper … … normal?"
 }
 
 # Called when the node enters the scene tree for the first time.
