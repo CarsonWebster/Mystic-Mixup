@@ -72,6 +72,7 @@ var spawning_chance: Dictionary = {
 var dragging: bool = false
 var starting_position: Vector2
 var in_cauldron: bool
+var game_active: bool = false
 
 signal dropped_in_cauldron(ingredent_type)
 
@@ -88,6 +89,8 @@ func _ready():
 	in_cauldron = false
 	$Area2D.connect("area_entered", _on_cauldron_area_entered)
 	$Area2D.connect("area_exited", _on_cauldron_area_exited)
+	#$'.'.connect("GameActive", _set_game_active)
+	$"../..".connect("GameActive", _set_game_active)
 	#print("I'm a ", type)
 
 
@@ -102,28 +105,31 @@ func _process(_delta):
 
 # Handle mouse event checks
 func _on_area_2d_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton:
-		# If left click AND mouse down, dragging enabled
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			dragging = true
-		# If left click AND mouse up, dragging disabled
-		elif event.button_index == MOUSE_BUTTON_LEFT and !event.pressed:
-			dragging = false
-			#print("We are in the bowl: ", in_cauldron)
-			if in_cauldron == true:
-				#print("Dead: ", type)
-				emit_signal("dropped_in_cauldron", type)
-				#queue_free()
-				visible = false
-			else:
-				#print("Back to shelf: ", type)
-				position = starting_position
-			
-	# Touch screen support? Havnt tested this ever
-	elif event is InputEventScreenTouch:
-		if event.pressed and event.get_index() == 0:
-			position = event.get_position()
+	if game_active:
+		if event is InputEventMouseButton:
+			# If left click AND mouse down, dragging enabled
+			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+				dragging = true
+			# If left click AND mouse up, dragging disabled
+			elif event.button_index == MOUSE_BUTTON_LEFT and !event.pressed:
+				dragging = false
+				#print("We are in the bowl: ", in_cauldron)
+				if in_cauldron == true:
+					#print("Dead: ", type)
+					emit_signal("dropped_in_cauldron", type)
+					#queue_free()
+					visible = false
+				else:
+					#print("Back to shelf: ", type)
+					position = starting_position
+				
+		# Touch screen support? Havnt tested this ever
+		elif event is InputEventScreenTouch:
+			if event.pressed and event.get_index() == 0:
+				position = event.get_position()
 
+func _set_game_active(boolean):
+	game_active = boolean
 
 func _on_cauldron_area_entered(area):
 	#print(area)

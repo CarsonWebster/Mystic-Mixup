@@ -25,6 +25,8 @@ var defaultSoundStartPoint = 0.0
 var countdownDecimalPadding = 2
 var gameOverScene = "res://Scenes/Prototyping.tscn"
 
+var gameStarted: bool = false
+
 func _ready():
 	# setup secondary timer, but wait.
 	secondaryTimer.set_wait_time(secondaryDuration)
@@ -44,7 +46,10 @@ func _process(_delta):
 		currentCountdownTime += secondaryDuration
 	
 	# assign the duration text	
-	duration.text = str(currentCountdownTime).pad_decimals(countdownDecimalPadding)
+	if gameStarted:
+		duration.text = str(currentCountdownTime).pad_decimals(countdownDecimalPadding)
+	else:
+		duration.text = ""
 
 # After the first timer ends, stop the background music, play the warning sound.
 func _on_primary_timer_timeout():
@@ -68,4 +73,5 @@ func _on_secondary_timer_timeout():
 
 func _on_animation_tree_animation_finished(anim_name):
 	if anim_name == "FadeOut":
+		gameStarted = true
 		primaryTimer.start(defaultSoundStartPoint)
