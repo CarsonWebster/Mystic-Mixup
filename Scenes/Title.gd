@@ -7,5 +7,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
+
+
+func _on_animation_tree_animation_finished(anim_name):
+	if anim_name == "FadeIn":
+		get_tree().change_scene_to_file("res://Scenes/Tavern.tscn")

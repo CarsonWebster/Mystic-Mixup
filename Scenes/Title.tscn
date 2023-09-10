@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cyc2wlptwcybj"]
+[gd_scene load_steps=18 format=3 uid="uid://cyc2wlptwcybj"]
 
 [ext_resource type="Texture2D" uid="uid://bewor2natxyrv" path="res://Assets/Art/Door_Start_Menu.svg" id="1_lmo3e"]
 [ext_resource type="Script" path="res://Scenes/Title.gd" id="1_tbajw"]
@@ -22,13 +22,69 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
 func _on_button_up():
 	$StartGameSoundEffect.play(0.0) # Replace with function body.
+	$\"../../CanvasModulate/AnimationTree\".play(\"FadeIn\")
+	
 "
+
+[sub_resource type="Animation" id="Animation_q4aey"]
+resource_name = "FadeIn"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ppk1m"]
+resource_name = "FadeOut"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tgctu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8u3m0"]
+_data = {
+"FadeIn": SubResource("Animation_q4aey"),
+"FadeOut": SubResource("Animation_ppk1m"),
+"RESET": SubResource("Animation_tgctu")
+}
 
 [node name="title_menu" type="Node2D"]
 script = ExtResource("1_tbajw")
@@ -216,8 +272,16 @@ script = ExtResource("7_btnya")
 [node name="SoundEffect" type="AudioStreamPlayer2D" parent="CreditsBackground/CreditsBackButton"]
 stream = ExtResource("8_p4t26")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="AnimationTree" type="AnimationPlayer" parent="CanvasModulate"]
+libraries = {
+"": SubResource("AnimationLibrary_8u3m0")
+}
+
 [connection signal="button_up" from="TextureRect/EnterTavernButton" to="TextureRect/EnterTavernButton" method="_on_button_up"]
 [connection signal="button_up" from="CreditsButton" to="CreditsButton" method="_on_button_up"]
 [connection signal="button_up" from="InstructionButton" to="InstructionButton" method="_on_button_up"]
 [connection signal="button_up" from="InstructionsBackground/InstructionsBackButton" to="InstructionsBackground/InstructionsBackButton" method="_on_button_up"]
 [connection signal="button_up" from="CreditsBackground/CreditsBackButton" to="CreditsBackground/CreditsBackButton" method="_on_button_up"]
+[connection signal="animation_finished" from="CanvasModulate/AnimationTree" to="." method="_on_animation_tree_animation_finished"]

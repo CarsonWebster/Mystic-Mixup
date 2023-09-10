@@ -33,7 +33,7 @@ func _ready():
 	# setup & start primary timer
 	primaryTimer.set_wait_time(primaryDuration)
 	primaryTimer.one_shot = isOneShotTimer
-	primaryTimer.start(defaultSoundStartPoint)
+	#primaryTimer.start(defaultSoundStartPoint)
 
 func _process(_delta):
 	# secondary time won't get added unless it starts.
@@ -66,4 +66,6 @@ func _on_secondary_timer_timeout():
 	get_tree().change_scene_to_file(gameOverScene)
 
 
-
+func _on_animation_tree_animation_finished(anim_name):
+	if anim_name == "FadeOut":
+		primaryTimer.start(defaultSoundStartPoint)

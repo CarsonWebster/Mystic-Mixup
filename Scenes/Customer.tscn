@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dxgypbjt1cplp"]
 
-[ext_resource type="Texture2D" path="res://Assets/Art/fishmaid.png" id="1_a6br8"]
+[ext_resource type="Texture2D" uid="uid://n0ps106v0ouw" path="res://Assets/Art/fishmaid.png" id="1_a6br8"]
 [ext_resource type="Script" path="res://Scripts/Customer.gd" id="2_lsbfo"]
 [ext_resource type="Texture2D" uid="uid://ctrjcigyjh3rg" path="res://Assets/Art/Scroll_Dialouge.png" id="3_eo31a"]
 [ext_resource type="AudioStream" uid="uid://3csq43wudptd" path="res://Assets/Miguels Workspace/SoundEffects/Characters/fishmaid.wav" id="3_rriuv"]
