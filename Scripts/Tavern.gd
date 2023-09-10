@@ -45,6 +45,10 @@ func _ready():
 	$CanvasModulate/AnimationTree.play("FadeOut")
 
 
+	# Spawn Customer
+	customer = customer_scene.instantiate()
+	customer.position = Vector2(1093, 45)
+	add_child(customer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
