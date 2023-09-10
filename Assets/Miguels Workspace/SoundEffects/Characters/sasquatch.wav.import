@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cmip67d6gavb3"
-path="res://.godot/imported/sasquatch.wav-4c6c57f6a6121fec95c3973d293bcc59.sample"
+path="res://.godot/imported/sasquatch.wav-20bc64362515589e4ef04223e02b21fa.sample"
 
 [deps]
 
-source_file="res://Assets/Miguels Workspace/sasquatch.wav"
-dest_files=["res://.godot/imported/sasquatch.wav-4c6c57f6a6121fec95c3973d293bcc59.sample"]
+source_file="res://Assets/Miguels Workspace/SoundEffects/Characters/sasquatch.wav"
+dest_files=["res://.godot/imported/sasquatch.wav-20bc64362515589e4ef04223e02b21fa.sample"]
 
 [params]
 

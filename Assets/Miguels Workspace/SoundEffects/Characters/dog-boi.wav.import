@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://lrx1ugpqty5o"
-path="res://.godot/imported/dog-boi.wav-47ff1b39ca95b56a0af9d79e092cc4f0.sample"
+path="res://.godot/imported/dog-boi.wav-299ed561bbcf7869a56ce9c0916f1661.sample"
 
 [deps]
 
-source_file="res://Assets/Miguels Workspace/dog-boi.wav"
-dest_files=["res://.godot/imported/dog-boi.wav-47ff1b39ca95b56a0af9d79e092cc4f0.sample"]
+source_file="res://Assets/Miguels Workspace/SoundEffects/Characters/dog-boi.wav"
+dest_files=["res://.godot/imported/dog-boi.wav-299ed561bbcf7869a56ce9c0916f1661.sample"]
 
 [params]
 

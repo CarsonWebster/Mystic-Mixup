@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://boxix2r8alp77"
-path="res://.godot/imported/bike-boi.wav-a823a94e115a8b5ee7d4430f4ba1bcdd.sample"
+path="res://.godot/imported/bike-boi.wav-31107b7b07d3d844c951248f008ee841.sample"
 
 [deps]
 
-source_file="res://Assets/Miguels Workspace/bike-boi.wav"
-dest_files=["res://.godot/imported/bike-boi.wav-a823a94e115a8b5ee7d4430f4ba1bcdd.sample"]
+source_file="res://Assets/Miguels Workspace/SoundEffects/Characters/bike-boi.wav"
+dest_files=["res://.godot/imported/bike-boi.wav-31107b7b07d3d844c951248f008ee841.sample"]
 
 [params]
 

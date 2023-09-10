@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://diodtdwkn1ujo"
-path="res://.godot/imported/punny-skeleton.wav-0a3feea3d8aa7754cb76ea726fdf1d90.sample"
+path="res://.godot/imported/punny-skeleton.wav-e872dbb30f7b4da50f041d958b6e5bcf.sample"
 
 [deps]
 
-source_file="res://Assets/Miguels Workspace/punny-skeleton.wav"
-dest_files=["res://.godot/imported/punny-skeleton.wav-0a3feea3d8aa7754cb76ea726fdf1d90.sample"]
+source_file="res://Assets/Miguels Workspace/SoundEffects/Characters/punny-skeleton.wav"
+dest_files=["res://.godot/imported/punny-skeleton.wav-e872dbb30f7b4da50f041d958b6e5bcf.sample"]
 
 [params]
 

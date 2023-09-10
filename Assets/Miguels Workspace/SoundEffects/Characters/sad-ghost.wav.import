@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cg1f481v1r1lp"
-path="res://.godot/imported/sad-ghost.wav-459dd6a69aad72549a44c03008eb8d58.sample"
+path="res://.godot/imported/sad-ghost.wav-4fe04a53d1899379ba9022f8a414bb2f.sample"
 
 [deps]
 
-source_file="res://Assets/Miguels Workspace/sad-ghost.wav"
-dest_files=["res://.godot/imported/sad-ghost.wav-459dd6a69aad72549a44c03008eb8d58.sample"]
+source_file="res://Assets/Miguels Workspace/SoundEffects/Characters/sad-ghost.wav"
+dest_files=["res://.godot/imported/sad-ghost.wav-4fe04a53d1899379ba9022f8a414bb2f.sample"]
 
 [params]
 

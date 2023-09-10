@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://n2e2ohxaccxk"
-path="res://.godot/imported/evil-scientist.wav-41123b418bf29395f50d6c565851082c.sample"
+path="res://.godot/imported/evil-scientist.wav-764d77350088b9afbcd8de18cc434aa2.sample"
 
 [deps]
 
-source_file="res://Assets/Miguels Workspace/evil-scientist.wav"
-dest_files=["res://.godot/imported/evil-scientist.wav-41123b418bf29395f50d6c565851082c.sample"]
+source_file="res://Assets/Miguels Workspace/SoundEffects/Characters/evil-scientist.wav"
+dest_files=["res://.godot/imported/evil-scientist.wav-764d77350088b9afbcd8de18cc434aa2.sample"]
 
 [params]
 
