@@ -39,11 +39,10 @@ func _set_drag_pc():
 
 
 func _on_area_2d_input_event(_viewport, event, _shape_idx):
-	print(event)
+	#print(event)
 	if event is InputEventMouseButton:
-#		print("Mouse Click/Unclick at: ", event.position)
-#		print(event.button_index)
-#		print(event.pressed)
+		print("Mouse Click/Unclick at: ", event.position)
+		print(event.pressed)
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			emit_signal("dragsignal")
 		elif event.button_index == MOUSE_BUTTON_LEFT and !event.pressed:
