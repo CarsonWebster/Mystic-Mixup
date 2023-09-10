@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://5p4o0el4svqu"]
+[gd_scene load_steps=13 format=3 uid="uid://5p4o0el4svqu"]
 
 [ext_resource type="Texture2D" uid="uid://ctrjcigyjh3rg" path="res://Assets/Art/Scroll_Dialouge.png" id="1_riqnh"]
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_rkre7"]
+[ext_resource type="Texture2D" uid="uid://c1jvqcxgnfplk" path="res://Assets/Art/stars_review.png" id="3_hbcvt"]
+[ext_resource type="Texture2D" uid="uid://cddtmtgvgkqrh" path="res://Assets/Art/square_profile.png" id="4_ty2ue"]
+[ext_resource type="Texture2D" uid="uid://cm4ln32xk5vrx" path="res://Assets/Art/fishmaid_crop.png" id="5_8uyd5"]
+[ext_resource type="Texture2D" uid="uid://baeykumq1icfs" path="res://Assets/Art/blank_star.png" id="6_ira1g"]
+[ext_resource type="Texture2D" uid="uid://h6m3263k3u7i" path="res://Assets/Art/ghost_cropped.png" id="7_p5jqt"]
+[ext_resource type="Texture2D" uid="uid://cbbt3hsdgnity" path="res://Assets/Art/angry_cowboy_cropped.png" id="8_v606i"]
+[ext_resource type="Texture2D" uid="uid://c1srqqgs1fiua" path="res://Assets/Art/old_man_cropped.png" id="9_21j62"]
+[ext_resource type="Texture2D" uid="uid://balafipmhbr6e" path="res://Assets/Art/frog.png" id="10_im867"]
+[ext_resource type="Texture2D" uid="uid://gwowbamhu0ow" path="res://Assets/Art/electro_bard_cropped.png" id="11_0esqr"]
+[ext_resource type="Texture2D" uid="uid://de8j6ywftwkq5" path="res://Assets/Art/dark_cropped.png" id="12_34hyu"]
 
 [node name="game_over" type="Node2D"]
 
@@ -12,6 +22,7 @@ offset_top = 150.0
 offset_right = 843.0
 offset_bottom = 176.0
 scale = Vector2(3.47, 3.47)
+theme_override_constants/line_spacing = 0
 text = "reviews"
 uppercase = true
 
@@ -35,18 +46,320 @@ scale = Vector2(0.805, 0.805)
 texture = ExtResource("1_riqnh")
 metadata/_edit_lock_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-top_level = true
-offset_left = 860.0
-offset_top = 285.0
-offset_right = 1065.0
-offset_bottom = 315.0
-scale = Vector2(1.635, 1.635)
-text = "  - \"review\""
+[node name="Stars" type="TextureRect" parent="."]
+offset_left = 784.0
+offset_top = 188.0
+offset_right = 2704.0
+offset_bottom = 2108.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_hbcvt")
+metadata/_edit_lock_ = true
 
-[node name="FishCustomer" type="Sprite2D" parent="RichTextLabel"]
-top_level = true
-position = Vector2(733, 315)
-scale = Vector2(0.194, 0.159)
-region_enabled = true
-region_rect = Rect2(295.312, 186.073, 1032.92, 880.717)
+[node name="Stars2" type="TextureRect" parent="."]
+offset_left = 782.0
+offset_top = 311.0
+offset_right = 2702.0
+offset_bottom = 2231.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_hbcvt")
+metadata/_edit_lock_ = true
+
+[node name="Stars3" type="TextureRect" parent="."]
+offset_left = 782.0
+offset_top = 431.0
+offset_right = 2702.0
+offset_bottom = 2351.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_hbcvt")
+metadata/_edit_lock_ = true
+
+[node name="Stars4" type="TextureRect" parent="."]
+offset_left = 783.0
+offset_top = 548.0
+offset_right = 2703.0
+offset_bottom = 2468.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_hbcvt")
+metadata/_edit_lock_ = true
+
+[node name="Stars5" type="TextureRect" parent="."]
+offset_left = 784.0
+offset_top = 668.0
+offset_right = 2704.0
+offset_bottom = 2588.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_hbcvt")
+metadata/_edit_lock_ = true
+
+[node name="Stars6" type="TextureRect" parent="."]
+offset_left = 783.0
+offset_top = 788.0
+offset_right = 2703.0
+offset_bottom = 2708.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_hbcvt")
+metadata/_edit_lock_ = true
+
+[node name="Stars7" type="TextureRect" parent="."]
+offset_left = 787.0
+offset_top = 910.0
+offset_right = 2707.0
+offset_bottom = 2830.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_hbcvt")
+metadata/_edit_lock_ = true
+
+[node name="Square" type="TextureRect" parent="."]
+offset_left = 678.0
+offset_top = 246.0
+offset_right = 1190.0
+offset_bottom = 758.0
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("4_ty2ue")
+metadata/_edit_lock_ = true
+
+[node name="Square2" type="TextureRect" parent="."]
+offset_left = 680.0
+offset_top = 367.0
+offset_right = 1192.0
+offset_bottom = 879.0
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("4_ty2ue")
+metadata/_edit_lock_ = true
+
+[node name="Square3" type="TextureRect" parent="."]
+offset_left = 680.0
+offset_top = 488.0
+offset_right = 1192.0
+offset_bottom = 1000.0
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("4_ty2ue")
+metadata/_edit_lock_ = true
+
+[node name="Square4" type="TextureRect" parent="."]
+offset_left = 681.0
+offset_top = 607.0
+offset_right = 1193.0
+offset_bottom = 1119.0
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("4_ty2ue")
+metadata/_edit_lock_ = true
+
+[node name="Square5" type="TextureRect" parent="."]
+offset_left = 682.0
+offset_top = 728.0
+offset_right = 1194.0
+offset_bottom = 1240.0
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("4_ty2ue")
+metadata/_edit_lock_ = true
+
+[node name="Square6" type="TextureRect" parent="."]
+offset_left = 679.0
+offset_top = 848.0
+offset_right = 1191.0
+offset_bottom = 1360.0
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("4_ty2ue")
+metadata/_edit_lock_ = true
+
+[node name="Square7" type="TextureRect" parent="."]
+offset_left = 680.0
+offset_top = 968.0
+offset_right = 1192.0
+offset_bottom = 1480.0
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("4_ty2ue")
+metadata/_edit_lock_ = true
+
+[node name="Fishmaid" type="TextureRect" parent="."]
+offset_left = 673.0
+offset_top = 259.0
+offset_right = 1701.0
+offset_bottom = 1064.0
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("5_8uyd5")
+
+[node name="blank_star" type="TextureRect" parent="."]
+offset_left = 875.0
+offset_top = 253.0
+offset_right = 3275.0
+offset_bottom = 2653.0
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("6_ira1g")
+metadata/_edit_lock_ = true
+
+[node name="blank_star2" type="TextureRect" parent="."]
+offset_left = 901.0
+offset_top = 253.0
+offset_right = 3301.0
+offset_bottom = 2653.0
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("6_ira1g")
+metadata/_edit_lock_ = true
+
+[node name="blank_star3" type="TextureRect" parent="."]
+offset_left = 822.0
+offset_top = 613.0
+offset_right = 3222.0
+offset_bottom = 3013.0
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("6_ira1g")
+metadata/_edit_lock_ = true
+
+[node name="blank_star4" type="TextureRect" parent="."]
+offset_left = 848.0
+offset_top = 613.0
+offset_right = 3248.0
+offset_bottom = 3013.0
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("6_ira1g")
+metadata/_edit_lock_ = true
+
+[node name="blank_star5" type="TextureRect" parent="."]
+offset_left = 874.0
+offset_top = 613.0
+offset_right = 3274.0
+offset_bottom = 3013.0
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("6_ira1g")
+metadata/_edit_lock_ = true
+
+[node name="blank_star6" type="TextureRect" parent="."]
+offset_left = 900.0
+offset_top = 613.0
+offset_right = 3300.0
+offset_bottom = 3013.0
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("6_ira1g")
+metadata/_edit_lock_ = true
+
+[node name="blank_star7" type="TextureRect" parent="."]
+offset_left = 878.0
+offset_top = 975.0
+offset_right = 3278.0
+offset_bottom = 3375.0
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("6_ira1g")
+metadata/_edit_lock_ = true
+
+[node name="blank_star8" type="TextureRect" parent="."]
+offset_left = 904.0
+offset_top = 975.0
+offset_right = 3304.0
+offset_bottom = 3375.0
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("6_ira1g")
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 796.0
+offset_top = 287.0
+offset_right = 891.0
+offset_bottom = 327.0
+scale = Vector2(1.335, 1.335)
+text = "\"blub...\""
+metadata/_edit_lock_ = true
+
+[node name="ghost" type="TextureRect" parent="."]
+offset_left = 689.0
+offset_top = 373.0
+offset_right = 1486.0
+offset_bottom = 1170.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("7_p5jqt")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 803.0
+offset_top = 411.0
+offset_right = 1067.0
+offset_bottom = 448.0
+text = "\"Whisper Whisper Whisper\""
+metadata/_edit_lock_ = true
+
+[node name="Angry Cowboy" type="TextureRect" parent="."]
+offset_left = 682.0
+offset_top = 494.0
+offset_right = 1637.0
+offset_bottom = 1449.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_v606i")
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 803.0
+offset_top = 533.0
+offset_right = 978.0
+offset_bottom = 573.0
+text = "\"Ain't bad, ah reckon.\""
+metadata/_edit_lock_ = true
+
+[node name="Old Man" type="TextureRect" parent="."]
+offset_left = 676.0
+offset_top = 603.0
+offset_right = 1590.0
+offset_bottom = 1518.0
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("9_21j62")
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+offset_left = 800.0
+offset_top = 645.0
+offset_right = 1118.0
+offset_bottom = 725.0
+text = "\"I'll let it slide this time, but don't think you can fool an old-timer like me again.\""
+metadata/_edit_lock_ = true
+
+[node name="frog_prince" type="TextureRect" parent="."]
+offset_left = 626.0
+offset_top = 560.0
+offset_right = 2281.0
+offset_bottom = 2722.0
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("10_im867")
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+offset_left = 800.0
+offset_top = 770.0
+offset_right = 1112.0
+offset_bottom = 823.0
+text = "\"A potion of exceptional quality, fitting f'r a prince liketh myself. Ribbit\""
+metadata/_edit_lock_ = true
+
+[node name="electro bard" type="TextureRect" parent="."]
+offset_left = 681.0
+offset_top = 846.0
+offset_right = 1669.0
+offset_bottom = 1835.0
+scale = Vector2(0.105, 0.105)
+texture = ExtResource("11_0esqr")
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="."]
+offset_left = 800.0
+offset_top = 893.0
+offset_right = 1152.0
+offset_bottom = 965.0
+scale = Vector2(0.885, 0.885)
+text = "🎶One drink in hand, life's grand, let's play and sway, through the night and day!🎶"
+metadata/_edit_lock_ = true
+
+[node name="dog" type="TextureRect" parent="."]
+offset_left = 577.0
+offset_top = 708.0
+offset_right = 2232.0
+offset_bottom = 2870.0
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("12_34hyu")
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="."]
+offset_left = 809.0
+offset_top = 1011.0
+offset_right = 908.0
+offset_bottom = 1038.0
+scale = Vector2(1.225, 1.225)
+text = "\"bark\""
+metadata/_edit_lock_ = true
