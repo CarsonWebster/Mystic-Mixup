@@ -46,12 +46,11 @@ var ingredient_types: Array = [
 ]
 
 var product_types: Array = [
-	"1",
-	"2",
-	"3",
-	"4",
-	"5"
+	"Moonshine",
 ]
+var product_sprite_map: Dictionary = {
+	"Moonshine": load("res://Assets/Art/Moonshine.png")
+}
 
 var used_ingredents: Array
 
@@ -117,7 +116,7 @@ func _on_craft_button_pressed():
 
 	# SET THE PRODUCT RESULT
 	product_result = determine_product()
-	$Product.texture = load("res://Assets/Art/icon.svg")
+	$Product.texture = product_sprite_map[product_result]
 	$Product/AnimationPlayer.play("Present")
 
 func _on_product_animation_finished(anim_name):
