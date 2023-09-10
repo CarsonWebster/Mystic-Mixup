@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
 [ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
 [ext_resource type="Texture2D" uid="uid://dy1y3hlhwh4rv" path="res://Assets/Art/Shelves.png" id="2_4d712"]
-[ext_resource type="PackedScene" uid="uid://ce8aga010ip1f" path="res://Scenes/Ingredient.tscn" id="3_oldij"]
+[ext_resource type="PackedScene" path="res://Scenes/Ingredient.tscn" id="3_oldij"]
 [ext_resource type="AudioStream" uid="uid://bfqktjx86lnja" path="res://Assets/Miguels Workspace/SoundEffects/Game/warning_sound.wav" id="4_hnb7n"]
 [ext_resource type="Texture2D" uid="uid://6apw7742rurc" path="res://Assets/Art/DoorClosed.png" id="5_46dt6"]
 [ext_resource type="AudioStream" uid="uid://bhka1dpj77ihb" path="res://Assets/Music/timer_ending_-_9923_8.19_PM.mp3" id="5_iiw66"]
