@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce8aga010ip1f"]
+
+[ext_resource type="Script" path="res://Scripts/Ingredient.gd" id="1_bro4j"]
+
+[node name="Ingredient" type="Node2D"]
+z_index = 3
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_bro4j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
