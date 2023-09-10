@@ -94,6 +94,6 @@ func _on_animation_tree_animation_finished(anim_name):
 	if anim_name == "FadeOut":
 		
 		# Spawn Customer
-		var customer = customer_scene.instantiate()
+		customer = customer_scene.instantiate()
 		customer.position = Vector2(1093, 45)
 		add_child(customer)
