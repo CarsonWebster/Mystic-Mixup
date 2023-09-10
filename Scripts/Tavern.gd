@@ -29,6 +29,7 @@ var used_ingredents: Array
 
 var product_result: String
 
+var customer = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,7 +37,6 @@ func _ready():
 	$BackgroundMusic.play(0.0)
 	$Product/AnimationPlayer.play("RESET")
 	$Product/AnimationPlayer.connect("animation_finished", _on_product_animation_finished)
-
 	for node in $IngredentsGroup.get_children():
 		if node.is_in_group("ingredient"):
 			node.connect("dropped_in_cauldron", _on_ingredient_dropped_in_cauldron)
@@ -44,8 +44,6 @@ func _ready():
 	# Play and wait for fade in
 	$CanvasModulate/AnimationTree.play("FadeOut")
 
-
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -88,7 +86,8 @@ func _on_product_animation_finished(anim_name):
 		print("We got a: ", product_result)
 		
 		# HERE IS WHERE THE CUSTOMER WILL CALL THE JUDGE FUNCTION
-		#customer.judge_product(product_result)
+		customer.judge_product(product_result)
+		$Product/AnimationPlayer.play("RESET")
 
 
 func _on_animation_tree_animation_finished(anim_name):

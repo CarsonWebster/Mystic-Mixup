@@ -1,37 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxgypbjt1cplp"]
+[gd_scene load_steps=12 format=3 uid="uid://dxgypbjt1cplp"]
 
 [ext_resource type="Texture2D" uid="uid://n0ps106v0ouw" path="res://Assets/Art/fishmaid.png" id="1_a6br8"]
 [ext_resource type="Script" path="res://Scripts/Customer.gd" id="2_lsbfo"]
 [ext_resource type="Texture2D" uid="uid://ctrjcigyjh3rg" path="res://Assets/Art/Scroll_Dialouge.png" id="3_eo31a"]
 [ext_resource type="AudioStream" uid="uid://3csq43wudptd" path="res://Assets/Miguels Workspace/SoundEffects/Characters/fishmaid.wav" id="3_rriuv"]
-
-[sub_resource type="Animation" id="Animation_mfqe0"]
-resource_name = "Customer walk"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1610, 487), Vector2(1610, 487), Vector2(1230, 487)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ScrollDialouge/ScrollText:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(3, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
 
 [sub_resource type="Animation" id="Animation_me48a"]
 length = 0.001
@@ -60,10 +32,55 @@ tracks/1/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_mfqe0"]
+resource_name = "Standard Customer Walk"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1610, 487), Vector2(1610, 487), Vector2(1230, 487)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScrollDialouge/ScrollText:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_pvv7f"]
+resource_name = "Standard Customer Leave"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1230, 487), Vector2(2.08165e-12, 487)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iin1c"]
 _data = {
-"Customer walk": SubResource("Animation_mfqe0"),
-"RESET": SubResource("Animation_me48a")
+"RESET": SubResource("Animation_me48a"),
+"Standard Customer Leave": SubResource("Animation_pvv7f"),
+"Standard Customer Walk": SubResource("Animation_mfqe0")
 }
 
 [sub_resource type="Animation" id="Animation_f4pfj"]
@@ -103,7 +120,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 3.5),
+"times": PackedFloat32Array(-0.1, 0, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-1095, -1922.5), Vector2(-1095, -1922.5), Vector2(-550, -350)]
@@ -115,7 +132,7 @@ tracks/1/path = NodePath("ScrollText:visible_ratio")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3.5, 4.5),
+"times": PackedFloat32Array(1, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
