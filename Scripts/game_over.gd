@@ -1,17 +1,18 @@
 extends Node2D
 
 
-var proto_results: Dictionary = {
-	"fishmaid": 0,
-	"sad_ghost":  0,
-	"angry_cowboy": 0,
-	"sasquatch":  0,
-	"doggo": 0,
-	"electro_bard": 0,
-	"evil_scientist": 0,
-	"frog_prince":  0,
-	"old_man": 0,
-}
+#var proto_results: Dictionary = {
+#	"fishmaid": 0,
+#	"sad_ghost":  0,
+#	"angry_cowboy": 0,
+#	"sasquatch":  0,
+#	"doggo": 0,
+#	"electro_bard": 0,
+#	"evil_scientist": 0,
+#	"frog_prince":  0,
+#	"old_man": 0,
+#}
+@export var proto_results: Dictionary
 
 var satisfied_text: Dictionary = {
 	"fishmaid": "Blub blub blub blub!",
@@ -88,6 +89,7 @@ func get_review_pool(numStars: int):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#print(proto_results)
 	for character in proto_results:
 		if proto_results[character] > -1:
 			if character == "fishmaid":
