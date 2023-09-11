@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://donpponaixs60"]
+[gd_scene load_steps=41 format=3 uid="uid://donpponaixs60"]
 
 [ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="1_e7ns7"]
 [ext_resource type="Script" path="res://Scripts/Tavern.gd" id="1_iuiyy"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b2vjnxgnvntuw" path="res://Assets/Art/icon.svg" id="18_te40p"]
 [ext_resource type="Texture2D" uid="uid://ck5exmcbavo6q" path="res://Assets/Art/CauldronLiquid.png" id="19_du0su"]
 [ext_resource type="Texture2D" uid="uid://cfh02buld2r25" path="res://Assets/Art/ProductMat.png" id="19_uaigo"]
+[ext_resource type="FontFile" uid="uid://8gmrcxwiq2r5" path="res://Assets/Fonts/MedievalSharp-Bold.ttf" id="21_f1nbi"]
 [ext_resource type="Texture2D" uid="uid://m36g402dwkik" path="res://Assets/Art/220.png" id="22_rsncl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qk04"]
@@ -580,19 +581,25 @@ metadata/_edit_lock_ = true
 z_index = 3
 offset_left = 490.0
 offset_top = 670.0
-offset_right = 498.0
-offset_bottom = 678.0
-scale = Vector2(5.10957, 2.2806)
+offset_right = 594.0
+offset_bottom = 749.0
+scale = Vector2(1.82401, 0.814127)
+theme_override_fonts/font = ExtResource("21_f1nbi")
+theme_override_font_sizes/font_size = 48
 text = "RESET"
+metadata/_edit_lock_ = true
 
 [node name="CraftButton" type="Button" parent="."]
 z_index = 3
 offset_left = 1122.0
 offset_top = 670.0
-offset_right = 1179.0
-offset_bottom = 701.0
-scale = Vector2(5.10957, 2.2806)
+offset_right = 1270.0
+offset_bottom = 758.0
+scale = Vector2(1.7216, 0.768418)
+theme_override_fonts/font = ExtResource("21_f1nbi")
+theme_override_font_sizes/font_size = 48
 text = "CRAFT"
+metadata/_edit_lock_ = true
 
 [node name="Product" type="Sprite2D" parent="."]
 visible = false
