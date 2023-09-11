@@ -392,9 +392,11 @@ volume_db = 3.884
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_32k0n")
+volume_db = -2.0
 
 [node name="TimerEndingMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_iiw66")
+volume_db = -1.0
 
 [node name="GameTimer" type="Node" parent="."]
 script = ExtResource("7_kwttk")
