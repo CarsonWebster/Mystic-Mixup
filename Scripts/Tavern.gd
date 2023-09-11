@@ -119,5 +119,6 @@ func _on_customer_done_walking():
 func _on_game_timer_game_over():
 	emit_signal("GameActive", false)
 	var game_over_layer = game_over_scene.instantiate()
+	game_over_layer.proto_results = customer.results
 	add_child(game_over_layer)
 	game_over_layer.z_index = 10

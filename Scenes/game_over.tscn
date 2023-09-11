@@ -358,10 +358,12 @@ script = ExtResource("13_7ur4o")
 metadata/_edit_lock_ = true
 
 [node name="FishMaidStars" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(419.292, 281)
 scale = Vector2(0.235667, 0.235667)
 sprite_frames = SubResource("SpriteFrames_uuqr3")
 animation = &"Zero Stars"
+metadata/_edit_lock_ = true
 
 [node name="GhostStars" type="AnimatedSprite2D" parent="."]
 visible = false
