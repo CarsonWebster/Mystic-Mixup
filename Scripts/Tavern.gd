@@ -47,7 +47,7 @@ var product_sprite_map: Dictionary = {
 	"Omega3Supplement": load("res://Assets/Art/Omega3Supplement.png"),
 	"Steak": load("res://Assets/Art/Steak.png"),
 	"CrunchySalad": load("res://Assets/Art/CrunchySalad.png"),
-	"TamagoSushi": load(""),
+	"TamagoSushi": load("res://Assets/Art/Tamago.png"),
 	"NuclearWaste": load("res://Assets/Art/Nuclear_Waste.png"),
 	"YouthPotion": load("res://Assets/Art/YouthPotion.png"),
 	"FruitCake": load("res://Assets/Art/FruitCake.png"),
