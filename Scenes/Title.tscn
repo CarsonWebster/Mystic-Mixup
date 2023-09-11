@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://cyc2wlptwcybj"]
+[gd_scene load_steps=19 format=3 uid="uid://cyc2wlptwcybj"]
 
 [ext_resource type="Texture2D" uid="uid://bewor2natxyrv" path="res://Assets/Art/Door_Start_Menu.svg" id="1_lmo3e"]
 [ext_resource type="Script" path="res://Scenes/Title.gd" id="1_tbajw"]
 [ext_resource type="PackedScene" uid="uid://fpuy7u4i77v8" path="res://Assets/Miguels Workspace/SoundEffects/Game/StartGame/start_game_sound_effect.tscn" id="2_2dpjy"]
 [ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/CreditsButton.gd" id="3_qmfix"]
 [ext_resource type="AudioStream" uid="uid://c24g87n27hebr" path="res://Assets/Miguels Workspace/SoundEffects/Objects/bell.wav" id="4_1e5pq"]
+[ext_resource type="FontFile" uid="uid://8gmrcxwiq2r5" path="res://Assets/Fonts/MedievalSharp-Bold.ttf" id="4_evihd"]
 [ext_resource type="AudioStream" uid="uid://crd1paqtlp5xh" path="res://Assets/Music/tavern_menu_-_9923_6.48_PM.mp3" id="5_tmxh2"]
 [ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/InstructionButton.gd" id="5_wrsff"]
 [ext_resource type="Texture2D" uid="uid://bgkbsxtp2eikh" path="res://Assets/Art/black_background.jpg" id="6_83cuj"]
@@ -121,6 +122,7 @@ offset_top = 796.0
 offset_right = 888.0
 offset_bottom = 827.0
 scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("4_evihd")
 text = "Start Game"
 script = SubResource("GDScript_1qwj1")
 
@@ -133,6 +135,7 @@ offset_top = 1036.0
 offset_right = 191.0
 offset_bottom = 1067.0
 scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("4_evihd")
 text = "Credits"
 script = ExtResource("3_qmfix")
 
@@ -149,6 +152,7 @@ offset_top = 925.0
 offset_right = 230.0
 offset_bottom = 956.0
 scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("4_evihd")
 text = "Instructions"
 script = ExtResource("5_wrsff")
 
@@ -217,6 +221,7 @@ offset_left = 868.0
 offset_top = 99.0
 offset_right = 941.0
 offset_bottom = 125.0
+theme_override_fonts/font = ExtResource("4_evihd")
 theme_override_font_sizes/font_size = 64
 text = "Credits:"
 
@@ -229,31 +234,37 @@ offset_bottom = 929.0
 
 [node name="Technical Lead" type="Label" parent="CreditsBackground/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_evihd")
 theme_override_font_sizes/font_size = 64
 text = "Technical Lead:"
 
 [node name="Design Team" type="Label" parent="CreditsBackground/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_evihd")
 theme_override_font_sizes/font_size = 64
 text = "Design:"
 
 [node name="Programmers" type="Label" parent="CreditsBackground/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_evihd")
 theme_override_font_sizes/font_size = 64
 text = "Programmers:"
 
 [node name="Artists" type="Label" parent="CreditsBackground/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_evihd")
 theme_override_font_sizes/font_size = 64
 text = "Artwork:"
 
 [node name="Audio" type="Label" parent="CreditsBackground/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_evihd")
 theme_override_font_sizes/font_size = 64
 text = "Audio:"
 
 [node name="Thanks" type="Label" parent="CreditsBackground/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_evihd")
 theme_override_font_sizes/font_size = 64
 text = "Honorable Mention: 
     - AudioLDM, ChatGPT & Bing Chat"
@@ -265,6 +276,7 @@ offset_top = 74.0
 offset_right = 1949.0
 offset_bottom = 257.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_evihd")
 theme_override_font_sizes/font_size = 128
 text = "Back"
 script = ExtResource("7_btnya")
