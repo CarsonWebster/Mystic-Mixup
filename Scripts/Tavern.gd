@@ -74,6 +74,7 @@ var combinations: Dictionary = {
 	"CockatriceEgg-SpicySugar-WargMilk": "FruitCake",
 	"CockatriceEgg-SpicySugar-Vanilla-WargMilk": "FruitCake",
 	"EnviousExtract-Vanilla": "LovePotion",
+	"EnviousExtract-NegativeReflection": "NuclearWaste",
 	"EnviousExtract-Rainbows": "LovePotion",
 	"EnviousExtract-FairyDust": "LovePotion",
 	"EnviousExtract-FairyDust-Rainbows": "LovePotion",
@@ -114,11 +115,12 @@ var combinations: Dictionary = {
 	"ChemicalX-ToxicJellyfish-Vanilla": "DeathPotion",
 	"ChemicalX-ToxicJellyfish-Wolfsbane": "DeathPotion",
 	"ChemicalX-ToxicJellyfish-Vanilla-Wolfsbane": "DeathPotion",
+	"Moonshine-Wolfsbane": "Moonshine",
 	"Rainbows-Vanilla": "AnimePotion",
 	"FairyDust-Rainbows": "AnimePotion",
 	"FairyDust-Moonshine": "AnimePotion",
 	"FairyDust-Moonshine-Rainbows": "AnimePotion",
-	"FairyDust-Moonshine-Rainbows-Vanilla": "AnimePotion"
+	"FairyDust-Moonshine-Rainbows-Vanilla": "AnimePotion",
 }
 
 var used_ingredents: Array
@@ -169,7 +171,7 @@ func determine_product():
 	# Join the key.
 	var key = "-".join(sorted)
 	# Find the item.
-	print("found key", key)
+	print("created key", key)
 	if key in combinations:
 		return combinations[key]
 	else:
