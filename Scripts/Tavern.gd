@@ -80,6 +80,8 @@ var product_result: String
 
 var customer = null
 
+var game_active: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$BackgroundMusic.play(0.0)
@@ -106,11 +108,12 @@ func _on_ingredient_dropped_in_cauldron(ingredent_type):
 
 
 func _on_reset_button_pressed():
-	print("RESET")
-	for node in $IngredentsGroup.get_children():
-		if node.is_in_group("ingredient"):
-			node.reset()
-	used_ingredents = []
+	if game_active:
+		print("RESET")
+		for node in $IngredentsGroup.get_children():
+			if node.is_in_group("ingredient"):
+				node.reset()
+		used_ingredents = []
 
 func determine_product():
 	# Sort and filter out duplicates from the selection.
@@ -127,18 +130,21 @@ func determine_product():
 
 
 func _on_craft_button_pressed():
-
-	for node in $IngredentsGroup.get_children():
-		if node.is_in_group("ingredient"):
-			node.crafted()
-	product_result = determine_product()
-
-	# SET THE PRODUCT RESULT
-	$Product.texture = product_sprite_map[product_result]
-	$Product/AnimationPlayer.play("Present")
-	emit_signal("GameActive", false)
 	
-	used_ingredents = []
+	if game_active:
+		if len(used_ingredents) > 0:
+			for node in $IngredentsGroup.get_children():
+				if node.is_in_group("ingredient"):
+					node.crafted()
+			product_result = determine_product()
+
+			# SET THE PRODUCT RESULT
+			$Product.texture = product_sprite_map[product_result]
+			$Product/AnimationPlayer.play("Present")
+			game_active = false
+			emit_signal("GameActive", false)
+		
+			used_ingredents = []
 
 func _on_product_animation_finished(anim_name):
 	if anim_name == "Present":
@@ -162,10 +168,12 @@ func _on_animation_tree_animation_finished(anim_name):
 		customer.connect("CustomerDoneWalking", _on_customer_done_walking)
 
 func _on_customer_done_walking():
+	game_active = true
 	emit_signal("GameActive", true)
 
 
 func _on_game_timer_game_over():
+	game_active = false
 	emit_signal("GameActive", false)
 	var game_over_layer = game_over_scene.instantiate()
 	game_over_layer.proto_results = customer.results
