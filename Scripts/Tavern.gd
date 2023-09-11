@@ -28,7 +28,8 @@ var product_types: Array = [
 	"Bones",
 	"MosaicFood",
 	"ElixirOfLife",
-	"AnimePotion"
+	"AnimePotion",
+	"Omega3Supplement"
 ]
 
 var product_sprite_map: Dictionary = {
@@ -38,7 +39,8 @@ var product_sprite_map: Dictionary = {
 	"Bones": load("res://Assets/Art/Bones.png"),
 	"MosaicFood": load("res://Assets/Art/MosaicFood.png"),
 	"ElixirOfLife": load("res://Assets/Art/ElixirOfLife.png"),
-	"AnimePotion": load("res://Assets/Art/AnimePotion.png")
+	"AnimePotion": load("res://Assets/Art/AnimePotion.png"),
+	"Omega3Supplement": load("res://Assets/Art/Omega3Supplement.png")
 }
 
 var combinations: Dictionary = {
