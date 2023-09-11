@@ -29,7 +29,8 @@ var product_types: Array = [
 	"MosaicFood",
 	"ElixirOfLife",
 	"AnimePotion",
-	"Omega3Supplement"
+	"Omega3Supplement",
+	"Steak"
 ]
 
 var product_sprite_map: Dictionary = {
@@ -40,7 +41,8 @@ var product_sprite_map: Dictionary = {
 	"MosaicFood": load("res://Assets/Art/MosaicFood.png"),
 	"ElixirOfLife": load("res://Assets/Art/ElixirOfLife.png"),
 	"AnimePotion": load("res://Assets/Art/AnimePotion.png"),
-	"Omega3Supplement": load("res://Assets/Art/Omega3Supplement.png")
+	"Omega3Supplement": load("res://Assets/Art/Omega3Supplement.png"),
+	"Steak": load("res://Assets/Art/Steak.png")
 }
 
 var combinations: Dictionary = {
@@ -52,8 +54,8 @@ var combinations: Dictionary = {
 	"Bones-Vanilla": "Bones",
 	"Bones-CockatriceEgg-Moonshine": "YouthPotion",
 	"Bones-CockatriceEgg-Moonshine-Vanilla": "YouthPotion",
-	"CockatriceEgg-SpicySugar-WargMilk": "FruitCake",
-	"CockatriceEgg-SpicySugar-Vanilla-WargMilk": "FruitCake",
+	"CockatriceEgg-GooseBerryBush-SpicySugar": "FruitCake",
+	"CockatriceEgg-GooseBerryBush-SpicySugar-Vanilla": "FruitCake",
 	"EnviousExtract-FairyDust-Rainbows": "LovePotion",
 	"EnviousExtract-FairyDust-Rainbows-Vanilla": "LovePotion",
 	"FrogLegs-Hair-WargMilk": "NuclearWaste",

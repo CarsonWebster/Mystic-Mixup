@@ -34,7 +34,9 @@ var ingredient_types: Array = [
 	"Wolfsbane",
 	"WargMilk",
 	"FairyDust",
-	"ChemicalX"
+	"ChemicalX",
+	"AssortedRocks",
+	"LeprechaunBeard"
 ]
 
 var spritemap: Dictionary = {
@@ -57,7 +59,9 @@ var spritemap: Dictionary = {
 	"Wolfsbane": load("res://Assets/Art/Wolfsbane.png"),
 	"WargMilk": load("res://Assets/Art/WargMilk.png"),
 	"FairyDust": load("res://Assets/Art/FairyDust.png"),
-	"ChemicalX": load("res://Assets/Art/ChemicalX.png")
+	"ChemicalX": load("res://Assets/Art/ChemicalX.png"),
+	"AssortedRocks": load("res://Assets/Art/AssortedRocks.png"),
+	"LeprechaunBeard": load("res://Assets/Art/LeprechaunBeard.png")
 }
 
 var dragging: bool = false
