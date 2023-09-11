@@ -108,10 +108,10 @@ var unsatisfiedCharacterSprites: Dictionary = {
 
 var desires: Dictionary = {
 	"fishmaid": ["LovePotion", "AnimePotion"],
-	"sad_ghost": ["ElixirOfLife"],
-	"angry_cowboy": ["Steak", "Moonshine"],
-	"sasquatch": ["AnimePotion"],
-	"doggo": ["Bones", "Steak"],
+	"sad_ghost": ["ElixirOfLife","DeathPotion"],
+	"angry_cowboy": ["Steak", "Moonshine", "TamagoSushi"],
+	"sasquatch": ["AnimePotion", "DeathPotion", "LovePotion"],
+	"doggo": ["Bones", "Steak", "TamagoSushi"],
 	"electro_bard": ["Moonshine", "Omega3Supplement"],
 	"evil_scientist": ["NuclearWaste", "DeathPotion"],
 	"frog_prince": ["FruitCake", "LovePotion"],
