@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cyc2wlptwcybj"]
+[gd_scene load_steps=20 format=3 uid="uid://cyc2wlptwcybj"]
 
 [ext_resource type="Texture2D" uid="uid://bewor2natxyrv" path="res://Assets/Art/Door_Start_Menu.svg" id="1_lmo3e"]
 [ext_resource type="Script" path="res://Scenes/Title.gd" id="1_tbajw"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/InstructionsBackButton.gd" id="7_blrjd"]
 [ext_resource type="Script" path="res://Assets/Miguels Workspace/Scripts/CreditsBackButton.gd" id="7_btnya"]
 [ext_resource type="AudioStream" uid="uid://b2fn068m7f30y" path="res://Assets/Miguels Workspace/SoundEffects/Game/door-close.wav" id="8_p4t26"]
+[ext_resource type="Texture2D" uid="uid://bb27od8x3un5x" path="res://Assets/Art/TavernBackground.png" id="9_h8ula"]
 [ext_resource type="Texture2D" uid="uid://cdvyuwk4eetea" path="res://Assets/Art/brick_wall-background.jpg" id="12_s1spt"]
 
 [sub_resource type="GDScript" id="GDScript_1qwj1"]
@@ -35,7 +36,7 @@ func _on_button_up():
 
 [sub_resource type="Animation" id="Animation_q4aey"]
 resource_name = "FadeIn"
-length = 3.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -161,44 +162,44 @@ stream = ExtResource("4_1e5pq")
 
 [node name="InstructionsBackground" type="TextureRect" parent="."]
 visible = false
-offset_left = -106.0
-offset_top = -47.0
-offset_right = 1925.0
-offset_bottom = 1314.0
+offset_left = -237.0
+offset_top = -38.0
+offset_right = 2718.0
+offset_bottom = 1624.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("9_h8ula")
+
+[node name="TextBackground" type="TextureRect" parent="InstructionsBackground"]
+layout_mode = 2
+offset_left = 878.0
+offset_top = 474.0
+offset_right = 7059.0
+offset_bottom = 3904.0
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_83cuj")
 
-[node name="Instructions" type="Label" parent="InstructionsBackground"]
-layout_mode = 0
-offset_left = 868.0
-offset_top = 99.0
-offset_right = 941.0
-offset_bottom = 125.0
-theme_override_font_sizes/font_size = 64
-text = "Instructions:"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="InstructionsBackground"]
-layout_mode = 0
-offset_left = 575.0
-offset_top = 492.0
-offset_right = 1422.0
-offset_bottom = 594.0
-
-[node name="Label" type="Label" parent="InstructionsBackground/VBoxContainer"]
+[node name="Label" type="Label" parent="InstructionsBackground"]
 layout_mode = 2
+offset_left = 980.0
+offset_top = 760.0
+offset_right = 2032.0
+offset_bottom = 991.0
 theme_override_font_sizes/font_size = 30
-text = "Customers will visit you at the tavern in hopes of receiving treatment of some kind
+text = "Customers will visit you at the tavern in hopes of receiving treatment.
 
-Drop ingredients into the cauldron to wip up a drink or food for your customer
+Get as many 5 star reviews as you can by crafting the item requested.
 
-Beware! Some ingredients may be harmful "
+Drop ingredients into the cauldron to whip up an item for your customer
+
+Beware! Some ingredients may be harmful."
 horizontal_alignment = 1
 
 [node name="InstructionsBackButton" type="Button" parent="InstructionsBackground"]
 layout_mode = 0
-offset_left = 1591.0
-offset_top = 72.0
-offset_right = 1932.0
-offset_bottom = 255.0
+offset_left = 2240.0
+offset_top = 87.5
+offset_right = 2581.0
+offset_bottom = 270.5
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 128
 text = "BACK"
@@ -206,6 +207,15 @@ script = ExtResource("7_blrjd")
 
 [node name="SoundEffect" type="AudioStreamPlayer2D" parent="InstructionsBackground/InstructionsBackButton"]
 stream = ExtResource("8_p4t26")
+
+[node name="Instructions" type="Label" parent="InstructionsBackground"]
+layout_mode = 0
+offset_left = 1290.0
+offset_top = 580.0
+offset_right = 1680.0
+offset_bottom = 671.0
+theme_override_font_sizes/font_size = 64
+text = "Instructions:"
 
 [node name="CreditsBackground" type="TextureRect" parent="."]
 visible = false
@@ -232,42 +242,40 @@ offset_top = 458.0
 offset_right = 666.0
 offset_bottom = 929.0
 
-[node name="Technical Lead" type="Label" parent="CreditsBackground/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_evihd")
-theme_override_font_sizes/font_size = 64
-text = "Technical Lead:"
-
 [node name="Design Team" type="Label" parent="CreditsBackground/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_evihd")
-theme_override_font_sizes/font_size = 64
-text = "Design:"
+theme_override_font_sizes/font_size = 48
+text = "Design: Alyssa Villagracia, Carson Webster, Aleczandria Villagracia"
 
 [node name="Programmers" type="Label" parent="CreditsBackground/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_evihd")
-theme_override_font_sizes/font_size = 64
-text = "Programmers:"
+theme_override_font_sizes/font_size = 48
+text = "Programmers: Carson Webster, Aleczandria Villagracia, Ericka Marquez, 
+Miguel Campos"
 
 [node name="Artists" type="Label" parent="CreditsBackground/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_evihd")
-theme_override_font_sizes/font_size = 64
-text = "Artwork:"
+theme_override_font_sizes/font_size = 48
+text = "Artwork: Alyssa Villagracia, Ericka Marquez, Ivan Manriquez"
 
 [node name="Audio" type="Label" parent="CreditsBackground/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_evihd")
-theme_override_font_sizes/font_size = 64
-text = "Audio:"
+theme_override_font_sizes/font_size = 48
+text = "Audio: Ericka Marquez, Miguel Campos"
 
-[node name="Thanks" type="Label" parent="CreditsBackground/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CreditsBackground/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+
+[node name="Honorable" type="Label" parent="CreditsBackground/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_evihd")
-theme_override_font_sizes/font_size = 64
-text = "Honorable Mention: 
-    - AudioLDM, ChatGPT & Bing Chat"
+theme_override_font_sizes/font_size = 48
+text = "Special Thanks To: Chat-GPT, AudioLDM, and Bing Search AI"
 
 [node name="CreditsBackButton" type="Button" parent="CreditsBackground"]
 layout_mode = 0

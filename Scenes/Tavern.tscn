@@ -344,7 +344,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ppk1m"]
 resource_name = "FadeOut"
-length = 6.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

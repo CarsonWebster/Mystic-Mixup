@@ -30,7 +30,10 @@ var product_types: Array = [
 	"ElixirOfLife",
 	"AnimePotion",
 	"Omega3Supplement",
-	"Steak"
+	"Steak",
+	"TamagoSushi",
+	"NuclearWaste",
+	"YouthPotion",
 ]
 
 var product_sprite_map: Dictionary = {
@@ -42,36 +45,82 @@ var product_sprite_map: Dictionary = {
 	"ElixirOfLife": load("res://Assets/Art/ElixirOfLife.png"),
 	"AnimePotion": load("res://Assets/Art/AnimePotion.png"),
 	"Omega3Supplement": load("res://Assets/Art/Omega3Supplement.png"),
-	"Steak": load("res://Assets/Art/Steak.png")
+	"Steak": load("res://Assets/Art/Steak.png"),
+	"CrunchySalad": load("res://Assets/Art/CrunchySalad.png"),
+	"TamagoSushi": load(""),
+	"NuclearWaste": load("res://Assets/Art/Nuclear_Waste.png"),
+	"YouthPotion": load(""),
+	"FruitCake": load("res://Assets/Art/FruitCake.png"),
 }
 
 var combinations: Dictionary = {
+	"FairyDust-NegativeReflection": "ElixirOfLife",
+	"FairyDust-Vanilla": "ElixirOfLife",
+	"FairyDust-MysteryBoxGood": "ElixirOfLife",
 	"FairyDust-MysteryBoxGood-NegativeReflection": "ElixirOfLife",
 	"FairyDust-MysteryBoxGood-NegativeReflection-Vanilla": "ElixirOfLife",
-	"Moonshine": "Moonshine",
-	"Moonshine-Vanilla": "Moonshine",
 	"Bones": "Bones",
+	"Bones-Hair": "DeathPotion",
 	"Bones-Vanilla": "Bones",
+	"Bones-MysteryMeat": "Steak",
+	"Bones-CockatriceEgg": "Steak",
 	"Bones-CockatriceEgg-Moonshine": "YouthPotion",
 	"Bones-CockatriceEgg-Moonshine-Vanilla": "YouthPotion",
 	"CockatriceEgg-GooseBerryBush-SpicySugar": "FruitCake",
 	"CockatriceEgg-GooseBerryBush-SpicySugar-Vanilla": "FruitCake",
+	"CockatriceEgg-MysteryMeat": "YouthPotion",
+	"CockatriceEgg-SpicySugar": "FruitCake",
+	"CockatriceEgg-SpicySugar-Vanilla": "FruitCake",
+	"CockatriceEgg-SpicySugar-WargMilk": "FruitCake",
+	"CockatriceEgg-SpicySugar-Vanilla-WargMilk": "FruitCake",
+	"EnviousExtract-Vanilla": "LovePotion",
+	"EnviousExtract-NegativeReflection": "NuclearWaste",
+	"EnviousExtract-Rainbows": "LovePotion",
+	"EnviousExtract-FairyDust": "LovePotion",
 	"EnviousExtract-FairyDust-Rainbows": "LovePotion",
 	"EnviousExtract-FairyDust-Rainbows-Vanilla": "LovePotion",
+	"Hair-Vanilla": "LovePotion",
+	"Hair-Rainbows": "DeathPotion",
+	"FrogLegs-Hair": "NuclearWaste",
 	"FrogLegs-Hair-WargMilk": "NuclearWaste",
 	"FrogLegs-Hair-Vanilla-WargMilk": "NuclearWaste",
+	"Moonshine": "Moonshine",
+	"Moonshine-Vanilla": "Moonshine",
+	"Moonshine-Rainbows": "AnimePotion",
+	"Moonshine-MysteryMeat": "Steak",
 	"Moonshine-MysteryMeat-SpicySugar": "Steak",
 	"Moonshine-MysteryMeat-SpicySugar-Vanilla": "Steak",
+	"AssortedRocks": "CrunchySalad",
+	"AssortedRocks-Vanilla": "CrunchySalad",
 	"AssortedRocks-Bones": "CrunchySalad",
 	"AssortedRocks-Bones-Vanilla": "CrunchySalad",
+	"MysteryMeat": "Steak",
+	"MysteryMeat-Rainbows": "Bones",
+	"MysteryMeat-Vanilla": "Omega3Supplement",
+	"MysteryMeat-ToxicJellyfish": "Omega3Supplement",
 	"MysteryMeat-ToxicJellyfish-WargMilk": "Omega3Supplement",
 	"MysteryMeat-ToxicJellyfish-Vanilla-WargMilk": "Omega3Supplement",
+	"CockatriceEgg-ToxicJellyfish": "Omega3Supplement",
+	"CockatriceEgg": "TamagoSushi",
+	"CockatriceEgg-Rainbows": "LovePotion",
+	"CockatriceEgg-Vanilla": "TamagoSushi",
+	"CockatriceEgg-GooseBerryBush": "TamagoSushi",
+	"CockatriceEgg-LeprechaunBeard": "TamagoSushi",
 	"CockatriceEgg-GooseBerryBush-LeprechaunBeard": "TamagoSushi",
 	"CockatriceEgg-GooseBerryBush-LeprechaunBeard-Vanilla": "TamagoSushi",
+	"ChemicalX": "DeathPotion",
+	"ChemicalX-Hair": "AnimePotion",
+	"ChemicalX-SpicySugar": "AnimePotion",
+	"ChemicalX-ToxicJellyfish": "DeathPotion",
+	"ChemicalX-ToxicJellyfish-Vanilla": "DeathPotion",
 	"ChemicalX-ToxicJellyfish-Wolfsbane": "DeathPotion",
 	"ChemicalX-ToxicJellyfish-Vanilla-Wolfsbane": "DeathPotion",
+	"Moonshine-Wolfsbane": "Moonshine",
+	"Rainbows-Vanilla": "AnimePotion",
+	"FairyDust-Rainbows": "AnimePotion",
+	"FairyDust-Moonshine": "AnimePotion",
 	"FairyDust-Moonshine-Rainbows": "AnimePotion",
-	"FairyDust-Moonshine-Rainbows-Vanilla": "AnimePotion"
+	"FairyDust-Moonshine-Rainbows-Vanilla": "AnimePotion",
 }
 
 var used_ingredents: Array
@@ -122,7 +171,7 @@ func determine_product():
 	# Join the key.
 	var key = "-".join(sorted)
 	# Find the item.
-	print("found key", key)
+	print("created key", key)
 	if key in combinations:
 		return combinations[key]
 	else:
