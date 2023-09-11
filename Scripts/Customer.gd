@@ -72,7 +72,7 @@ var characterSprites: Dictionary = {
 var characterDialog: Dictionary = {
 	"fishmaid": "Blub, blub, blubbbbb!\nBlub, blub, blub, blub.\nBlub, blub… …\nBlub, blub, blub?",
 	"sad_ghost": "… *Whispers* …",
-	"frog_prince": "Greetings, gentle tav'rn keepeth'r. *Ribbit* I am a prince und'r a naughty enchantment. *Ribbit* A fav'r of a magical nature, and thy kindness may setteth me free from this amphibious plight! *Ribbit*",
+	"frog_prince": "Greetings. I am a prince und'r a naughty enchantment. *Ribbit* A fav'r of magical nature, and thy kindness may setteth me free from this amphibious plight! *Ribbit*",
 	"angry_cowboy": "Ah'm starvin'! Give me some guh-rub, now.",
 	"electro_bard": "🎶 One drink, my friend, to set the vibe, a glass of lightning, let the music thrive! 🎶",
 	"old_man": "Say, young'un, do you by any chance, got any o' them youth potions?",
